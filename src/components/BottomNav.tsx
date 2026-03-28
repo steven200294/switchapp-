@@ -39,7 +39,7 @@ export default function BottomNav() {
   const pathname = usePathname();
 
   const tabs = [
-    { href: "/", label: "Explorer", icon: ExplorerIcon },
+    { href: "/explorer", label: "Explorer", icon: ExplorerIcon },
     { href: "/favoris", label: "Favoris", icon: FavorisIcon },
     { href: "/swipe", label: "Switch", icon: SwipeIcon },
     { href: "/messages", label: "Messages", icon: MessagesIcon },
@@ -58,9 +58,14 @@ export default function BottomNav() {
         </defs>
       </svg>
 
-      <div 
-        className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex items-center justify-around pt-3 px-2 z-[100] md:hidden overflow-visible"
-        style={{ paddingBottom: "calc(16px + env(safe-area-inset-bottom))" }}
+      <div
+        className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex items-center justify-around pt-3 px-2 z-[100] md:hidden overflow-visible will-change-transform"
+        style={{
+          paddingBottom: "calc(16px + env(safe-area-inset-bottom))",
+          transform: "translateZ(0)",
+          WebkitTransform: "translateZ(0)",
+          backfaceVisibility: "hidden",
+        }}
       >
         {tabs.map((tab) => {
           const isActive = pathname === tab.href;
