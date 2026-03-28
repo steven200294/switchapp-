@@ -32,7 +32,7 @@ export default function ConnectionModal({ onClose }: Props) {
         style={{ transform: visible ? "translateY(0)" : "translateY(100%)" }}
       >
         {/* Cercles décoratifs d'appartements responsifs, bien séparés et très visibles */}
-        <div className="absolute inset-0 overflow-hidden rounded-t-[3rem] pointer-events-none z-0">
+        <div className="hidden md:block absolute inset-0 overflow-hidden rounded-t-[3rem] pointer-events-none z-0">
           
           {/* Gauche haut */}
           <div className="absolute top-[5%] left-[-8%] md:left-[-2%] lg:left-[5%] w-28 h-28 md:w-40 md:h-40 lg:w-56 lg:h-56 rounded-full border-4 border-white overflow-hidden opacity-100">
@@ -86,7 +86,7 @@ export default function ConnectionModal({ onClose }: Props) {
           </svg>
         </button>
 
-        <div className="flex flex-col items-center pt-12 pb-8 px-6 w-full max-w-md mx-auto overflow-y-auto max-h-[80vh] relative z-10">
+        <div className="flex flex-col items-center pt-12 pb-8 px-6 w-full max-w-md mx-auto overflow-y-auto scrollbar-hide max-h-[80vh] relative z-10">
 
           {/* Titre */}
           <div className="text-center mb-6">

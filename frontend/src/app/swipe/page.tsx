@@ -191,18 +191,9 @@ export default function SwipePage() {
 
       <main className="flex-1 w-full flex flex-col items-center justify-start pt-6 md:pt-10 px-4">
         
-        {/* En-tête (Titre et instructions) */}
-        <div className="w-full max-w-sm mb-6 text-center">
-          <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00BFFF] to-[#8A2BE2] tracking-tight">
-            Switch
-          </h1>
-          <p className="text-gray-500 text-[14px] font-medium mt-1">
-            Trouvez votre prochain logement d'échange.
-          </p>
-        </div>
 
         {/* Pile de cartes */}
-        <div className="relative w-full max-w-[340px] md:max-w-[400px] h-[65vh] max-h-[600px] min-h-[450px] mb-8 lg:mb-12">
+        <div className="relative w-full max-w-[92vw] md:max-w-[400px] h-[72vh] md:max-h-[600px] md:min-h-[450px] mb-8 lg:mb-12">
           
           {currentCards.length === 0 ? (
             // Aucun appartement restant
