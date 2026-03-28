@@ -1,0 +1,4879 @@
+[
+  {
+    "id": "fbaa4d85-e0c8-4d80-815a-857c9a916744",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "contract_ready",
+    "title": "Contrat prêt",
+    "body": "Le contrat est prêt à être signé.",
+    "data": {
+      "contract_id": "ab288d34-a56c-4cde-bb6d-795bba5713f9",
+      "conversation_id": "beef7a94-27ba-4ee4-9327-06b64dc2cecd"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T05:59:51.043472+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "994fd861-c48a-43f2-8ef6-40c043b275c6",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "292e8db2-9232-4a81-840d-966e3ecb1a7a"
+    },
+    "is_read": false,
+    "created_at": "2025-12-31T21:46:06.770325+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3e4067c3-3d5c-4714-918d-2a64dcd73c15",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "ec8ca6ae-81c2-491e-aefb-71d370ff46ee"
+    },
+    "is_read": false,
+    "created_at": "2025-12-31T21:46:06.845692+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "cbe8ddf5-832c-4a3c-9ac3-0026b7f97f81",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "376c98b7-4616-4d20-bad0-d08231c0d3a4"
+    },
+    "is_read": false,
+    "created_at": "2025-12-31T21:46:08.01638+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7adcec61-5920-4189-aad9-70e969c57388",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "contract_ready",
+    "title": "Contrat prêt",
+    "body": "Le contrat est prêt à être signé.",
+    "data": {
+      "contract_id": "ab288d34-a56c-4cde-bb6d-795bba5713f9",
+      "conversation_id": "beef7a94-27ba-4ee4-9327-06b64dc2cecd"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T05:59:51.043472+00:00",
+    "read_at": "2026-01-14T07:00:11.205+00:00",
+    "content": null
+  },
+  {
+    "id": "58123ec2-1965-4ae0-8bc7-5904b3191b7e",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "081c9413-b8f3-4831-9946-6ea5119eceb0"
+    },
+    "is_read": false,
+    "created_at": "2025-12-31T21:46:16.7858+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "74888f7f-a403-4494-b0b2-895a3d32a376",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "b23ab8c5-76b1-4683-9e21-53be21acce8d"
+    },
+    "is_read": false,
+    "created_at": "2026-01-01T10:43:18.337603+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "4692a43b-63d0-4499-99ea-bd7b6ab9f799",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T11:34:53.090491+00:00",
+    "read_at": "2026-01-14T11:38:03.791+00:00",
+    "content": null
+  },
+  {
+    "id": "a443e6ed-ba36-46e1-ab95-7a04a74d62f2",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d4a6c8a6-80e0-4bb9-a399-d963d43103e3",
+      "property_id": "081c9413-b8f3-4831-9946-6ea5119eceb0"
+    },
+    "is_read": false,
+    "created_at": "2026-01-05T18:55:05.332619+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "199db0fd-d417-4cf4-a190-1c01c7fb95aa",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:11.353173+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "16a97030-b76c-4a0f-892b-0e06bac9dd2b",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:11.353173+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "0d650cb3-a865-48af-9647-2814bc01fb4c",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:36.168464+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "28db1fab-bf76-403b-af5e-b716253f0a9c",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:36.168464+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "79883521-6568-43d6-9894-741574adff03",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d4a6c8a6-80e0-4bb9-a399-d963d43103e3",
+      "property_id": "b23ab8c5-76b1-4683-9e21-53be21acce8d"
+    },
+    "is_read": false,
+    "created_at": "2026-01-05T18:55:24.96231+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f9621869-6b2c-4569-ad16-3d7cc6412d11",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "62132ec1-fa5a-4181-82db-eef1de0a456a",
+      "property_id": "081c9413-b8f3-4831-9946-6ea5119eceb0"
+    },
+    "is_read": false,
+    "created_at": "2026-01-05T20:13:23.840691+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "2e2ef3f0-a0d6-43df-9ed7-f0bf954f2b17",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "62132ec1-fa5a-4181-82db-eef1de0a456a",
+      "property_id": "ee9fd262-41cf-4446-9174-ae2403f9d270"
+    },
+    "is_read": false,
+    "created_at": "2026-01-05T20:24:16.336948+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "06124ca5-526d-423c-8b8b-1726e9aaebe2",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "62132ec1-fa5a-4181-82db-eef1de0a456a",
+      "property_id": "f649b110-31a7-4953-842e-cd872616a64c"
+    },
+    "is_read": false,
+    "created_at": "2026-01-05T20:24:16.959808+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "552e17a8-a09f-4c74-b88a-e8bcc34a4711",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ef01f9ef-d61e-402a-a4ba-b0fdd878fb7c",
+      "property_id": "081c9413-b8f3-4831-9946-6ea5119eceb0"
+    },
+    "is_read": false,
+    "created_at": "2026-01-05T20:57:20.560778+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5aa9ebc1-1a54-412b-9774-667bcdfaeb0e",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "ee603c43-02e2-411b-a5e6-380efd1af46f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:43.252179+00:00",
+    "read_at": "2026-03-01T16:54:32.664+00:00",
+    "content": null
+  },
+  {
+    "id": "9abf1818-ceb0-4cdc-bbfb-dd8423eeec28",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "ee9fd262-41cf-4446-9174-ae2403f9d270"
+    },
+    "is_read": false,
+    "created_at": "2026-01-07T21:36:15.034145+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "997a371d-c919-4f6e-8ea9-14c46791c19f",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:51.372496+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f7a0f0c2-d51f-40b2-8dbe-95fdb70d2503",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:51.372496+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7ad53af0-72ce-431e-b865-f7a2bc85d7e1",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+      "property_id": "081c9413-b8f3-4831-9946-6ea5119eceb0"
+    },
+    "is_read": false,
+    "created_at": "2026-01-13T20:06:10.443146+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "2ab78cba-6132-407c-905d-f1ea837255e9",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:12:08.752069+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "06a66be4-a4e8-4b4d-9721-f372002ee6cf",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:12:09.425053+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "fec205a4-ef2c-4e1b-bda4-ee5c3b55bf5f",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:52.681976+00:00",
+    "read_at": "2026-03-01T21:39:44.234+00:00",
+    "content": null
+  },
+  {
+    "id": "8884e823-1515-48d6-8e65-acc99c03d8c8",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T07:30:56.957152+00:00",
+    "read_at": "2026-01-14T11:38:03.791+00:00",
+    "content": null
+  },
+  {
+    "id": "166fc36d-5116-473e-b2c5-25b1500f6564",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T07:30:56.957152+00:00",
+    "read_at": "2026-01-14T11:38:03.791+00:00",
+    "content": null
+  },
+  {
+    "id": "f73ae125-0179-4ebf-ab50-a1efc2817abf",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-01-18T04:02:47.014542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "02e750c9-7482-4006-ba9f-95f6c8b93632",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-01-18T04:02:47.014542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "8a8175c0-cc1c-420e-bc78-db1230162c71",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:29.532489+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c5b8c091-cc6b-478f-ab58-bf633c10ced1",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:29.532489+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7d8b122c-582b-45b4-80c6-2baf768f9e02",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:33.770655+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "1336440a-f170-43f1-bc29-cc48c88e929b",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:33.770655+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "87731064-00be-45d2-a096-2566d69705d6",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:53.485916+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "57e196e1-b814-4147-9dc9-c68dd66827d3",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:54:17.29257+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "d5f28637-2232-4dcc-8fed-f6e0b2d9873a",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:54:17.29257+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "84b310c9-3cc6-4758-b4bd-ec0815d4ea7a",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "454de2e5-22e9-487e-b7f3-3a33607ffd6f"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T02:50:02.299169+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3cf80ed3-84b3-4a86-8711-e4cd5a390f07",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:11:24.795119+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "287d06e0-1a6a-4ba8-b160-3d324c5f7aae",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T03:42:38.553012+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "016084ad-be43-4d8f-8f26-d6825189f0e4",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T03:42:38.553012+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3b0cb832-d6c1-4605-8a17-d4cbf8f89885",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:42.763892+00:00",
+    "read_at": "2026-03-01T17:25:03.739+00:00",
+    "content": null
+  },
+  {
+    "id": "9139e611-0c28-47b1-b7b2-3ee8020b8ff3",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:11:21.973831+00:00",
+    "read_at": "2026-03-01T17:25:03.739+00:00",
+    "content": null
+  },
+  {
+    "id": "b19b332d-9bbf-43f0-8e71-0c7c1bf5d76b",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:25:22.350931+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "eceb55f4-7f54-4547-9ad5-501f81ce7fac",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:25:26.382445+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9225c1ee-6d90-49f1-88ed-cc35a3452b0f",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:25:26.958725+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "420a4f6e-424a-4287-a81f-907c3f52758d",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T11:31:55.159905+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3a49a7c5-5950-43e4-852b-b7040214314d",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T11:31:55.159905+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "82787642-8e67-4786-8458-fcf72cf43262",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T03:59:09.706945+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "66be4936-1a3f-4f07-bbab-5723bf63e356",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T04:00:05.737509+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e68a3044-4b10-4321-a634-092b8cfb8f92",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T04:04:43.224298+00:00",
+    "read_at": "2026-01-14T11:38:03.791+00:00",
+    "content": null
+  },
+  {
+    "id": "1547dcda-5bd4-49d5-8d54-dd91c2bec48c",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:08.781342+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "809eaa81-d46f-43af-b8f4-3a1c1799b957",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:08.781342+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5844d324-555c-4de7-a525-6652e64a20c1",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:19.167447+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f7d708b1-5347-4552-86d0-891a1b74c103",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:19.167447+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "68d7ecad-7c45-4c8e-94d0-d2525854221d",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:26.414354+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e1424e0e-0796-4916-9a64-beadb2ece119",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:53:26.414354+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "6fe9dc96-4ab7-4f4f-a107-4b6ceccf5aa4",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:54:10.556241+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "b63d40a3-bca8-4193-8646-b59bd2bbf296",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "match_created",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "ac346376-f426-4b56-bd47-fd1821f08cf1",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "conversation_id": "beef7a94-27ba-4ee4-9327-06b64dc2cecd"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T04:14:41.409477+00:00",
+    "read_at": "2026-01-14T04:15:07.928+00:00",
+    "content": null
+  },
+  {
+    "id": "a09611c8-60ab-4dd4-a548-32395210a100",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match_created",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "ac346376-f426-4b56-bd47-fd1821f08cf1",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "other_user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+      "conversation_id": "beef7a94-27ba-4ee4-9327-06b64dc2cecd"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T04:14:41.409477+00:00",
+    "read_at": "2026-01-14T04:15:23.268+00:00",
+    "content": null
+  },
+  {
+    "id": "8898ab6b-37ee-4da2-b850-823facb25a90",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match_created",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "ac346376-f426-4b56-bd47-fd1821f08cf1",
+      "other_user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T04:14:41.409477+00:00",
+    "read_at": "2026-01-14T04:15:25.455+00:00",
+    "content": null
+  },
+  {
+    "id": "1b98dc54-9f19-4b6e-903c-87730a2c728e",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "match_created",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "ac346376-f426-4b56-bd47-fd1821f08cf1",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-01-14T04:14:41.409477+00:00",
+    "read_at": "2026-01-14T04:31:34.588+00:00",
+    "content": null
+  },
+  {
+    "id": "94c47039-0ba5-4276-bd2c-bf387fcfaee5",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T16:54:10.556241+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f52760f0-7e73-4e19-bab2-f073446c9814",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:38.923292+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "fae8a073-7c1a-42f6-94e3-2bb4164ecce6",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:38.923292+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "1e8ea05a-b071-4990-954e-6da7f98d67de",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:48.106569+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "649fd343-108b-4ff9-8138-d9b4453715f3",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:48.106569+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "45de16f3-6210-4601-b81b-601e2bf24de2",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:42.763892+00:00",
+    "read_at": "2026-03-01T17:11:32.581+00:00",
+    "content": null
+  },
+  {
+    "id": "7add8350-2429-497d-ae88-deaf6e92f986",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:25:24.030591+00:00",
+    "read_at": "2026-03-01T17:25:33.552+00:00",
+    "content": null
+  },
+  {
+    "id": "3c9df15e-ed0f-41f6-9007-c689b13df543",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "5d9718f1-8abc-46d6-890b-a3adc5a57021",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "conversation_id": "85337fce-ce2f-4bcc-860b-8996ee6d6716"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:21.513425+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "510e3b30-29f3-433c-a7ef-ed5ff0542f0e",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "5d9718f1-8abc-46d6-890b-a3adc5a57021",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "conversation_id": "85337fce-ce2f-4bcc-860b-8996ee6d6716"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:21.513425+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "52488526-40f6-4757-ae35-cc5cd994ab91",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "5d9718f1-8abc-46d6-890b-a3adc5a57021",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:21.513425+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e06d0f47-d18c-484e-a318-f2e4c2288ed4",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "5d9718f1-8abc-46d6-890b-a3adc5a57021",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:21.513425+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c83a3697-2a89-4c9f-a271-ca4047e7ee12",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:21.513425+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "328d0bbb-b0df-490a-9f64-7aef7b09135f",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:21.513425+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f314c06e-ad9e-4127-9243-baecb57a4308",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:21.513425+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "236960a4-0a69-44e4-af45-72de4d782f29",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:21.513425+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "de70323b-291c-4d22-b2dc-1d66463a3309",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:27.377994+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5fa5300d-05ec-481c-b0fa-3a93227ea8e3",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:29:27.377994+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "bac64963-9b56-4fb9-b08e-6442b2782062",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "f1d235b8-e027-466d-a62a-575a394ee2a4",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "other_user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "conversation_id": "adbb1608-95d9-46b7-a3a6-26fea343992f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:43:50.049225+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "15b78825-849b-49e3-b7fa-55f9c40edf93",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "f1d235b8-e027-466d-a62a-575a394ee2a4",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "conversation_id": "adbb1608-95d9-46b7-a3a6-26fea343992f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:43:50.049225+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f7bbcbb9-135d-440d-9c8e-d7c368bf2234",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "f1d235b8-e027-466d-a62a-575a394ee2a4",
+      "other_user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:43:50.049225+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "77318611-2750-463b-8c65-eddc12c9967d",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "f1d235b8-e027-466d-a62a-575a394ee2a4",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:43:50.049225+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a8a479e1-b533-453f-914c-a6c2122b4f96",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:43:50.049225+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "fc4e6243-81ab-41be-a237-49dc1d8710a5",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "ee603c43-02e2-411b-a5e6-380efd1af46f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:43:50.049225+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c63144f6-f2b1-421a-afa5-30316ecd2bf8",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:43:50.049225+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "36398233-cb8a-4848-8b29-5d0dd096b076",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:43:50.049225+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "61d9dcff-b0ba-4fbe-9983-f102de45402d",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "aa6b7db0-5b82-494e-8a4b-23a0149fcbfb",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "other_user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "conversation_id": "58c1cfaa-93cb-408a-b12a-768d3bf60bd2"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:42.186433+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9701dc3c-a747-4e2a-815e-95493e4d57db",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "aa6b7db0-5b82-494e-8a4b-23a0149fcbfb",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "conversation_id": "58c1cfaa-93cb-408a-b12a-768d3bf60bd2"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:42.186433+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "87e66899-8ae8-40fa-bfd8-6b0d52ba31a7",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "aa6b7db0-5b82-494e-8a4b-23a0149fcbfb",
+      "other_user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:42.186433+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "4413762b-7d6a-4154-8ce4-1449db61cd2c",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "aa6b7db0-5b82-494e-8a4b-23a0149fcbfb",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:42.186433+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "6e81ff68-b200-418e-94b0-6a1c2f4acd21",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "ee603c43-02e2-411b-a5e6-380efd1af46f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:42.186433+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "1c50f382-a2bb-461d-bf4d-c47ba13f6135",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:42.186433+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c800a7ce-3670-474d-a734-1dd31c908c06",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:42.186433+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "1914a3cb-4ac4-49fb-9771-a067fea86ec7",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:42.186433+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "1e3c8276-3058-4d26-bd85-6e69c5d16d65",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "0986b562-2fa6-41a2-99dc-b50265f369a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:16.60673+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "4584038c-9497-405c-b5df-b567884fafd4",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "361cb597-fc57-467e-86a2-172bbed7a59b",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "conversation_id": "2067f806-068d-4dd5-ac05-58ebf0e9897c"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.046455+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e5b5cf43-25e9-4626-80e0-bb71e16864c5",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "361cb597-fc57-467e-86a2-172bbed7a59b",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "conversation_id": "2067f806-068d-4dd5-ac05-58ebf0e9897c"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.046455+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "bf84b642-cbcf-4f42-ada3-84d33ffddf18",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "361cb597-fc57-467e-86a2-172bbed7a59b",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.046455+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "acb2298e-5075-4ae1-9974-93a39e2121f1",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "361cb597-fc57-467e-86a2-172bbed7a59b",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.046455+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3fc413db-78ad-4b8c-96b3-95c34f08fc7f",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.046455+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e78be91f-fbbf-4303-8fef-029a01fd0d1a",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.046455+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c675b200-9b4f-4c90-8537-155b96bf02f8",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.046455+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5559ea46-8b3d-421d-8698-d30d9bb7e029",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.046455+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "bff8b10f-9a3b-4f1a-9c82-e1228113d14c",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "01103265-297d-49f0-978f-b655f94f0cc6",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "conversation_id": "7ababac3-100a-4247-81df-01077dc210b6"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.219342+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "61d7b4d8-925a-41fe-b81e-389e4a875241",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "01103265-297d-49f0-978f-b655f94f0cc6",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "conversation_id": "7ababac3-100a-4247-81df-01077dc210b6"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.219342+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "dbe2da3d-4b74-498d-ba5d-0d6b388c41c2",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "01103265-297d-49f0-978f-b655f94f0cc6",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.219342+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3192536c-fdf9-4a4b-ba6b-c0b431af0178",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "01103265-297d-49f0-978f-b655f94f0cc6",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:08:43.219342+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "524f3131-1d76-4094-b404-a40138bc8831",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T17:05:52.681976+00:00",
+    "read_at": "2026-03-01T21:25:02.418+00:00",
+    "content": null
+  },
+  {
+    "id": "b118208e-ffd0-41cb-be89-789bcac92282",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "df5654c6-c7ac-4936-96f6-07165e59f2ad",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "conversation_id": "b949929b-7bce-40dc-b5db-7073ab51dbe8"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:50:58.13787+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7d2bbf43-da90-4ac8-81f4-de9252afe670",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "df5654c6-c7ac-4936-96f6-07165e59f2ad",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "conversation_id": "b949929b-7bce-40dc-b5db-7073ab51dbe8"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:50:58.13787+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e9064901-ace1-4b36-ba17-b9016d61ce35",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "df5654c6-c7ac-4936-96f6-07165e59f2ad",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:50:58.13787+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c71c68d7-1ae7-4321-898a-8c9205f01361",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "df5654c6-c7ac-4936-96f6-07165e59f2ad",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:50:58.13787+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "82126b48-f22c-4539-9267-144d7932e555",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:50:58.13787+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "eb4bdf19-a8c2-42dd-845a-401955927309",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:50:58.13787+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "d0633fcd-26fb-449e-8114-ca7289be2ae6",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:50:58.13787+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "197f22af-aa60-49a5-b395-1c8e9b738f88",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T21:50:58.13787+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "0dc2f6e8-f92e-4474-a471-44e5843631a8",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:16:51.522382+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f250a582-820b-4314-aae1-6a8401542995",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:16:51.522382+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "18af8546-0c16-4aff-87e9-f9e038b9d377",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:16:52.061048+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "690bc31d-1122-4f8c-a9e3-320a62030888",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:16:52.061048+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "69f33a8d-bc18-493f-9ad4-fd9d8c76ac51",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:16:54.948102+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "77b8e08c-8d22-4bb1-b951-a5f31f847022",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:16:54.948102+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e507e9b3-89a4-49fd-bb56-ed436ed07b61",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:16:59.540583+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a36c5eaf-5a88-4b6a-a3ac-ac2944b6547c",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:16:59.540583+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9a960683-63e4-4fed-bda1-087c495b9caa",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:03.055842+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f41d9312-5e64-4aa8-9f3e-79211f5f5048",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:03.055842+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3ec2c372-f5f8-4789-a987-6e13732bc41d",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.234067+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "84f61e02-2adf-45da-85a3-5ac24bad3867",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.234067+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9fdc088b-3723-4c54-af96-89e4d87510d5",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "84ddcc0b-120d-492f-9547-3daedd41e784",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "conversation_id": "e65fae88-4a2d-4d81-bada-cb8a994f7b37"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.727542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e47f9167-c312-4681-bb9c-03b4325172c6",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "84ddcc0b-120d-492f-9547-3daedd41e784",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "other_user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+      "conversation_id": "e65fae88-4a2d-4d81-bada-cb8a994f7b37"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.727542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9c4b5620-fdd5-49f9-975f-7d916d4f9192",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "84ddcc0b-120d-492f-9547-3daedd41e784",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.727542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f2d9891c-ad6b-4b06-9df2-cfb24a04e29e",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "84ddcc0b-120d-492f-9547-3daedd41e784",
+      "other_user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.727542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "75104f74-8b68-44a3-a4bb-01a9cce51556",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.727542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "fb2af62c-58d6-4e5c-9b42-58541f2c39b1",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.727542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "0d3dc11a-221f-4ae9-8ad5-f21753f06d94",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.727542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a22d6566-4d48-4d6a-ab05-9f24ba88b5c9",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:17:09.727542+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7138d7f9-3469-4dfc-ab93-93195732b0ab",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.445653+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "819ff2b0-bb95-4a4e-b876-ba484b1eb63c",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.445653+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "084d9352-5729-4dea-92c0-d607e4ccabe1",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "5fef87b4-370d-4077-8a08-5e93a6d9bec3",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "conversation_id": "fa96aae1-a8a3-484a-84aa-29777895cf66"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.764993+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5081f39d-6eae-4189-8204-9e1c7d2402d4",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "5fef87b4-370d-4077-8a08-5e93a6d9bec3",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "conversation_id": "fa96aae1-a8a3-484a-84aa-29777895cf66"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.764993+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "6b90bf51-420d-4570-a45b-c95e8bde67ca",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "5fef87b4-370d-4077-8a08-5e93a6d9bec3",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.764993+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "64127a9e-5725-4f0b-bfff-2c24c5c7a1bc",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "5fef87b4-370d-4077-8a08-5e93a6d9bec3",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.764993+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7011ccb5-dd75-44bb-944b-2c837899e02b",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.764993+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "52cff9ab-db85-4eba-a672-82b288b8a045",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.764993+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "dc9f87cf-52a5-4406-8119-6aa596dde16e",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.764993+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c6ea9674-d690-42e7-bdba-fc194354c41f",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:25:35.764993+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "b503705d-361f-44b4-8cb5-ce2a018da6ea",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:02.625955+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a8fa602b-a182-4b73-9ad4-0d11ba6a16ee",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:02.625955+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e900e838-82c2-425c-86ec-90ce4867165e",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:02.888161+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "8992e624-1981-4df4-9383-cab971405fd9",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:02.888161+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "8aacddf8-0e41-4e8b-92f1-e7e05e424f3f",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:03.155063+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c78c657e-0444-431f-b1a4-92a760b3cbcd",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:03.155063+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "d5ca852b-e2ef-43c7-aa30-f355e7942603",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:05.390734+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "90d0484a-cff5-4732-902f-f2512f193b1f",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:05.390734+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a91938a3-1baf-4779-a91c-493eac022f65",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:11.310536+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "93602e6f-48db-474a-a9df-87ba76774f73",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:11.310536+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "30730b72-270c-44d4-a1cd-281e2a98ad85",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:11.792328+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "38db827e-5b88-4627-85e7-4a893f59a757",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:11.792328+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "fd5677cd-68f6-4d5f-9c0a-e3a4c2481243",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:13.669328+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "6401cf40-6f48-41c8-b8ad-6e4ffb625c57",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:13.669328+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "50530f66-9200-448c-8caf-139f0efc99bf",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:24.737716+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "07ce61c0-8d0e-4ba2-b22f-d3aafefab896",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:24.737716+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f5abeb4d-72ac-4824-bbb0-da8a066358d8",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "371a82e5-e5b2-4cad-ac2d-62ca6a61f9b9",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "conversation_id": "74c61f63-d168-46ee-94c3-87285e7a616c"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.309951+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "ee2c91fb-c13d-4494-97bb-f6ce67ad1f8a",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "371a82e5-e5b2-4cad-ac2d-62ca6a61f9b9",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.309951+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c908082a-801f-4f18-ae98-404086788ff2",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "371a82e5-e5b2-4cad-ac2d-62ca6a61f9b9",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.309951+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "944a938b-955f-4b24-84f9-29d0558d75f7",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "371a82e5-e5b2-4cad-ac2d-62ca6a61f9b9",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "conversation_id": "74c61f63-d168-46ee-94c3-87285e7a616c"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.309951+00:00",
+    "read_at": "2026-03-01T22:33:34.995+00:00",
+    "content": null
+  },
+  {
+    "id": "b456a082-cda8-465c-b421-ab05483b09a0",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "e6f8a0d1-5a4e-4c24-8517-826fb5fde77e",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "conversation_id": "72792a46-c1ff-401c-894f-4a7e9275474d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:37:39.647769+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a9d7f16f-fe80-49b6-b0a1-46f31275783d",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "e6f8a0d1-5a4e-4c24-8517-826fb5fde77e",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "conversation_id": "72792a46-c1ff-401c-894f-4a7e9275474d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:37:39.647769+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a5fb7b2c-ec78-44bc-9cac-71cf8bb1dc95",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "e6f8a0d1-5a4e-4c24-8517-826fb5fde77e",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:37:39.647769+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "6f57d871-dbcd-4681-9be9-824fa647a51d",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "e6f8a0d1-5a4e-4c24-8517-826fb5fde77e",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:37:39.647769+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "feee5dc2-0851-406c-9823-6abe44e4e268",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "5e325100-9f90-4a84-9b04-cc75fb9435fe"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:37:39.647769+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a311f212-bf30-497c-8039-035cee4b9d97",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:37:39.647769+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c1b72932-00e2-4309-abdd-72021f39ebb5",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:37:39.647769+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "6efd6240-4a1a-4eec-a6d8-ff7f4e5b0f73",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:37:39.647769+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a391be36-7f74-49fe-99ba-ba64e6adb9ee",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:18.637434+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "fde906a6-ad79-4e5d-a94e-53711b2e8939",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:18.637434+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "26aec724-e90b-46bc-8d50-eafe5a3cc190",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:21.25926+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "90ff0fc9-c453-4efa-a928-31f772efdcad",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:21.25926+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9345f3a2-4b94-4906-a675-3d3615998ebc",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:41.16927+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f75c4d99-5d8e-4718-b180-f5793de17be6",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:41.16927+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "066f2309-3699-4e77-97ad-f34e6c9a6b8b",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:43.443869+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e3c8acf6-380a-419c-be7f-d09b3d79cfc6",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:43.443869+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "8e552cf9-ce1e-4a7a-88e1-01e1f0553727",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:00.173493+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a7e44465-4655-466f-b10d-4957b937f239",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:00.173493+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "cf7ffabd-75a5-401c-a549-776e75f34396",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:05.199898+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "b5ddcf2c-2a79-4e92-95dc-05c818c2cb73",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:05.199898+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5878ad59-fde1-4c4a-9ce4-b269265860ed",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "d88e57e1-1486-401d-a6ea-070786d0b612",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "conversation_id": "61b25489-276b-4dad-bdd4-1fe8112f2961"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.18672+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5bf6d964-aec6-4224-be93-0bcaa586d543",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "d88e57e1-1486-401d-a6ea-070786d0b612",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "conversation_id": "61b25489-276b-4dad-bdd4-1fe8112f2961"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.18672+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "cc64ef22-6f68-475e-9037-12c2e9c271a7",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "d88e57e1-1486-401d-a6ea-070786d0b612",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.18672+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7f6f485d-75c4-469c-8e38-9be09420bdcb",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "d88e57e1-1486-401d-a6ea-070786d0b612",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.18672+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c8514fc1-7e38-4a37-a944-2486498cea61",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.18672+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "4c0eea43-9d5a-4ad1-919c-231675ffd9e5",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "5e325100-9f90-4a84-9b04-cc75fb9435fe"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.18672+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "cc24dd68-8f82-4d84-9a7d-9d8f8e6b754e",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.18672+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "352f3fbe-9d90-4fc4-8775-8631bc3e2f54",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:13.18672+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f4192a5a-e495-4591-9b85-f27e490e28fe",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:49.929058+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "eb62a110-f171-4f39-9991-5d43e94588fc",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:31:49.929058+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "25e1b6c8-9bd0-47eb-8019-91502a9a3052",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "7992f30d-62e9-46df-9351-bf54b04bbf42",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "conversation_id": "87cb55bc-a58e-46bb-ac54-6a3fd508b9fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:43:15.147629+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "8fc06c28-9954-4cd8-bf52-744152970681",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "7992f30d-62e9-46df-9351-bf54b04bbf42",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "conversation_id": "87cb55bc-a58e-46bb-ac54-6a3fd508b9fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:43:15.147629+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7153aef3-5703-4079-8f69-24f48ec2063d",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "7992f30d-62e9-46df-9351-bf54b04bbf42",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:43:15.147629+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7d706c81-a5cf-4e49-ae97-9b7c68157eec",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "7992f30d-62e9-46df-9351-bf54b04bbf42",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:43:15.147629+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f258db52-2555-46fa-a3a9-fa8f52565785",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:43:15.147629+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "d68bfcc8-75b2-43cd-abec-41de4395f215",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:43:15.147629+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "032171df-5647-4e76-97ee-e0a48a4799da",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:43:15.147629+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "67ff98ce-d619-41f0-8ae6-737560fe38b4",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:43:15.147629+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "48e6a2ac-786b-4626-8dd8-ff71358e7a01",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:37.571426+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c583dfe4-6b23-4cb3-9c0f-ad574b0e1ddb",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:37.571426+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "d72a9ca2-9c6d-42bc-b552-7b212297f1ba",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "ae3374d8-3923-4dad-8265-ce3826f531ca",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "other_user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+      "conversation_id": "850570d5-0dfd-4d57-b277-1ee64fe3ce02"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:39.862707+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "eddb9b09-1846-414b-b2eb-542d53700b4d",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "ae3374d8-3923-4dad-8265-ce3826f531ca",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "other_user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "conversation_id": "850570d5-0dfd-4d57-b277-1ee64fe3ce02"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:39.862707+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "86bd3d8b-160c-4b19-87ea-69f974b63aef",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "ae3374d8-3923-4dad-8265-ce3826f531ca",
+      "other_user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:39.862707+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "d6dab1bc-74bb-4db1-8512-4f979ee0abed",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "ae3374d8-3923-4dad-8265-ce3826f531ca",
+      "other_user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:39.862707+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "66b9e581-44eb-4838-af0d-50fcae096b82",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "ee603c43-02e2-411b-a5e6-380efd1af46f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:39.862707+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "79c03ef6-e975-4090-8469-4bc7c57f1bd5",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "0986b562-2fa6-41a2-99dc-b50265f369a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:39.862707+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "bb2cdb94-edcd-4aa7-8ac4-545b448e1aef",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:39.862707+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "0e0e61a7-8c85-4864-9951-0f278bf84e5c",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-02T21:28:39.862707+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "970dc0b0-db5b-4005-bf60-e3d62189f5e9",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "fd9731eb-d273-4742-926f-4b3b546103ef",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "conversation_id": "0c9b0d5a-0684-4082-a3a1-9df5814d857f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:16.60673+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9e5cd0f6-54b5-4d38-987e-7f05fc20a786",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "fd9731eb-d273-4742-926f-4b3b546103ef",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "other_user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "conversation_id": "0c9b0d5a-0684-4082-a3a1-9df5814d857f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:16.60673+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e568c2f3-6853-4820-af1d-4e1855363381",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "fd9731eb-d273-4742-926f-4b3b546103ef",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:16.60673+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "4365328a-0ddf-4b79-a535-eda547dfaf32",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "fd9731eb-d273-4742-926f-4b3b546103ef",
+      "other_user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:16.60673+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "11852f5b-46ec-4078-9589-6180b253cb1f",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:16.60673+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "7c51c67b-a252-4702-92ea-71a5307d3b48",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:12.063309+00:00",
+    "read_at": "2026-03-06T16:11:06.554+00:00",
+    "content": null
+  },
+  {
+    "id": "3d6bb601-9a04-4c68-9ceb-3ca6eb4e214e",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:16.60673+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "35a0e3de-69a0-446f-b069-ffa3be45be1a",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:16.60673+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "58712523-e68e-494d-843a-1db365d5a87b",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "e851edc4-89e4-4b28-995e-a3da68ead479",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+      "conversation_id": "fe29429b-6a58-432c-9f9a-bd66b4a53572"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:17.481337+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5f1b7743-2336-4289-8d84-bd145717285d",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "e851edc4-89e4-4b28-995e-a3da68ead479",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "other_user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "conversation_id": "fe29429b-6a58-432c-9f9a-bd66b4a53572"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:17.481337+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "8428b445-b477-409e-bade-4a57239da0d7",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "e851edc4-89e4-4b28-995e-a3da68ead479",
+      "other_user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:17.481337+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "aa6dbdc0-49f7-484c-a2c0-eeb593903b64",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "e851edc4-89e4-4b28-995e-a3da68ead479",
+      "other_user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:17.481337+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "93a2a32c-fb6d-4ff9-9656-9015d18dc73c",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:17.481337+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "736a3119-91e5-4525-8a22-79fa2dceb25b",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "0986b562-2fa6-41a2-99dc-b50265f369a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:17.481337+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "42d0f79d-ebe7-4e33-8bb2-6b35d0277e77",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:17.481337+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "aec4bd5e-e6f2-4e28-aa67-c76c1fbbf502",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.62343+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "fc74df76-0170-43a0-bcfb-bac11a9cbeda",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.62343+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3c352ae7-b157-4c51-a179-fa7b9cb541a5",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "fe509619-1861-4c89-9402-c596acdb02d9",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "conversation_id": "25e360c8-542c-46b5-9835-1b9d4bea2532"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.822571+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "12e3e98b-14b0-4877-88dc-77f18e792d2b",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "fe509619-1861-4c89-9402-c596acdb02d9",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "conversation_id": "25e360c8-542c-46b5-9835-1b9d4bea2532"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.822571+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "32ec098a-a805-4545-92dc-c848f6b49146",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "fe509619-1861-4c89-9402-c596acdb02d9",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.822571+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "80bc82b7-3b4f-4428-87f0-36126079ca45",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "fe509619-1861-4c89-9402-c596acdb02d9",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.822571+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "75daf1e9-ae28-4f07-836c-ede75ee9ed37",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.822571+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "29e5ff48-ffd2-4144-9907-e2dd46ba87cb",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.822571+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "2ee25685-a36e-449f-a604-c6de6828bd50",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.822571+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "248f556d-2df2-4415-9eb9-f07eace39d55",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.822571+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "b33de05c-18e0-4400-9c2b-4d372b96e1ea",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "cab178e4-cbd5-4f7f-9a74-f85acb3e72d5",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+      "conversation_id": "1b8a3c6e-e787-4246-9749-0db824d8fc13"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.935461+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "20faace3-4545-439e-8a52-ae3b9e156e04",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "cab178e4-cbd5-4f7f-9a74-f85acb3e72d5",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "conversation_id": "1b8a3c6e-e787-4246-9749-0db824d8fc13"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.935461+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "b032a3ec-19bd-45e0-9488-d1c8d8ab09a3",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "cab178e4-cbd5-4f7f-9a74-f85acb3e72d5",
+      "other_user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.935461+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "00611c6b-2980-4548-bad9-ad830060bce5",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "cab178e4-cbd5-4f7f-9a74-f85acb3e72d5",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:18.935461+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "aa0a95f0-7e30-454e-94c0-9fd5bd1c8976",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "38f0a116-edbc-45b4-b595-f46eb5e289a6",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "conversation_id": "032eeea3-5c68-415c-8416-73c7d9a1d568"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.55819+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "6f38f212-dbf5-46ac-a387-0ebc1c297d56",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "38f0a116-edbc-45b4-b595-f46eb5e289a6",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "conversation_id": "032eeea3-5c68-415c-8416-73c7d9a1d568"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.55819+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a04f6ba4-bfcf-478b-9ae7-fcd6c19714ee",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "38f0a116-edbc-45b4-b595-f46eb5e289a6",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.55819+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c6e76124-e599-4c97-9f01-985931647e91",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "38f0a116-edbc-45b4-b595-f46eb5e289a6",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.55819+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c8142a41-193a-4d57-be4d-142ed009a679",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "5e325100-9f90-4a84-9b04-cc75fb9435fe"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.55819+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3279cc98-71ad-4f29-aa10-40fca1434c1e",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.55819+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "0191526e-329e-4981-bb27-6932b6be42e8",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.55819+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "bbda9b4d-bca2-429f-b025-70132b4beefb",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.55819+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "76082160-0952-4674-945f-72c6217b305c",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "b0e90b48-804f-4e13-9a78-167861c50b20",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "conversation_id": "cbe5c323-6672-403d-9dc0-de1443075cdb"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.405544+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a1f9b057-089c-4ac1-b730-3f65b6f0d4de",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "b0e90b48-804f-4e13-9a78-167861c50b20",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "conversation_id": "cbe5c323-6672-403d-9dc0-de1443075cdb"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.405544+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5746ab3c-d1b9-4b89-9d98-85e4f27cad6a",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "b0e90b48-804f-4e13-9a78-167861c50b20",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.405544+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "1e4e32e7-c75a-42d0-b37f-e41c6a0e3997",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "b0e90b48-804f-4e13-9a78-167861c50b20",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.405544+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "79052c57-e39c-488d-ab87-15147a87016c",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.405544+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "521fc17d-dd67-4561-b49f-7a4630f9357f",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.405544+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "24b4c8e8-41db-4656-ba1e-042c997aaca3",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.405544+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "21b61e69-3566-4041-b212-311f5d57d141",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.405544+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3c8e8c25-da98-4abd-99f6-52ede74c61ec",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "e344191a-46c2-424a-b5b1-75f5a1d581f6",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "conversation_id": "c56f1d82-79fc-4075-86f5-e15f36f55100"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.675869+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "cf542c0d-98a2-42d8-b119-e36ab67b63d3",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "e344191a-46c2-424a-b5b1-75f5a1d581f6",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "conversation_id": "c56f1d82-79fc-4075-86f5-e15f36f55100"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.675869+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "b55315c1-ec7b-46f1-8fe1-dc1f430c8813",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "e344191a-46c2-424a-b5b1-75f5a1d581f6",
+      "other_user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.675869+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "cd835d71-f77f-4515-aa5c-b05a92a7003c",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "e344191a-46c2-424a-b5b1-75f5a1d581f6",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:19.675869+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9e4d85da-9efb-44a7-b272-ef1621d1252a",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "83419ae2-7529-4eea-83a4-79a50582de08",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "conversation_id": "97886386-1cdd-434e-831e-cddf9cfe688e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.492663+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "883f612a-baad-4189-95eb-83c511a54cdc",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "83419ae2-7529-4eea-83a4-79a50582de08",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+      "conversation_id": "97886386-1cdd-434e-831e-cddf9cfe688e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.492663+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "92597583-50e0-474a-ad48-4a4ea9b497c0",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "83419ae2-7529-4eea-83a4-79a50582de08",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.492663+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e9f86169-d562-4a35-b4db-e50f57e24c60",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "83419ae2-7529-4eea-83a4-79a50582de08",
+      "other_user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa"
+    },
+    "is_read": false,
+    "created_at": "2026-03-05T17:59:23.492663+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "01eab279-ddbf-4e4f-bd77-e40ca2e5e5a3",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-03T09:37:17.481337+00:00",
+    "read_at": "2026-03-06T16:09:12.562+00:00",
+    "content": null
+  },
+  {
+    "id": "1e3eadc1-5b8f-4a85-b513-c05e2a29c012",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-01T22:32:12.063309+00:00",
+    "read_at": "2026-03-06T16:10:43.009+00:00",
+    "content": null
+  },
+  {
+    "id": "86a9af42-6573-45b8-9ebb-355510b1b58d",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T18:46:07.773826+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f9bb8825-c3e5-493b-81bf-774c7c324a48",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.80419+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "24cb12b1-0d9d-45bb-a89d-bd8de51c5d32",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.80419+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "921c534b-bf3a-4891-8e6b-0f980f75a037",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "30008be1-c15d-4a8a-9773-fb694b5108b9",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+      "conversation_id": "fa07878b-f3c2-4208-8578-05e7930c7573"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.874362+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "c2dd7a15-8839-43d5-9c81-99415656dddb",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match ✨",
+    "body": "C’est un match ! Vous pouvez démarrer une conversation.",
+    "data": {
+      "match_id": "30008be1-c15d-4a8a-9773-fb694b5108b9",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "conversation_id": "fa07878b-f3c2-4208-8578-05e7930c7573"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.874362+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "07c318c6-15f3-452a-ab4f-d1c4bfdc7a1d",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "30008be1-c15d-4a8a-9773-fb694b5108b9",
+      "other_user_id": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.874362+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "14e00618-6055-4edf-b4db-808c3b8992d6",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match",
+    "title": "Nouveau match 🔥",
+    "body": "Vous avez un nouveau match !",
+    "data": {
+      "match_id": "30008be1-c15d-4a8a-9773-fb694b5108b9",
+      "other_user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.874362+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a351292c-93de-4dfe-8e12-b602656bc301",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "55d116c7-3460-4961-8700-43efd1a3e057"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.874362+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5840da61-02df-4ee7-ac81-361e0088f4e6",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "match_created",
+    "title": "Nouveau match 🎉",
+    "body": "Vous pouvez maintenant discuter.",
+    "data": {
+      "with": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.874362+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "ac65f698-a0ad-4706-a72d-309b14d565ff",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.874362+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "a5b8fe36-bb70-4434-866d-063660f4b821",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:09.874362+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "d47cc33d-63f7-4bf2-8285-dd1ba4f06460",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:11.858245+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "ed49bee1-b69f-43c8-96b4-0c59534eb61e",
+    "user_id": "bf1608cf-d2f7-4f9f-9f57-0fd3bd18718d",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+      "property_id": "ccd1739a-8190-4d39-89d2-b15189519be3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-06T19:00:11.858245+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "61d2f87c-effa-470c-9971-b88116948709",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:03.7965+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "433cf48c-d8d4-4fc9-b1d2-3f308a851385",
+    "user_id": "c4f4f57b-1328-4e79-a6e0-c10ed3be07d9",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "8760fdc0-d13a-4dc7-89a1-3acd6cf83b21",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:03.7965+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "4ae5816d-b0cb-4b6c-82b7-9905f6e111b1",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:04.426184+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "50e2e134-8649-4710-acb2-46cdb60950b5",
+    "user_id": "18cfc2d5-e46c-4cb4-b9df-fe2605f4de90",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "9fd31623-732d-4801-9b14-5433e0f65b25",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:04.426184+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "745fa7e6-1b98-4e9f-abb9-6696a5f4101d",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:05.067149+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "76ebb774-1de1-42b8-8d98-dee1317a1015",
+    "user_id": "ee603c43-02e2-411b-a5e6-380efd1af46f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "be4f417b-dd30-4e78-a72f-47047b8950b9",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:05.067149+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "bffe4449-6754-4b44-b17c-41c503367539",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:07.511222+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "d2b7a995-d386-4463-946f-8cef17db26e1",
+    "user_id": "1d554be3-0572-425d-9b1c-0c71c4612f7e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "c3ecf645-bd8e-4640-89c6-96bc51da8880",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:07.511222+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "b5b0de36-dbac-4501-a045-5efd5326dfc9",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:08.075774+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "759f3d4d-e3bd-407e-89d1-5ce98b723b2e",
+    "user_id": "5e325100-9f90-4a84-9b04-cc75fb9435fe",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "d118f67a-bf98-4d4a-ab2c-63d648a47447",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:08.075774+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9a18f389-a5bc-4038-ba3f-44661923db6a",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:09.896219+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "472082b9-22ba-4253-8226-dc6f7378a1ff",
+    "user_id": "55d116c7-3460-4961-8700-43efd1a3e057",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "4c071239-a593-45fa-b08d-5282ebdc05ca",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:09.896219+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "3f73b1e3-01af-4730-a7b3-a29616f80f5e",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:10.070212+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "385767be-862b-4f1d-94c7-f3c8084ef8f6",
+    "user_id": "e923589d-e26d-4400-9cdf-d3bfa9dc03fa",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "bb4e4a05-4951-430c-8875-670dde453a0a",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:10.070212+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "5a40a232-6038-4a7b-b7a6-a57ce2c1fb69",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:13.013923+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "9ceebddf-62cd-417d-8f62-8221ae597a32",
+    "user_id": "65e02dba-74d4-47d6-aa80-dcb19d55f2bc",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "c8958520-92b4-45ca-86d5-a5b7a0949616",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:13.013923+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "f4e549f3-285a-4589-a2d3-52ec8d7ec19a",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:13.657428+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "e0108cfe-7a32-4c87-8031-3015656ac9c8",
+    "user_id": "4dd48fe2-ffb4-4fd6-9e06-4b01f44a63a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "798a7ade-12a1-44ef-b541-47cc4e2695a3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:13.657428+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "89266f58-ce65-459b-8a9c-188379ebac9d",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:10.701609+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "56bce528-43ac-4666-8c08-1c23275eb565",
+    "user_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d40c13a3-6598-4803-9b6a-0e6b90d0382a",
+      "property_id": "05b96906-ad7c-4fbf-ba0d-eba779ffd0f3",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-07T02:41:10.701609+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "2ffbd245-07f9-4779-bf4b-2f89dfe18297",
+    "user_id": "88cc256e-3b6b-4c89-b040-8fe5ac06688e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d790b2e7-9048-4ff1-bdd5-2af6e02cab7f",
+      "property_id": "f3d7d2a6-4489-4c07-9c5c-adef2278d4bb",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-12T10:13:31.680507+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "4add3915-6121-4be1-acfb-3415b205b3e8",
+    "user_id": "88cc256e-3b6b-4c89-b040-8fe5ac06688e",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "d790b2e7-9048-4ff1-bdd5-2af6e02cab7f",
+      "property_id": "f3d7d2a6-4489-4c07-9c5c-adef2278d4bb",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-12T10:13:31.680507+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "77a04985-3bf2-46b3-b09e-cf8713043e4d",
+    "user_id": "88cc256e-3b6b-4c89-b040-8fe5ac06688e",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "f3d7d2a6-4489-4c07-9c5c-adef2278d4bb",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "d790b2e7-9048-4ff1-bdd5-2af6e02cab7f"
+    },
+    "is_read": false,
+    "created_at": "2026-03-12T10:17:07.346372+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "96965bb3-5071-40b0-b873-e4cc79638ec5",
+    "user_id": "88cc256e-3b6b-4c89-b040-8fe5ac06688e",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "f3d7d2a6-4489-4c07-9c5c-adef2278d4bb",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "a32bb0f5-a988-41fb-ab3c-e6156393c2d0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-15T23:01:52.763161+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "562a610f-bcac-4e4d-b833-b494af39b62c",
+    "user_id": "de430f5c-011c-40c8-b5e2-04e6f8ee1a93",
+    "type": "favorite_received",
+    "title": "Nouveau favori ⭐",
+    "body": "Quelqu’un a ajouté votre logement en favori.",
+    "data": {
+      "property_id": "1890168c-b29f-4eeb-a69b-62326976a9da",
+      "created_from": "trigger:favorites",
+      "favoriter_id": "a32bb0f5-a988-41fb-ab3c-e6156393c2d0"
+    },
+    "is_read": false,
+    "created_at": "2026-03-16T08:28:09.807885+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "b75545da-253d-464b-917a-9750a695d5d0",
+    "user_id": "d790b2e7-9048-4ff1-bdd5-2af6e02cab7f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "90a9eb4f-d0be-4acf-8309-3b2ebc671f35",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-18T20:14:59.367435+00:00",
+    "read_at": null,
+    "content": null
+  },
+  {
+    "id": "bf43f4dd-9434-433d-968a-cea41dccba37",
+    "user_id": "d790b2e7-9048-4ff1-bdd5-2af6e02cab7f",
+    "type": "like_received",
+    "title": "Nouveau like ❤️",
+    "body": "Quelqu’un a liké un de vos logements.",
+    "data": {
+      "liker_id": "0986b562-2fa6-41a2-99dc-b50265f369a0",
+      "property_id": "90a9eb4f-d0be-4acf-8309-3b2ebc671f35",
+      "created_from": "trigger:property_likes"
+    },
+    "is_read": false,
+    "created_at": "2026-03-18T20:14:59.367435+00:00",
+    "read_at": null,
+    "content": null
+  }
+]

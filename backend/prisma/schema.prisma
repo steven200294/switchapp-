@@ -1,19 +1,161 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  schemas  = ["public", "auth"]
 }
 
-// Placeholder — will be replaced by introspection from Supabase dump
-model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
+model AuthUser {
+  id                 String    @id @db.Uuid
+  email              String?   @db.VarChar(255)
+  encrypted_password String?   @db.VarChar(255)
+  email_confirmed_at DateTime? @db.Timestamptz
+  created_at         DateTime? @db.Timestamptz
+  updated_at         DateTime? @db.Timestamptz
+  raw_app_meta_data  Json?
+  raw_user_meta_data Json?
+  aud                String?   @db.VarChar(255)
+  role               String?   @db.VarChar(255)
+  is_sso_user        Boolean   @default(false)
+  is_anonymous       Boolean   @default(false)
 
   @@map("users")
+  @@schema("auth")
+}
+
+model User {
+  id            String    @id @db.Uuid
+  first_name    String?
+  last_name     String?
+  age           Int?
+  profession    String?
+  phone         String?
+  bio           String?
+  avatar_url    String?
+  updated_at    DateTime? @default(now())
+  username      String?
+  is_verified   Boolean   @default(false)
+  display_name  String?
+  email         String?
+  full_name     String?
+  date_of_birth DateTime? @db.Date
+  created_at    DateTime? @default(now()) @db.Timestamptz
+
+  @@map("users")
+  @@schema("public")
+}
+
+model UserProfile {
+  id                       String    @id @default(uuid()) @db.Uuid
+  email                    String?
+  full_name                String?
+  city                     String?
+  country                  String?   @default("France")
+  created_at               DateTime? @default(now()) @db.Timestamptz
+  updated_at               DateTime? @default(now()) @db.Timestamptz
+  budget_min               Int?      @default(0)
+  budget_max               Int?      @default(100000)
+  preferred_property_types String[]  @default([])
+  preferred_amenities      String[]  @default([])
+  surface_min              Int?
+  preferred_district       String?
+  preferred_neighborhood   String?
+  user_id                  String    @unique @db.Uuid
+  avatar_url               String?
+  age                      Int?
+  profession               String?
+  phone                    String?
+  birthdate                DateTime? @db.Date
+  bio                      String?
+  first_name               String?
+  last_name                String?
+  date_of_birth            DateTime? @db.Date
+  languages                String?   @default("{}")
+  verified                 Boolean?  @default(false)
+  last_seen_at             DateTime? @db.Timestamptz
+
+  @@map("user_profiles")
+  @@schema("public")
+}
+
+model Property {
+  id                            String    @id @default(uuid()) @db.Uuid
+  owner_id                      String    @db.Uuid
+  title                         String
+  description                   String?   @default("")
+  property_type                 String?   @default("apartment")
+  address                       String?   @default("")
+  city                          String?   @default("")
+  postal_code                   String?   @default("")
+  country                       String?   @default("France")
+  latitude                      Float?
+  longitude                     Float?
+  surface_area                  Int?      @default(0)
+  rooms                         Int?      @default(1)
+  bedrooms                      Int?      @default(1)
+  bathrooms                     Int?      @default(1)
+  max_occupants                 Int?      @default(1)
+  amenities                     String[]  @default([])
+  monthly_rent                  Int?      @default(0)
+  deposit                       Int?      @default(0)
+  utilities_included            Boolean?  @default(false)
+  furnished                     Boolean?  @default(false)
+  smoking_allowed               Boolean?  @default(false)
+  pets_allowed                  Boolean?  @default(false)
+  photos                        String[]  @default([])
+  available_from                DateTime? @db.Timestamptz
+  available_until               DateTime? @db.Timestamptz
+  minimum_stay                  Int?      @default(7)
+  maximum_stay                  Int?
+  instant_booking               Boolean?  @default(false)
+  status                        String?   @default("published")
+  roommates                     Int?      @default(0)
+  max_roommates                 Int?      @default(1)
+  cover_image                   String?
+  compatibility_score           Int?      @default(80)
+  tags                          String[]  @default([])
+  created_at                    DateTime? @default(now()) @db.Timestamptz
+  updated_at                    DateTime? @default(now()) @db.Timestamptz
+  district                      String?
+  neighborhood                  String?
+  is_available                  Boolean   @default(true)
+  occupancy_status              String?   @default("tenant")
+  lease_type                    String?   @default("classic")
+  exchange_authorization_status String?   @default("not_declared")
+  equipment                     Json?     @default("{}")
+  published                     Boolean   @default(false)
+  photo_paths                   String[]  @default([])
+  cover_path                    String?
+
+  @@map("properties")
+  @@schema("public")
+}
+
+model UserSwitchPass {
+  user_id    String    @id @db.Uuid
+  balance    Int       @default(0)
+  updated_at DateTime? @default(now()) @db.Timestamptz
+
+  @@map("user_switch_passes")
+  @@schema("public")
+}
+
+model Notification {
+  id         String    @id @default(uuid()) @db.Uuid
+  user_id    String    @db.Uuid
+  type       String
+  title      String
+  body       String?
+  data       Json      @default("{}")
+  is_read    Boolean   @default(false)
+  created_at DateTime  @default(now()) @db.Timestamptz
+  read_at    DateTime? @db.Timestamptz
+  content    String?
+
+  @@map("notifications")
+  @@schema("public")
 }
