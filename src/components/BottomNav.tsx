@@ -85,10 +85,11 @@ export default function BottomNav() {
                   : <Icon isActive={isActive} />
                 }
               </div>
-              <span 
-                className={`text-[10px] font-medium tracking-wide ${
-                  isActive 
-                    ? "bg-gradient-to-r from-[#00BFFF] to-[#8A2BE2] bg-clip-text text-transparent font-bold" 
+              {tab.label === "Switch" && <div className="h-6 w-14" />}
+              <span
+                className={`text-[10px] font-medium tracking-wide ${tab.label === "Switch" ? "hidden" : ""} ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#00BFFF] to-[#8A2BE2] bg-clip-text text-transparent font-bold"
                     : "text-gray-500 hover:text-gray-900"
                 }`}
               >
