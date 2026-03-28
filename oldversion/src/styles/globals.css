@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  
+  /* SwitchAppart Neon Colors - Plus subtiles */
+  --neon-blue: #00BFFF;
+  --neon-purple: #8A2BE2;
+  --neon-magenta: #FF00FF;
+  --neon-cyan: #00FFFF;
+  --neon-orange: #FFA500;
+  
+  /* Airbnb-inspired colors */
+  --primary-red: #FF385C;
+  --primary-dark: #222222;
+  --secondary-gray: #717171;
+  --light-gray: #F7F7F7;
+  --border-gray: #DDDDDD;
+  --background-white: #FFFFFF;
+  
+  --dark-bg: #0a0a0f;
+  --dark-secondary: #1a1a2e;
+  --light-bg: #ffffff;
+  --light-secondary: #f8fafc;
+  
+  /* Glassmorphisme backgrounds - Plus subtiles */
+  --glass-bg-dark: rgba(26, 26, 46, 0.3);
+  --glass-bg-light: rgba(255, 255, 255, 0.8);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  --glass-border-light: rgba(0, 0, 0, 0.08);
+  
+  /* Default theme (light by default for Airbnb style) */
+  --background: var(--background-white);
+  --foreground: var(--primary-dark);
+  --card: var(--background-white);
+  --card-foreground: var(--primary-dark);
+  --popover: var(--background-white);
+  --popover-foreground: var(--primary-dark);
+  --primary: var(--primary-red);
+  --primary-foreground: #ffffff;
+  --secondary: var(--light-gray);
+  --secondary-foreground: var(--primary-dark);
+  --muted: var(--light-gray);
+  --muted-foreground: var(--secondary-gray);
+  --accent: var(--neon-blue);
+  --accent-foreground: #ffffff;
+  --destructive: #FF4444;
+  --destructive-foreground: #ffffff;
+  --border: var(--border-gray);
+  --input: var(--background-white);
+  --input-background: var(--background-white);
+  --switch-background: var(--light-gray);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--primary-red);
+  --chart-1: var(--neon-blue);
+  --chart-2: var(--neon-purple);
+  --chart-3: var(--neon-magenta);
+  --chart-4: var(--neon-cyan);
+  --chart-5: var(--neon-orange);
+  --radius: 0.75rem;
+  --sidebar: var(--background-white);
+  --sidebar-foreground: var(--primary-dark);
+  --sidebar-primary: var(--primary-red);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--light-gray);
+  --sidebar-accent-foreground: var(--primary-dark);
+  --sidebar-border: var(--border-gray);
+  --sidebar-ring: var(--primary-red);
+}
+
+.dark {
+  --background: var(--dark-bg);
+  --foreground: #ffffff;
+  --card: var(--glass-bg-dark);
+  --card-foreground: #ffffff;
+  --popover: var(--glass-bg-dark);
+  --popover-foreground: #ffffff;
+  --primary: var(--neon-blue);
+  --primary-foreground: #000000;
+  --secondary: var(--glass-bg-dark);
+  --secondary-foreground: #ffffff;
+  --muted: rgba(42, 42, 42, 0.6);
+  --muted-foreground: #A0A0A0;
+  --accent: var(--neon-purple);
+  --accent-foreground: #ffffff;
+  --destructive: #FF4444;
+  --destructive-foreground: #ffffff;
+  --border: var(--glass-border-dark);
+  --input: transparent;
+  --input-background: var(--glass-bg-dark);
+  --switch-background: rgba(58, 58, 58, 0.6);
+  --ring: var(--neon-blue);
+  --sidebar: var(--glass-bg-dark);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: var(--neon-blue);
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: var(--glass-bg-dark);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: var(--glass-border-dark);
+  --sidebar-ring: var(--neon-blue);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Neon utilities */
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-magenta: var(--neon-magenta);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-orange: var(--neon-orange);
+  --color-primary-red: var(--primary-red);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary-gray: var(--secondary-gray);
+  --color-light-gray: var(--light-gray);
+  --color-border-gray: var(--border-gray);
+  --color-background-white: var(--background-white);
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-secondary: var(--dark-secondary);
+  --color-light-bg: var(--light-bg);
+  --color-light-secondary: var(--light-secondary);
+  
+  /* Glassmorphisme utilities */
+  --color-glass-bg-dark: var(--glass-bg-dark);
+  --color-glass-bg-light: var(--glass-bg-light);
+  --color-glass-border-dark: var(--glass-border-dark);
+  --color-glass-border-light: var(--glass-border-light);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply text-foreground;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+  }
+  
+  .font-orbitron {
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* Airbnb-style utilities */
+@layer utilities {
+  .airbnb-card {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  
+  .airbnb-card-dark {
+    @apply bg-dark-secondary rounded-xl border border-white/10 shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+  
+  .airbnb-button {
+    @apply bg-primary-red text-white rounded-lg font-medium hover:bg-red-600 transition-colors duration-200;
+  }
+  
+  .airbnb-button-outline {
+    @apply border border-gray-300 text-gray-700 rounded-lg font-medium hover:border-gray-400 hover:bg-gray-50 transition-all duration-200;
+  }
+  
+  .search-bar {
+    @apply bg-white border border-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  .search-bar-dark {
+    @apply bg-dark-secondary border border-white/20 rounded-full shadow-md hover:shadow-lg transition-all duration-300;
+  }
+}
+
+/* Glassmorphisme Effects - Plus subtiles */
+@layer utilities {
+  .glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: var(--glass-bg-light);
+    border: 1px solid var(--glass-border-light);
+  }
+  
+  .glass-dark {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: var(--glass-bg-dark);
+    border: 1px solid var(--glass-border-dark);
+  }
+  
+  .glass-strong {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-strong-dark {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(26, 26, 46, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  
+  .glass-subtle {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .glass-subtle-dark {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(26, 26, 46, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Neon effects - Plus subtiles pour s'intégrer au style Airbnb */
+@layer utilities {
+  .glow-blue-subtle {
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+  }
+  
+  .glow-purple-subtle {
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+  }
+  
+  .glow-cyan-subtle {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  
+  .glow-magenta-subtle {
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+  }
+  
+  .glow-orange-subtle {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+  }
+  
+  .text-gradient-neon {
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hover-lift-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/**
+ * Base typography - Style Airbnb avec Poppins
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.3;
+      font-family: 'Poppins', sans-serif;
+      color: var(--foreground);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+      font-family: 'Poppins', sans-serif;
+      color: var(--foreground);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.4;
+      font-family: 'Poppins', sans-serif;
+      color: var(--foreground);
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+      color: var(--foreground);
+    }
+
+    p {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      color: var(--muted-foreground);
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+      color: var(--foreground);
+    }
+
+    button {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    textarea {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    select {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    span {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    div {
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}

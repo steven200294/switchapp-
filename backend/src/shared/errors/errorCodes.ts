@@ -1,0 +1,25 @@
+export const ERROR_CODES = {
+  INTERNAL: "INTERNAL_ERROR",
+  NOT_FOUND: "NOT_FOUND",
+  VALIDATION: "VALIDATION_ERROR",
+  UNAUTHORIZED: "UNAUTHORIZED",
+  FORBIDDEN: "FORBIDDEN",
+  CONFLICT: "CONFLICT",
+  RATE_LIMIT: "RATE_LIMIT_EXCEEDED",
+  AUTH_INVALID_TOKEN: "AUTH_INVALID_TOKEN",
+  AUTH_EXPIRED_TOKEN: "AUTH_EXPIRED_TOKEN",
+  AUTH_INVALID_CREDENTIALS: "AUTH_INVALID_CREDENTIALS",
+} as const;
+
+export const CLIENT_MESSAGES: Record<string, string> = {
+  [ERROR_CODES.INTERNAL]: "Something went wrong",
+  [ERROR_CODES.NOT_FOUND]: "Resource not found",
+  [ERROR_CODES.VALIDATION]: "Invalid request data",
+  [ERROR_CODES.UNAUTHORIZED]: "Authentication required",
+  [ERROR_CODES.FORBIDDEN]: "Access denied",
+  [ERROR_CODES.CONFLICT]: "Resource already exists",
+  [ERROR_CODES.RATE_LIMIT]: "Too many requests",
+  [ERROR_CODES.AUTH_INVALID_TOKEN]: "Invalid token",
+  [ERROR_CODES.AUTH_EXPIRED_TOKEN]: "Token expired",
+  [ERROR_CODES.AUTH_INVALID_CREDENTIALS]: "Invalid email or password",
+};
