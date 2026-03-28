@@ -81,6 +81,7 @@ frontend/src/
 ### Frontend rules
 - Server state: **React Query** only
 - Global UI state: **Zustand**
+- Use **Zustand** for any shared frontend state; do not introduce React Context or ad hoc global state for that purpose
 - API calls only in `services/` files — never inline in page/component JSX
 - No `hooks/` or `helpers/` folders — use services, stores, module utilities
 - All magic values in constants files (see below)
