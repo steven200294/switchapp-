@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/profil/layout,_N_T_/profil/parrainage/layout,_N_T_/profil/parrainage/page,_N_T_/profil/parrainage"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/profil/parrainage/__PAGE__",
+    "/profil/parrainage",
+    "/profil",
+    "/_index",
+    "/_head"
+  ]
+}

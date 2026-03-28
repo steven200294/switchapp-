@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/profil/layout,_N_T_/profil/parametres/layout,_N_T_/profil/parametres/notifications/layout,_N_T_/profil/parametres/notifications/page,_N_T_/profil/parametres/notifications"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/profil/parametres/notifications/__PAGE__",
+    "/profil/parametres/notifications",
+    "/profil/parametres",
+    "/profil",
+    "/_index",
+    "/_head"
+  ]
+}

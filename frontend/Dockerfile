@@ -14,6 +14,6 @@ RUN cd frontend && npm install
 COPY shared/ shared/
 COPY frontend/ frontend/
 
-EXPOSE 3000
+EXPOSE 3001
 
-CMD ["npm", "--prefix", "frontend", "run", "dev"]
+CMD ["sh", "-c", "cd frontend && npm run dev -- -p ${FRONTEND_PORT:-3001}"]

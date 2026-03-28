@@ -1,9 +1,43 @@
 # SwitchAppart — Claude Code Rules
 
+## Team & Memory files
+
+Two developers work on this project. Each has a memory file at the repo root:
+
+- **`memory-abderrazaq.md`** — Backend & infra (Abderrazaq). Contains technical preferences, Supabase refs, and context.
+- **`memory-steven.md`** — Frontend (Steven). **⚠️ Steven: if this file is still the template, fill it in with your Claude memory/context so our AIs stay in sync.**
+
+Read both memory files before starting work to understand each person's preferences and current focus.
+
+---
+
 ## Project overview
+
 Peer-to-peer apartment exchange platform (Tinder-style swipe matching).
 Three workspaces: `frontend/` (Next.js), `backend/` (Express), `worker/` (heavy jobs).
 Real users exist in Supabase — **never drop or truncate auth data**.
+
+**Product spec:** see `docs/PRD.md` (the single source of truth for features, flows, and data model).
+
+**The `oldversion/` folder is OBSOLETE.** Do not use it as reference for new code. It was a prototype, not production code.
+
+---
+
+## Current sprint (March–April 2026)
+
+**Goal:** Rebuild the full app in **6-7 days**, fully functional, deployed as a **PWA**.
+After the PWA is live and stable, the next phase is **React Native** for native mobile.
+
+**Division of work:**
+- **Abderrazaq:** Backend API, database, Docker, deployment, infra
+- **Steven:** Frontend UI, pages, components, PWA config
+
+**Priority order:**
+1. Core API (auth, properties, swipe, matches, messages)
+2. Frontend pages wired to real API (no more mocks)
+3. PWA manifest + service worker + offline support
+4. Deploy (Vercel frontend + Railway/Fly backend + managed Postgres)
+5. Polish & testing
 
 ---
 
@@ -11,11 +45,13 @@ Real users exist in Supabase — **never drop or truncate auth data**.
 
 ```
 switchapp-/
-  frontend/      — Next.js 16 + React 19 + TailwindCSS 4 + React Query
-  backend/       — Express.js + TypeScript + Prisma + PostgreSQL
-  worker/        — Heavy job processor (BullMQ consumers)
-  shared/        — DTOs, enums, validators, constants shared across apps
-  docs/          — Business plan and specs
+  frontend/           — Next.js 16 + React 19 + TailwindCSS 4 + TanStack Query + Zustand
+  backend/            — Express.js + TypeScript + Prisma + PostgreSQL
+  worker/             — Heavy job processor (BullMQ consumers)
+  shared/             — DTOs, enums, validators, constants shared across apps
+  docs/               — PRD and specs
+  memory-abderrazaq.md — Abderrazaq's Claude memory (backend/infra context)
+  memory-steven.md     — Steven's Claude memory (frontend context)
   docker-compose.yml
   CLAUDE.md
 ```
@@ -79,12 +115,14 @@ frontend/src/
 ```
 
 ### Frontend rules
-- Server state: **React Query** only
+- Server state: **TanStack Query (React Query)** only — all API data fetching and caching goes through `useQuery` / `useMutation`
 - Global UI state: **Zustand**
 - Use **Zustand** for any shared frontend state; do not introduce React Context or ad hoc global state for that purpose
 - API calls only in `services/` files — never inline in page/component JSX
 - No `hooks/` or `helpers/` folders — use services, stores, module utilities
 - All magic values in constants files (see below)
+- **Explorer is the home page** — there is no separate "Accueil" tab. The app opens on the Explorer (search + listings)
+- **4 bottom nav tabs:** Explorer, Switch, Messages, Profil
 
 ---
 

@@ -17,6 +17,6 @@ COPY backend/ backend/
 # Generate Prisma client
 RUN cd backend && npx prisma generate
 
-EXPOSE 4000
+EXPOSE ${API_PORT}
 
 CMD ["npm", "--prefix", "backend", "run", "dev"]

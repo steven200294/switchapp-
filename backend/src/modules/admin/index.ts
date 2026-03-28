@@ -1,1 +1,1 @@
-export { default as adminRouter } from './routes/admin.routes.js';
+export { default as adminRouter } from './admin.routes.js';

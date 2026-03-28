@@ -1,0 +1,206 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/admin/users/[id]",
+      "regex": "^/admin/users/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/admin/users/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/explorer/[id]",
+      "regex": "^/explorer/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/explorer/(?<nxtPid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/admin/properties",
+      "regex": "^/admin/properties(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/properties(?:/)?$"
+    },
+    {
+      "page": "/admin/users",
+      "regex": "^/admin/users(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/users(?:/)?$"
+    },
+    {
+      "page": "/explorer",
+      "regex": "^/explorer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/explorer(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/favoris",
+      "regex": "^/favoris(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favoris(?:/)?$"
+    },
+    {
+      "page": "/messages",
+      "regex": "^/messages(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/messages(?:/)?$"
+    },
+    {
+      "page": "/profil",
+      "regex": "^/profil(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil(?:/)?$"
+    },
+    {
+      "page": "/profil/aide",
+      "regex": "^/profil/aide(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/aide(?:/)?$"
+    },
+    {
+      "page": "/profil/cadeaux",
+      "regex": "^/profil/cadeaux(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/cadeaux(?:/)?$"
+    },
+    {
+      "page": "/profil/confidentialite",
+      "regex": "^/profil/confidentialite(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/confidentialite(?:/)?$"
+    },
+    {
+      "page": "/profil/hote",
+      "regex": "^/profil/hote(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/hote(?:/)?$"
+    },
+    {
+      "page": "/profil/juridique",
+      "regex": "^/profil/juridique(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/juridique(?:/)?$"
+    },
+    {
+      "page": "/profil/parametres",
+      "regex": "^/profil/parametres(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/parametres(?:/)?$"
+    },
+    {
+      "page": "/profil/parametres/abonnement",
+      "regex": "^/profil/parametres/abonnement(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/parametres/abonnement(?:/)?$"
+    },
+    {
+      "page": "/profil/parametres/informations",
+      "regex": "^/profil/parametres/informations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/parametres/informations(?:/)?$"
+    },
+    {
+      "page": "/profil/parametres/notifications",
+      "regex": "^/profil/parametres/notifications(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/parametres/notifications(?:/)?$"
+    },
+    {
+      "page": "/profil/parametres/securite",
+      "regex": "^/profil/parametres/securite(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/parametres/securite(?:/)?$"
+    },
+    {
+      "page": "/profil/parrainage",
+      "regex": "^/profil/parrainage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/parrainage(?:/)?$"
+    },
+    {
+      "page": "/profil/public",
+      "regex": "^/profil/public(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profil/public(?:/)?$"
+    },
+    {
+      "page": "/swipe",
+      "regex": "^/swipe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/swipe(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

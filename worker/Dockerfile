@@ -19,6 +19,6 @@ COPY backend/prisma/ backend/prisma/
 COPY backend/package.json backend/
 RUN cd backend && npm install --omit=dev && npx prisma generate
 
-EXPOSE 4001
+EXPOSE ${WORKER_PORT}
 
 CMD ["npm", "--prefix", "worker", "run", "dev"]

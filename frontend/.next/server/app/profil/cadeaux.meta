@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/profil/layout,_N_T_/profil/cadeaux/layout,_N_T_/profil/cadeaux/page,_N_T_/profil/cadeaux"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/profil/cadeaux/__PAGE__",
+    "/profil/cadeaux",
+    "/profil",
+    "/_index",
+    "/_head"
+  ]
+}

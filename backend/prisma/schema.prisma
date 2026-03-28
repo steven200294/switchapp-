@@ -9,13 +9,15 @@ datasource db {
   schemas  = ["public", "auth"]
 }
 
+// ── Auth schema (Supabase — DO NOT MODIFY) ───────────────
+
 model AuthUser {
   id                 String    @id @db.Uuid
   email              String?   @db.VarChar(255)
   encrypted_password String?   @db.VarChar(255)
-  email_confirmed_at DateTime? @db.Timestamptz
-  created_at         DateTime? @db.Timestamptz
-  updated_at         DateTime? @db.Timestamptz
+  email_confirmed_at DateTime? @db.Timestamptz(6)
+  created_at         DateTime? @db.Timestamptz(6)
+  updated_at         DateTime? @db.Timestamptz(6)
   raw_app_meta_data  Json?
   raw_user_meta_data Json?
   aud                String?   @db.VarChar(255)
@@ -27,6 +29,8 @@ model AuthUser {
   @@schema("auth")
 }
 
+// ── Public schema ────────────────────────────────────────
+
 model User {
   id            String    @id @db.Uuid
   first_name    String?
@@ -36,27 +40,27 @@ model User {
   phone         String?
   bio           String?
   avatar_url    String?
-  updated_at    DateTime? @default(now())
+  updated_at    DateTime? @default(now()) @db.Timestamp(6)
   username      String?
   is_verified   Boolean   @default(false)
   display_name  String?
   email         String?
   full_name     String?
   date_of_birth DateTime? @db.Date
-  created_at    DateTime? @default(now()) @db.Timestamptz
+  created_at    DateTime? @default(now()) @db.Timestamptz(6)
 
   @@map("users")
   @@schema("public")
 }
 
 model UserProfile {
-  id                       String    @id @default(uuid()) @db.Uuid
-  email                    String?
+  id                       String?   @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email                    String?   @unique
   full_name                String?
   city                     String?
   country                  String?   @default("France")
-  created_at               DateTime? @default(now()) @db.Timestamptz
-  updated_at               DateTime? @default(now()) @db.Timestamptz
+  created_at               DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at               DateTime? @default(now()) @db.Timestamptz(6)
   budget_min               Int?      @default(0)
   budget_max               Int?      @default(100000)
   preferred_property_types String[]  @default([])
@@ -64,7 +68,7 @@ model UserProfile {
   surface_min              Int?
   preferred_district       String?
   preferred_neighborhood   String?
-  user_id                  String    @unique @db.Uuid
+  user_id                  String    @id @db.Uuid
   avatar_url               String?
   age                      Int?
   profession               String?
@@ -76,14 +80,17 @@ model UserProfile {
   date_of_birth            DateTime? @db.Date
   languages                String?   @default("{}")
   verified                 Boolean?  @default(false)
-  last_seen_at             DateTime? @db.Timestamptz
+  last_seen_at             DateTime? @db.Timestamptz(6)
+  user_type                String?   @default("tenant")
+
+  properties Property[]
 
   @@map("user_profiles")
   @@schema("public")
 }
 
 model Property {
-  id                            String    @id @default(uuid()) @db.Uuid
+  id                            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   owner_id                      String    @db.Uuid
   title                         String
   description                   String?   @default("")
@@ -107,8 +114,8 @@ model Property {
   smoking_allowed               Boolean?  @default(false)
   pets_allowed                  Boolean?  @default(false)
   photos                        String[]  @default([])
-  available_from                DateTime? @db.Timestamptz
-  available_until               DateTime? @db.Timestamptz
+  available_from                DateTime? @db.Timestamptz(6)
+  available_until               DateTime? @db.Timestamptz(6)
   minimum_stay                  Int?      @default(7)
   maximum_stay                  Int?
   instant_booking               Boolean?  @default(false)
@@ -118,8 +125,8 @@ model Property {
   cover_image                   String?
   compatibility_score           Int?      @default(80)
   tags                          String[]  @default([])
-  created_at                    DateTime? @default(now()) @db.Timestamptz
-  updated_at                    DateTime? @default(now()) @db.Timestamptz
+  created_at                    DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at                    DateTime? @default(now()) @db.Timestamptz(6)
   district                      String?
   neighborhood                  String?
   is_available                  Boolean   @default(true)
@@ -131,29 +138,115 @@ model Property {
   photo_paths                   String[]  @default([])
   cover_path                    String?
 
+  owner    UserProfile  @relation(fields: [owner_id], references: [user_id])
+  swipes   Swipe[]
+  favorites Favorite[]
+
   @@map("properties")
+  @@schema("public")
+}
+
+model Swipe {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id     String   @db.Uuid
+  property_id String   @db.Uuid
+  action      String
+  created_at  DateTime @default(now()) @db.Timestamptz(6)
+
+  property Property @relation(fields: [property_id], references: [id])
+
+  @@map("matching_swipes")
+  @@schema("public")
+}
+
+model Match {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_a     String   @db.Uuid
+  user_b     String   @db.Uuid
+  property_a String   @db.Uuid
+  property_b String   @db.Uuid
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+
+  conversations Conversation[]
+
+  @@map("matches")
+  @@schema("public")
+}
+
+model Conversation {
+  id                String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  created_at        DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at        DateTime  @default(now()) @db.Timestamptz(6)
+  last_message_at   DateTime? @db.Timestamptz(6)
+  last_message_text String?
+  match_id          String?   @db.Uuid
+
+  match              Match?                    @relation(fields: [match_id], references: [id])
+  messages           Message[]
+  participants       ConversationParticipant[]
+
+  @@map("conversations")
+  @@schema("public")
+}
+
+model ConversationParticipant {
+  conversation_id String   @db.Uuid
+  user_id         String   @db.Uuid
+  joined_at       DateTime @default(now()) @db.Timestamptz(6)
+  last_read_at    DateTime? @db.Timestamptz(6)
+
+  conversation Conversation @relation(fields: [conversation_id], references: [id])
+
+  @@id([conversation_id, user_id])
+  @@map("conversation_participants")
+  @@schema("public")
+}
+
+model Message {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  conversation_id String   @db.Uuid
+  sender_id       String   @db.Uuid
+  content         String?
+  attachment_url  String?
+  created_at      DateTime @default(now()) @db.Timestamptz(6)
+
+  conversation Conversation @relation(fields: [conversation_id], references: [id])
+
+  @@map("messages")
+  @@schema("public")
+}
+
+model Favorite {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id     String   @db.Uuid
+  property_id String   @db.Uuid
+  created_at  DateTime? @default(now()) @db.Timestamptz(6)
+
+  property Property @relation(fields: [property_id], references: [id])
+
+  @@map("favorites")
   @@schema("public")
 }
 
 model UserSwitchPass {
   user_id    String    @id @db.Uuid
   balance    Int       @default(0)
-  updated_at DateTime? @default(now()) @db.Timestamptz
+  updated_at DateTime? @default(now()) @db.Timestamptz(6)
 
   @@map("user_switch_passes")
   @@schema("public")
 }
 
 model Notification {
-  id         String    @id @default(uuid()) @db.Uuid
+  id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   user_id    String    @db.Uuid
   type       String
   title      String
   body       String?
   data       Json      @default("{}")
   is_read    Boolean   @default(false)
-  created_at DateTime  @default(now()) @db.Timestamptz
-  read_at    DateTime? @db.Timestamptz
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  read_at    DateTime? @db.Timestamptz(6)
   content    String?
 
   @@map("notifications")
