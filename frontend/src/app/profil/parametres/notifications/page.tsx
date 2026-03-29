@@ -14,7 +14,7 @@ export default function NotificationsPage() {
         </header>
 
         <main className="flex-1 overflow-y-auto w-full px-6 lg:px-10 pb-12">
-          <h1 className="text-[32px] font-bold text-gray-900 tracking-tight mb-8">
+          <h1 className="text-display font-bold text-gray-900 tracking-tight mb-8">
             Notifications
           </h1>
 
@@ -22,13 +22,13 @@ export default function NotificationsPage() {
             
             {/* Section Push */}
             <div>
-              <h2 className="text-[20px] font-bold text-gray-900 mb-6">Notifications Push</h2>
+              <h2 className="text-title font-bold text-gray-900 mb-6">Notifications Push</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start justify-between">
                   <div className="pr-4">
-                    <h3 className="text-[16px] font-bold text-gray-900 mb-1">Nouveaux messages</h3>
-                    <p className="text-[14px] text-gray-500 font-medium">Soyez notifié quand un hôte vous écrit.</p>
+                    <h3 className="text-body-lg font-bold text-gray-900 mb-1">Nouveaux messages</h3>
+                    <p className="text-body text-gray-500 font-medium">Soyez notifié quand un hôte vous écrit.</p>
                   </div>
                   {/* Toggle On */}
                   <button className="w-12 h-6 rounded-full bg-green-500 relative transition-colors duration-300">
@@ -38,8 +38,8 @@ export default function NotificationsPage() {
 
                 <div className="flex items-start justify-between">
                   <div className="pr-4">
-                    <h3 className="text-[16px] font-bold text-gray-900 mb-1">Nouveaux Switchs</h3>
-                    <p className="text-[14px] text-gray-500 font-medium">Un match ! Votre logement intéresse quelqu'un que vous avez liké.</p>
+                    <h3 className="text-body-lg font-bold text-gray-900 mb-1">Nouveaux Switchs</h3>
+                    <p className="text-body text-gray-500 font-medium">Un match ! Votre logement intéresse quelqu'un que vous avez liké.</p>
                   </div>
                   <button className="w-12 h-6 rounded-full bg-green-500 relative transition-colors duration-300">
                     <div className="w-5 h-5 bg-white rounded-full absolute right-0.5 top-0.5 shadow-sm"></div>
@@ -52,13 +52,13 @@ export default function NotificationsPage() {
 
             {/* Section Email */}
             <div>
-              <h2 className="text-[20px] font-bold text-gray-900 mb-6">Notifications E-mail</h2>
+              <h2 className="text-title font-bold text-gray-900 mb-6">Notifications E-mail</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start justify-between">
                   <div className="pr-4">
-                    <h3 className="text-[16px] font-bold text-gray-900 mb-1">Rappels de voyage</h3>
-                    <p className="text-[14px] text-gray-500 font-medium">Informations importantes avant votre départ.</p>
+                    <h3 className="text-body-lg font-bold text-gray-900 mb-1">Rappels de voyage</h3>
+                    <p className="text-body text-gray-500 font-medium">Informations importantes avant votre départ.</p>
                   </div>
                   <button className="w-12 h-6 rounded-full bg-green-500 relative transition-colors duration-300">
                     <div className="w-5 h-5 bg-white rounded-full absolute right-0.5 top-0.5 shadow-sm"></div>
@@ -67,8 +67,8 @@ export default function NotificationsPage() {
 
                 <div className="flex items-start justify-between">
                   <div className="pr-4">
-                    <h3 className="text-[16px] font-bold text-gray-900 mb-1">Promotions et recommandations</h3>
-                    <p className="text-[14px] text-gray-500 font-medium">Les meilleurs appartements de votre wishlist et astuces voyages.</p>
+                    <h3 className="text-body-lg font-bold text-gray-900 mb-1">Promotions et recommandations</h3>
+                    <p className="text-body text-gray-500 font-medium">Les meilleurs appartements de votre wishlist et astuces voyages.</p>
                   </div>
                   {/* Toggle Off */}
                   <button className="w-12 h-6 rounded-full bg-gray-200 relative transition-colors duration-300">

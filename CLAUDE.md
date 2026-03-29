@@ -93,36 +93,100 @@ backend/src/
 
 ---
 
-## Frontend architecture
+## Frontend architecture (colocated — no `modules/` folder)
+
+Everything lives **inside its route folder** under `app/`. No separate `modules/` directory.
 
 ```
 frontend/src/
-  app/             — Next.js App Router pages and layouts
-  modules/
-    <feature>/
-      pages/
-      components/
-      services/    — API calls only here, never in JSX
-      constants/
-      types/
+  app/
+    explorer/            — Property search & listing route
+      components/        — PropertyCard, PropertyHero, CityFilters, etc.
+      hooks/             — useProperties, useProperty
+      services/          — properties.service.ts (API calls)
+      types/             — properties.types.ts
+      page.tsx           — thin wrapper composing components
+      [id]/page.tsx      — property detail page
+    swipe/
+      components/        — SwipeCard, SwipeDeck, MatchOverlay, etc.
+      hooks/             — useSwipe (deck, mutations, undo)
+      services/          — swipe.service.ts
+      types/             — swipe.types.ts
+      page.tsx
+    messages/
+      components/        — ChatWindow, ChatHeader, ConversationList, etc.
+      hooks/             — useMessages
+      services/          — messages.service.ts
+      types/             — messages.types.ts
+      constants/         — messages.constants.ts (mock data)
+      page.tsx
+    favoris/
+      components/        — FavoriteCard
+      hooks/             — useFavorites
+      services/          — favorites.service.ts
+      types/             — favorites.types.ts
+      page.tsx
+    profil/
+      components/        — ProfileCard, PremiumBanner, ProfileMenuSection
+      constants/         — settings-sections.tsx
+      types/             — profile-menu-types.ts
+      layout.tsx
+      page.tsx
+      parametres/...     — sub-pages
+    admin/
+      components/        — AdminSidebar, StatCard, RecentUsersTable
+      services/          — admin.service.ts
+      layout.tsx, page.tsx
+  components/            — layout-level shared components (Header, BottomNav, ConnectionModal, Footer)
+    header/              — sub-components of Header
+    connection/          — sub-components of ConnectionModal
+    bottom-nav/          — sub-components of BottomNav
   shared/
-    ui/            — reusable design system components
-    stores/        — Zustand global state
-    services/      — shared API client
-    constants/     — colors, routes, query keys, limits, breakpoints
-    lib/           — utilities
-  providers/       — React Query, theme, auth providers
+    ui/                  — reusable design system (AuthGate, EmptyState, GradientButton, AmenityIcon)
+    stores/              — Zustand global state
+    auth/                — auth service + types (cross-cutting)
+    services/            — shared API client (apiFetch)
+    constants/           — theme.ts, queryKeys.ts
+  providers/             — React Query, auth providers
 ```
 
 ### Frontend rules
-- Server state: **TanStack Query (React Query)** only — all API data fetching and caching goes through `useQuery` / `useMutation`
+- **No `modules/` folder** — everything colocated inside its `app/` route folder
+- **File size limit: 90 lines max** — split into sub-components when exceeding
+- Page files are **thin wrappers** — they import and compose components, never contain business logic
+- Server state: **TanStack Query (React Query)** only — `useQuery` / `useMutation` in custom hooks
 - Global UI state: **Zustand**
-- Use **Zustand** for any shared frontend state; do not introduce React Context or ad hoc global state for that purpose
 - API calls only in `services/` files — never inline in page/component JSX
-- No `hooks/` or `helpers/` folders — use services, stores, module utilities
 - All magic values in constants files (see below)
-- **Explorer is the home page** — there is no separate "Accueil" tab. The app opens on the Explorer (search + listings)
-- **4 bottom nav tabs:** Explorer, Switch, Messages, Profil
+- **No hardcoded colors or font sizes** — use theme tokens (see Design tokens section)
+- **No CDN-hosted icons/emojis** — all assets stored locally in `public/` (e.g. `public/emojis/`)
+- **Explorer is the home page** — no separate "Accueil" tab
+- **5 bottom nav tabs:** Explorer, Favoris, Switch (floating), Messages, Profil
+- Shared components used by 2+ routes go in `shared/ui/`
+- Route-specific components stay in their route's `components/` folder
+
+---
+
+## Design tokens (mandatory — zero hardcoded values)
+
+All colors and font sizes are defined as **CSS variables** in `frontend/src/app/globals.css` under `@theme inline`.
+Tailwind auto-generates utility classes from them.
+
+**Colors** (change ONE line in `:root` to rebrand):
+- `--brand-cyan` → `text-brand-cyan`, `bg-brand-cyan`, `from-brand-cyan`
+- `--brand-purple` → `text-brand-purple`, `bg-brand-purple`, `to-brand-purple`
+- `--brand-dark`, `--brand-dark-alt`, `--brand-chat-bg`, `--brand-input-bg`
+
+**Font sizes** (semantic names, all customizable):
+- `text-body-2xs` (10px), `text-body-xs` (11px), `text-caption` (12px), `text-body-sm` (13px)
+- `text-body` (14px), `text-body-md` (15px), `text-body-lg` (16px), `text-body-xl` (17px)
+- `text-title-sm` (18px), `text-title-xs` (19px), `text-title` (20px), `text-title-md` (22px), `text-title-lg` (24px)
+- `text-display-xs` (26px), `text-display-sm` (28px), `text-display` (32px), `text-display-md` (36px), `text-display-lg` (40px)
+
+**Rules:**
+- Never use `text-[14px]`, `bg-[#00BFFF]`, or any arbitrary Tailwind value for colors/sizes
+- SVG `stopColor` attributes use `var(--brand-cyan)`, never raw hex
+- JS-level constants (fallback URLs, thresholds) live in `frontend/src/shared/constants/theme.ts`
 
 ---
 
@@ -139,8 +203,8 @@ shared/src/constants/
   enums.ts         — domain enums (UserRole, MatchStatus, PropertyType, etc.)
 
 frontend/src/shared/constants/
-  theme.ts         — Tailwind color aliases, spacing tokens
-  nav.ts           — bottom nav items, route labels
+  theme.ts         — JS-level tokens (fallback URLs, swipe thresholds, stale times)
+  queryKeys.ts     — React Query cache keys
 ```
 
 **Why:** colors, routes, and limits change often. One edit, zero hunt.

@@ -3,13 +3,47 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --brand-cyan: #00BFFF;
+  --brand-purple: #8A2BE2;
+  --brand-dark: #111111;
+  --brand-dark-alt: #222222;
+  --brand-chat-bg: #f8f9fa;
+  --brand-input-bg: #f1f3f5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-dark-alt: var(--brand-dark-alt);
+  --color-brand-chat-bg: var(--brand-chat-bg);
+  --color-brand-input-bg: var(--brand-input-bg);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --font-size-body-2xs: 10px;
+  --font-size-body-xs: 11px;
+  --font-size-caption: 12px;
+  --font-size-body-sm: 13px;
+  --font-size-body: 14px;
+  --font-size-body-md: 15px;
+  --font-size-body-lg: 16px;
+  --font-size-body-xl: 17px;
+  --font-size-title-sm: 18px;
+  --font-size-title-xs: 19px;
+  --font-size-title: 20px;
+  --font-size-title-md: 22px;
+  --font-size-title-lg: 24px;
+  --font-size-display-xs: 26px;
+  --font-size-display-sm: 28px;
+  --font-size-display: 32px;
+  --font-size-display-md: 36px;
+  --font-size-display-lg: 40px;
 }
 
 @media (prefers-color-scheme: dark) {

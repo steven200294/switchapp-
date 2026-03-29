@@ -1,40 +1,26 @@
-// Design tokens — single source of truth for colors and spacing
-// Change here, changes everywhere
+/**
+ * Design tokens — single source of truth.
+ *
+ * Colors & font-sizes are defined as CSS variables in globals.css (@theme).
+ * Tailwind utilities are auto-generated:
+ *   text-brand-cyan, bg-brand-purple, text-body-sm, text-title, etc.
+ *
+ * This file exports TS constants for values needed in JS logic
+ * (e.g. framer-motion thresholds, fallback URLs).
+ */
 
-export const COLORS = {
-  primary: "#6C5CE7",
-  primaryLight: "#A29BFE",
-  secondary: "#00CEC9",
-  secondaryLight: "#81ECEC",
-  accent: "#FD79A8",
-  success: "#00B894",
-  warning: "#FDCB6E",
-  error: "#D63031",
-  text: {
-    primary: "#2D3436",
-    secondary: "#636E72",
-    muted: "#B2BEC3",
-    inverse: "#FFFFFF",
-  },
-  bg: {
-    primary: "#FFFFFF",
-    secondary: "#F8F9FA",
-    tertiary: "#DFE6E9",
-  },
+export const BRAND = {
+  cyan: "var(--brand-cyan)",
+  purple: "var(--brand-purple)",
+  dark: "var(--brand-dark)",
+  darkAlt: "var(--brand-dark-alt)",
 } as const;
 
-export const SPACING = {
-  xs: "4px",
-  sm: "8px",
-  md: "16px",
-  lg: "24px",
-  xl: "32px",
-  xxl: "48px",
-} as const;
+export const FALLBACK_COVER =
+  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?fit=crop&w=800&q=80";
+export const FALLBACK_COVER_HQ =
+  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?fit=crop&w=800&q=100";
 
-export const BORDER_RADIUS = {
-  sm: "8px",
-  md: "12px",
-  lg: "16px",
-  full: "9999px",
-} as const;
+export const SWIPE_THRESHOLD = 120;
+export const DECK_SIZE = 30;
+export const STALE_TIME = 5 * 60 * 1000;

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import type { AuthUser } from '@/modules/auth/types/auth.types';
-import { getMe } from '@/modules/auth/services/auth.service';
+import type { AuthUser } from '@/shared/auth/types/auth.types';
+import { getMe } from '@/shared/auth/services/auth.service';
 
 type AuthState = {
   user: AuthUser | null;

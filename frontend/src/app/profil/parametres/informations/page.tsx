@@ -15,38 +15,38 @@ export default function InformationsPage() {
         </header>
 
         <main className="flex-1 overflow-y-auto w-full px-6 lg:px-10 pb-12">
-          <h1 className="text-[32px] font-bold text-gray-900 tracking-tight mb-8">
+          <h1 className="text-display font-bold text-gray-900 tracking-tight mb-8">
             Informations personnelles
           </h1>
 
           <div className="space-y-6">
             <div className="flex flex-col">
-              <label className="text-[14px] font-bold text-gray-900 mb-2">Prénom et Nom</label>
-              <input type="text" defaultValue="Kuti" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-[16px] text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8A2BE2]/50 focus:border-[#8A2BE2] transition-all" />
+              <label className="text-body font-bold text-gray-900 mb-2">Prénom et Nom</label>
+              <input type="text" defaultValue="Kuti" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-body-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 focus:border-brand-purple transition-all" />
             </div>
 
             <div className="flex flex-col">
-              <label className="text-[14px] font-bold text-gray-900 mb-2">Adresse E-mail</label>
-              <input type="email" defaultValue="kuti@switchappart.com" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-[16px] text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8A2BE2]/50 focus:border-[#8A2BE2] transition-all" />
+              <label className="text-body font-bold text-gray-900 mb-2">Adresse E-mail</label>
+              <input type="email" defaultValue="kuti@switchappart.com" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-body-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 focus:border-brand-purple transition-all" />
             </div>
 
             <div className="flex flex-col">
-              <label className="text-[14px] font-bold text-gray-900 mb-2">Numéro de téléphone</label>
+              <label className="text-body font-bold text-gray-900 mb-2">Numéro de téléphone</label>
               <div className="flex gap-3">
-                <input type="text" defaultValue="+33" className="w-[80px] text-center px-4 py-3 bg-white border border-gray-200 rounded-xl text-[16px] text-gray-900" />
-                <input type="tel" defaultValue="6 12 34 56 78" className="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-xl text-[16px] text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8A2BE2]/50 focus:border-[#8A2BE2] transition-all" />
+                <input type="text" defaultValue="+33" className="w-[80px] text-center px-4 py-3 bg-white border border-gray-200 rounded-xl text-body-lg text-gray-900" />
+                <input type="tel" defaultValue="6 12 34 56 78" className="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-xl text-body-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 focus:border-brand-purple transition-all" />
               </div>
             </div>
 
             <div className="flex flex-col">
-              <label className="text-[14px] font-bold text-gray-900 mb-2">Adresse postale</label>
-              <input type="text" defaultValue="Paris, France" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-[16px] text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8A2BE2]/50 focus:border-[#8A2BE2] transition-all" />
-              <p className="text-[13px] text-gray-500 font-medium mt-3 leading-relaxed">
+              <label className="text-body font-bold text-gray-900 mb-2">Adresse postale</label>
+              <input type="text" defaultValue="Paris, France" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-body-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 focus:border-brand-purple transition-all" />
+              <p className="text-body-sm text-gray-500 font-medium mt-3 leading-relaxed">
                 Votre adresse exacte ne sera jamais partagée avec les autres utilisateurs avant la validation concrète d'un Switch.
               </p>
             </div>
             
-            <button className="w-full py-4 mt-8 bg-gray-900 text-white rounded-[14px] font-bold text-[16px] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md">
+            <button className="w-full py-4 mt-8 bg-gray-900 text-white rounded-[14px] font-bold text-body-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md">
               Enregistrer
             </button>
           </div>

@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEYS } from '@/shared/constants/queryKeys';
-import { getAdminProperties } from '@/modules/admin/services/admin.service';
+import { getAdminProperties } from '@/app/admin/services/admin.service';
 
 export default function AdminPropertiesPage() {
   const { data: properties, isLoading } = useQuery({

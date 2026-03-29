@@ -3,8 +3,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 import { QUERY_KEYS } from '@/shared/constants/queryKeys';
-import { getAdminUsers } from '@/modules/admin/services/admin.service';
-import type { AuthUser } from '@/modules/auth/types/auth.types';
+import { getAdminUsers } from '@/app/admin/services/admin.service';
+import type { AuthUser } from '@/shared/auth/types/auth.types';
 
 export default function AdminUsersPage() {
   const router = useRouter();

@@ -11,7 +11,7 @@ export default function ConfidentialitePage() {
           <Link href="/profil" scroll={false} className="p-2 mr-3 rounded-full hover:bg-gray-100 transition-colors text-gray-900 flex items-center justify-center w-10 h-10 shrink-0">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
           </Link>
-          <h1 className="flex-1 font-bold text-gray-900 text-[18px] tracking-tight truncate">
+          <h1 className="flex-1 font-bold text-gray-900 text-title-sm tracking-tight truncate">
             Confidentialité
           </h1>
         </header>

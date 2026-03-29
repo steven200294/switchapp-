@@ -12,7 +12,7 @@ export default function JuridiquePage() {
 
         <header className="px-4 py-2 border-b border-gray-100 flex items-center justify-between sticky top-0 bg-white z-10 w-full">
           <div className="w-10"></div>
-          <h1 className="flex-1 text-center font-bold text-gray-900 text-[17px] tracking-tight truncate px-2">
+          <h1 className="flex-1 text-center font-bold text-gray-900 text-body-xl tracking-tight truncate px-2">
             Juridique
           </h1>
           <Link href="/profil" scroll={false} className="p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-900 flex items-center justify-center w-10 h-10">
