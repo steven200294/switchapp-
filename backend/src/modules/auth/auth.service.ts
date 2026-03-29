@@ -1,24 +1,18 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { env } from '../../config/env.js';
 import { AppError } from '../../shared/errors/AppError.js';
 import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js';
+import { activeUsers } from '../../infra/metrics/prometheus.js';
 import * as authRepo from './auth.repository.js';
+import { isAdminUser } from '../admin/admin.repository.js';
 import type { RegisterInput, LoginInput } from './auth.schemas.js';
 
-function getJwtSecret(): string {
-  const secret = process.env.JWT_SECRET;
-  if (!secret) {
-    throw new Error('JWT_SECRET environment variable is required');
-  }
-  return secret;
-}
-
 function signToken(userId: string, email: string): string {
-  const expiresIn = process.env.JWT_EXPIRES_IN || '7d';
   return jwt.sign(
     { sub: userId, email, role: 'authenticated' },
-    getJwtSecret(),
-    { expiresIn } as jwt.SignOptions,
+    env.jwt.secret,
+    { expiresIn: env.jwt.expiresIn } as jwt.SignOptions,
   );
 }
 
@@ -33,7 +27,7 @@ export async function register(input: RegisterInput) {
     );
   }
 
-  const encryptedPassword = await bcrypt.hash(input.password, 10);
+  const encryptedPassword = await bcrypt.hash(input.password, env.bcrypt.rounds);
 
   const authUser = await authRepo.createAuthUser({
     email: input.email,
@@ -73,8 +67,12 @@ export async function login(input: LoginInput) {
     );
   }
 
-  const profile = await authRepo.findUserProfileByUserId(authUser.id);
+  const [profile, admin] = await Promise.all([
+    authRepo.findUserProfileByUserId(authUser.id),
+    isAdminUser(authUser.id),
+  ]);
   const token = signToken(authUser.id, authUser.email!);
+  activeUsers.inc();
 
   return {
     user: {
@@ -84,6 +82,7 @@ export async function login(input: LoginInput) {
       avatar_url: profile?.avatar_url ?? null,
       city: profile?.city ?? null,
       verified: profile?.verified ?? false,
+      role: admin ? 'admin' : 'user',
     },
     token,
   };
@@ -100,7 +99,10 @@ export async function getMe(userId: string) {
     );
   }
 
-  const profile = await authRepo.findUserProfileByUserId(userId);
+  const [profile, admin] = await Promise.all([
+    authRepo.findUserProfileByUserId(userId),
+    isAdminUser(userId),
+  ]);
 
   return {
     id: authUser.id,
@@ -109,7 +111,7 @@ export async function getMe(userId: string) {
     avatar_url: profile?.avatar_url ?? null,
     city: profile?.city ?? null,
     verified: profile?.verified ?? false,
-    role: 'user',
+    role: admin ? 'admin' : 'user',
     created_at: profile?.created_at?.toISOString() ?? null,
   };
 }

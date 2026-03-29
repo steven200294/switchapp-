@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function NotificationsPage() {
   return (
-    <div className="fixed inset-0 z-[100] overflow-hidden">
+    <div className="fixed inset-0 z-100 overflow-hidden">
       <Link href="/profil/parametres" scroll={false} className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fade-in" />
       
       <div className="absolute inset-x-0 bottom-0 md:inset-0 md:left-auto md:w-full md:max-w-2xl h-full bg-white shadow-2xl flex flex-col md:animate-page-slide-right animate-page-slide-up overflow-hidden">
@@ -39,7 +39,7 @@ export default function NotificationsPage() {
                 <div className="flex items-start justify-between">
                   <div className="pr-4">
                     <h3 className="text-body-lg font-bold text-gray-900 mb-1">Nouveaux Switchs</h3>
-                    <p className="text-body text-gray-500 font-medium">Un match ! Votre logement intéresse quelqu'un que vous avez liké.</p>
+                    <p className="text-body text-gray-500 font-medium">Un match ! Votre logement intéresse quelqu&apos;un que vous avez liké.</p>
                   </div>
                   <button className="w-12 h-6 rounded-full bg-green-500 relative transition-colors duration-300">
                     <div className="w-5 h-5 bg-white rounded-full absolute right-0.5 top-0.5 shadow-sm"></div>

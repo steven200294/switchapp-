@@ -1158,3 +1158,52 @@ ALTER TABLE ONLY public.users
 
 -- pg_dump artifact removed
 
+
+-- Admin tables & seed admin user
+SET search_path TO public;
+CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
+
+CREATE TABLE IF NOT EXISTS public.admin_users (
+    user_id uuid PRIMARY KEY
+);
+
+INSERT INTO auth.users (id, email, encrypted_password, aud, role, email_confirmed_at, created_at, updated_at, raw_app_meta_data, raw_user_meta_data, is_sso_user, is_anonymous)
+VALUES (
+    '858a52da-cbb0-41e6-be15-753da1ac29a3',
+    'abderrazaq@mail.com',
+    public.crypt('admin123', public.gen_salt('bf'::text, 10)),
+    'authenticated', 'authenticated',
+    now(), now(), now(),
+    '{"provider":"email","providers":["email"]}',
+    '{"full_name":"Abderrazaq"}',
+    false, false
+) ON CONFLICT (id) DO NOTHING;
+
+INSERT INTO public.admin_users (user_id)
+VALUES ('858a52da-cbb0-41e6-be15-753da1ac29a3')
+ON CONFLICT DO NOTHING;
+
+-- Drop legacy/unused tables
+DROP TABLE IF EXISTS public.kv_store_515d6ac6 CASCADE;
+DROP TABLE IF EXISTS public.city_districts CASCADE;
+DROP TABLE IF EXISTS public.property_views CASCADE;
+DROP TABLE IF EXISTS public.property_interactions CASCADE;
+DROP TABLE IF EXISTS public.users CASCADE;
+DROP TABLE IF EXISTS public.conversation_participants CASCADE;
+DROP TABLE IF EXISTS public.user_switch_passes CASCADE;
+DROP TABLE IF EXISTS public.property_likes CASCADE;
+DROP TABLE IF EXISTS public.notifications CASCADE;
+DROP TABLE IF EXISTS public.landlords CASCADE;
+DROP TABLE IF EXISTS public.user_identity_verifications CASCADE;
+DROP TABLE IF EXISTS public.identity_verifications CASCADE;
+DROP TABLE IF EXISTS public.user_documents CASCADE;
+DROP TABLE IF EXISTS public.housing_documents CASCADE;
+DROP TABLE IF EXISTS public.notification_unlocks CASCADE;
+DROP TABLE IF EXISTS public.analytics_events CASCADE;
+DROP TABLE IF EXISTS public.analytics_daily CASCADE;
+DROP TABLE IF EXISTS public.exchange_contracts CASCADE;
+DROP TABLE IF EXISTS public.exchange_requests CASCADE;
+DROP TABLE IF EXISTS public.exchange_offers CASCADE;
+DROP TABLE IF EXISTS public.contract_signatures CASCADE;
+DROP TABLE IF EXISTS public.exchange_contract_signatures_backup CASCADE;
+DROP TABLE IF EXISTS public.exchange_contract_signatures CASCADE;

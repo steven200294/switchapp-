@@ -1,6 +1,7 @@
 import * as repo from './swipes.repository.js';
 import { AppError } from '../../shared/errors/AppError.js';
 import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js';
+import { swipesTotal, matchesTotal } from '../../infra/metrics/prometheus.js';
 
 interface SwipeResult {
   swipe: Awaited<ReturnType<typeof repo.createSwipe>>;
@@ -29,6 +30,7 @@ export async function recordSwipe(userId: string, propertyId: string, action: st
 
   const dbAction = action === 'super_like' ? 'like' : action;
   const swipe = await repo.createSwipe(userId, propertyId, dbAction);
+  swipesTotal.inc({ action });
 
   if (action === 'nope') {
     return { swipe, matched: false };
@@ -46,6 +48,7 @@ export async function recordSwipe(userId: string, propertyId: string, action: st
 
   const match = await repo.createMatch(userId, propertyOwnerId, swiperPropertyId, propertyId);
   const conversationId = await repo.createConversationForMatch(match.id, userId, propertyOwnerId);
+  matchesTotal.inc();
 
   return { swipe, matched: true, match, conversationId };
 }

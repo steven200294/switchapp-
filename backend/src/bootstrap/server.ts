@@ -1,7 +1,11 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import { env } from "../config/env.js";
+import { logger } from "../config/logger.js";
+import { register, metricsMiddleware } from "../infra/metrics/prometheus.js";
 import { errorHandler } from "../shared/middlewares/errorHandler.js";
+import { apiLimiter } from "../shared/middlewares/rateLimiter.js";
 import { authRouter } from "../modules/auth/index.js";
 import { adminRouter } from "../modules/admin/index.js";
 import { propertiesRouter } from "../modules/properties/index.js";
@@ -11,19 +15,24 @@ import { matchesRouter } from "../modules/matches/index.js";
 import { messagesRouter } from "../modules/messages/index.js";
 import { favoritesRouter } from "../modules/favorites/index.js";
 
-if (!process.env.API_PORT) {
-  throw new Error("API_PORT environment variable is required");
-}
-
 const app = express();
-const PORT = process.env.API_PORT;
 
 app.use(helmet());
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: env.isDev ? true : env.frontendUrl,
+  credentials: true,
+}));
+app.use(express.json({ limit: "1mb" }));
+app.use(metricsMiddleware);
+app.use("/api/v1", apiLimiter);
 
 app.get("/api/v1/health", (_req, res) => {
   res.json({ data: { status: "ok", timestamp: new Date().toISOString() } });
+});
+
+app.get("/api/v1/metrics", async (_req, res) => {
+  res.set("Content-Type", register.contentType);
+  res.end(await register.metrics());
 });
 
 app.use("/api/v1/auth", authRouter);
@@ -37,8 +46,8 @@ app.use("/api/v1/favorites", favoritesRouter);
 
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`[api] listening on port ${PORT}`);
+app.listen(env.port, () => {
+  logger.info(`API listening on port ${env.port}`);
 });
 
 export default app;

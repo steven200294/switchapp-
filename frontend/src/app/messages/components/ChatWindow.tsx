@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import type { MockConversation } from "../types/messages.types";
+import type { ConversationThread } from "../types/messages.types";
 import ChatHeader from "./ChatHeader";
 import ChatInput from "./ChatInput";
 import ChatMenu from "./ChatMenu";
 
 interface ChatWindowProps {
-  activeChat: MockConversation;
-  setActiveChat: (c: MockConversation | null) => void;
+  activeChat: ConversationThread;
+  setActiveChat: (c: ConversationThread | null) => void;
   isMobile: boolean;
 }
 
@@ -20,7 +20,7 @@ export default function ChatWindow({ activeChat, setActiveChat, isMobile }: Chat
       <div
         className={`flex flex-col bg-white overflow-hidden ${
           isMobile
-            ? "fixed inset-0 z-[200] animate-page-slide-right pb-[env(safe-area-inset-bottom)]"
+            ? "fixed inset-0 z-200 animate-page-slide-right pb-[env(safe-area-inset-bottom)]"
             : "w-full h-full relative z-10"
         }`}
       >
@@ -43,16 +43,9 @@ export default function ChatWindow({ activeChat, setActiveChat, isMobile }: Chat
               <img src={activeChat.avatar} alt={activeChat.name} className="w-full h-full object-cover" />
             </div>
             <div className="px-4 py-3 rounded-2xl rounded-bl-none bg-white border border-gray-100 shadow-sm text-gray-800 text-body-md leading-snug">
-              {activeChat.lastMessage}
+              {activeChat.lastMessage || "—"}
             </div>
           </div>
-          {activeChat.unread && (
-            <div className="flex self-end max-w-[85%] gap-2 items-end">
-              <div className="px-4 py-3 rounded-2xl rounded-br-none bg-gradient-to-r from-brand-cyan to-brand-purple text-white text-body-md leading-snug shadow-md shadow-brand-purple/20">
-                Super merci beaucoup ! Je te tiens au courant très vite.
-              </div>
-            </div>
-          )}
         </div>
 
         <ChatInput />

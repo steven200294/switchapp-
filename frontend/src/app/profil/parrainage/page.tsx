@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ParrainagePage() {
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col justify-end items-center">
+    <div className="fixed inset-0 z-100 flex flex-col justify-end items-center">
       <Link href="/profil" scroll={false} className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fade-in" />
       
       <div className="relative w-full md:max-w-xl h-[90vh] md:h-[80vh] bg-white rounded-t-3xl md:rounded-3xl md:mb-10 shadow-2xl flex flex-col animate-page-slide-up overflow-hidden">

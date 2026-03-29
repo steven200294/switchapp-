@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Globe, Menu, User } from "@/shared/ui/icons";
+import UserAvatar from "@/shared/ui/UserAvatar";
 import type { AuthUser } from "@/shared/auth/types/auth.types";
 
 type Props = {
@@ -26,7 +27,7 @@ export default function DesktopNav({ activeTab, setActiveTab, isLoggedIn, user, 
   return (
     <div className="max-w-[1440px] mx-auto px-6 h-20 hidden md:flex items-center justify-between">
       <div className="flex-1 min-w-0">
-        <Link href="/explorer" className="text-title-lg font-black bg-gradient-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent cursor-pointer tracking-tight">
+        <Link href="/explorer" className="text-title-lg font-black bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent cursor-pointer tracking-tight">
           SwitchAppart
         </Link>
       </div>
@@ -55,7 +56,7 @@ export default function DesktopNav({ activeTab, setActiveTab, isLoggedIn, user, 
           >
             <Menu className="w-4 h-4" />
             <div className="w-8 h-8 rounded-full bg-gray-500 overflow-hidden text-gray-300 flex items-center justify-center">
-              {isLoggedIn && user?.avatar_url ? <img src={user.avatar_url} alt="" className="w-full h-full object-cover" /> : <User className="w-5 h-5" />}
+              {isLoggedIn && user?.avatar_url ? <UserAvatar avatarUrl={user.avatar_url} name={user.full_name} size="sm" /> : <User className="w-5 h-5" />}
             </div>
           </button>
           {showMenu && isLoggedIn && (

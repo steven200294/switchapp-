@@ -21,6 +21,23 @@ export const FALLBACK_COVER =
 export const FALLBACK_COVER_HQ =
   "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?fit=crop&w=800&q=100";
 
+const SUPABASE_STORAGE_RE = /^https?:\/\/[^/]+\/storage\/v1\/object\/public\/[^/]+\//;
+
+/**
+ * Resolve a storage path or URL to a public browser-accessible URL.
+ * Handles: relative paths, full Supabase URLs, internal Docker URLs.
+ */
+export function resolveStorageUrl(path: string, bucket = "properties"): string {
+  if (!path) return FALLBACK_COVER_HQ;
+  const base = process.env.NEXT_PUBLIC_STORAGE_URL ?? "http://localhost:9000";
+  if (path.startsWith("http")) {
+    const stripped = path.replace(SUPABASE_STORAGE_RE, "");
+    if (stripped !== path) return `${base}/${bucket}/${stripped.split("?")[0]}`;
+    return path.replace(/^https?:\/\/[^/]+/, base);
+  }
+  return `${base}/${bucket}/${path}`;
+}
+
 export const SWIPE_THRESHOLD = 120;
 export const DECK_SIZE = 30;
 export const STALE_TIME = 5 * 60 * 1000;

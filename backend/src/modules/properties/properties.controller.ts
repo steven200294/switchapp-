@@ -1,16 +1,10 @@
 import type { Request, Response, NextFunction } from 'express';
-import { createPropertySchema, updatePropertySchema, listQuerySchema } from './properties.schemas.js';
+import { listQuerySchema } from './properties.schemas.js';
 import * as propertiesService from './properties.service.js';
-import { AppError } from '../../shared/errors/AppError.js';
-import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js';
 
 export async function list(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const parsed = listQuerySchema.safeParse(req.query);
-    if (!parsed.success) {
-      throw new AppError(ERROR_CODES.VALIDATION, 400, CLIENT_MESSAGES[ERROR_CODES.VALIDATION], parsed.error.message);
-    }
-    const { page, limit, ...filters } = parsed.data;
+    const { page, limit, ...filters } = listQuerySchema.parse(req.query);
     const result = await propertiesService.list(filters, page, limit);
     res.json({ data: result });
   } catch (err) { next(err); }
@@ -25,22 +19,14 @@ export async function getById(req: Request, res: Response, next: NextFunction): 
 
 export async function create(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const parsed = createPropertySchema.safeParse(req.body);
-    if (!parsed.success) {
-      throw new AppError(ERROR_CODES.VALIDATION, 400, CLIENT_MESSAGES[ERROR_CODES.VALIDATION], parsed.error.message);
-    }
-    const property = await propertiesService.create(req.userId!, parsed.data);
+    const property = await propertiesService.create(req.userId!, req.body);
     res.status(201).json({ data: property });
   } catch (err) { next(err); }
 }
 
 export async function update(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const parsed = updatePropertySchema.safeParse(req.body);
-    if (!parsed.success) {
-      throw new AppError(ERROR_CODES.VALIDATION, 400, CLIENT_MESSAGES[ERROR_CODES.VALIDATION], parsed.error.message);
-    }
-    const property = await propertiesService.update(req.params.id as string, req.userId!, parsed.data);
+    const property = await propertiesService.update(req.params.id as string, req.userId!, req.body);
     res.json({ data: property });
   } catch (err) { next(err); }
 }

@@ -12,7 +12,7 @@ export async function getMyProfile(req: Request, res: Response, next: NextFuncti
 
 export async function updateMyProfile(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    if (!req.body || Object.keys(req.body).length === 0) {
+    if (Object.keys(req.body).length === 0) {
       throw new AppError(ERROR_CODES.VALIDATION, 400, CLIENT_MESSAGES[ERROR_CODES.VALIDATION]);
     }
     const profile = await usersService.updateMyProfile(req.userId!, req.body);

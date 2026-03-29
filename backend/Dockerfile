@@ -1,22 +1,26 @@
-FROM node:20-alpine
-
+FROM node:20-alpine AS base
 WORKDIR /app
 
-# Install shared deps
+FROM base AS deps
 COPY shared/package.json shared/
 RUN cd shared && npm install
-
-# Install backend deps
-COPY backend/package.json backend/
+COPY backend/package.json backend/package-lock.json backend/
 RUN cd backend && npm install
 
-# Copy source
+FROM base AS builder
+COPY --from=deps /app/shared/node_modules shared/node_modules
+COPY --from=deps /app/backend/node_modules backend/node_modules
 COPY shared/ shared/
 COPY backend/ backend/
+RUN cd backend && npx prisma generate && npx tsc
 
-# Generate Prisma client
-RUN cd backend && npx prisma generate
+FROM base AS runner
+ENV NODE_ENV=production
+COPY --from=builder /app/shared shared
+COPY --from=builder /app/backend/node_modules backend/node_modules
+COPY --from=builder /app/backend/dist backend/dist
+COPY --from=builder /app/backend/prisma backend/prisma
+COPY --from=builder /app/backend/package.json backend/
 
-EXPOSE ${API_PORT}
-
-CMD ["npm", "--prefix", "backend", "run", "dev"]
+EXPOSE ${API_PORT:-4001}
+CMD ["node", "backend/dist/bootstrap/server.js"]

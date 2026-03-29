@@ -1,9 +1,9 @@
 "use client";
 
-import type { MockConversation } from "../types/messages.types";
+import type { ConversationThread } from "../types/messages.types";
 
 interface ChatMenuProps {
-  activeChat: MockConversation;
+  activeChat: ConversationThread;
   isMobile: boolean;
   onClose: () => void;
 }
@@ -30,7 +30,7 @@ const MENU_ITEMS: { icon: string; label: string; isCircle?: boolean }[] = [
 
 export default function ChatMenu({ activeChat, isMobile, onClose }: ChatMenuProps) {
   return (
-    <div className={`absolute inset-0 z-[300] flex flex-col justify-end ${isMobile ? "" : "rounded-3xl overflow-hidden"}`}>
+    <div className={`absolute inset-0 z-300 flex flex-col justify-end ${isMobile ? "" : "rounded-3xl overflow-hidden"}`}>
       <button
         type="button"
         className={`absolute inset-0 w-full h-full bg-black/40 backdrop-blur-[2px] cursor-default ${

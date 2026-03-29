@@ -1,9 +1,11 @@
+"use client";
+
 import Link from "next/link";
-import { FALLBACK_COVER } from "@/shared/constants/theme";
+import { resolveStorageUrl } from "@/shared/constants/theme";
 import type { Property } from "../types/properties.types";
 
 export default function PropertyCard({ property }: { property: Property }) {
-  const coverImg = property.cover_image || property.photos[0] || FALLBACK_COVER;
+  const coverImg = resolveStorageUrl(property.cover_image || property.photos[0] || "");
 
   return (
     <Link href={`/explorer/${property.id}`} className="group block">
@@ -15,7 +17,6 @@ export default function PropertyCard({ property }: { property: Property }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
         
-        {/* Heart Icon */}
         <button
           className="absolute top-3 right-3 transition-transform active:scale-95"
           onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
@@ -28,17 +29,14 @@ export default function PropertyCard({ property }: { property: Property }) {
 
       <div className="flex justify-between items-start">
         <div className="flex-1 pr-2">
-          {/* Title / City */}
           <h3 className="font-semibold text-gray-900 text-[15px] leading-snug truncate">
             {property.city || "Logement"}{property.district ? `, ${property.district}` : ""}
           </h3>
           
-          {/* Subtitle / Description */}
           <p className="text-[#6A6A6A] text-[15px] leading-snug mt-0.5 truncate">
             {property.title}
           </p>
           
-          {/* Details */}
           <p className="text-[#6A6A6A] text-[15px] leading-snug truncate">
             {property.surface_area ? `${property.surface_area} m²` : ""}
             {property.surface_area && property.rooms ? " · " : ""}
@@ -46,7 +44,6 @@ export default function PropertyCard({ property }: { property: Property }) {
             {(!property.surface_area && !property.rooms) && "Particulier"}
           </p>
           
-          {/* Price */}
           <div className="mt-1.5 flex items-center text-[15px]">
             <span className="font-semibold text-gray-900">{property.monthly_rent} €</span>
             <span className="text-gray-900 ml-1">par mois</span>

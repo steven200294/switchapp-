@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ConfidentialitePage() {
   return (
-    <div className="fixed inset-0 z-[100] overflow-hidden">
+    <div className="fixed inset-0 z-100 overflow-hidden">
       <Link href="/profil" scroll={false} className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fade-in" />
       
       <div className="absolute inset-0 w-full h-full bg-white shadow-2xl flex flex-col animate-page-slide-right overflow-hidden border-l border-gray-100">
@@ -22,7 +22,7 @@ export default function ConfidentialitePage() {
               <svg className="w-8 h-8 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h2 className="text-xl font-bold text-gray-900 mb-2">Sécurité et Données</h2>
-            <p className="text-gray-500 font-medium pb-24 md:pb-0">Gère ici tout ce qui concerne tes données personnelles et la confidentialité liées à l'application.</p>
+            <p className="text-gray-500 font-medium pb-24 md:pb-0">Gère ici tout ce qui concerne tes données personnelles et la confidentialité liées à l&apos;application.</p>
           </div>
         </main>
       </div>

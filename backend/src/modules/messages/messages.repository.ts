@@ -1,5 +1,12 @@
 import prisma from '../../infra/prisma/client.js';
 
+export async function findUserProfile(userId: string) {
+  return prisma.userProfile.findUnique({
+    where: { user_id: userId },
+    select: { user_id: true, full_name: true, avatar_url: true },
+  });
+}
+
 export async function findConversationsForUser(userId: string) {
   const participations = await prisma.conversationParticipant.findMany({
     where: { user_id: userId },

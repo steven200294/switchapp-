@@ -1,5 +1,4 @@
 import * as repo from './messages.repository.js';
-import prisma from '../../infra/prisma/client.js';
 import { AppError } from '../../shared/errors/AppError.js';
 import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js';
 
@@ -8,12 +7,7 @@ export async function listConversations(userId: string) {
 
   return Promise.all(
     convos.map(async ({ conversation, otherUserId }) => {
-      const otherUser = otherUserId
-        ? await prisma.userProfile.findUnique({
-            where: { user_id: otherUserId },
-            select: { user_id: true, full_name: true, avatar_url: true },
-          })
-        : null;
+      const otherUser = otherUserId ? await repo.findUserProfile(otherUserId) : null;
       return {
         id: conversation.id,
         last_message_at: conversation.last_message_at,

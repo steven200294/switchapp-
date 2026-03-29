@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, type PanInfo } from "framer-motion";
-import { SWIPE_THRESHOLD, FALLBACK_COVER_HQ } from "@/shared/constants/theme";
+import { SWIPE_THRESHOLD, resolveStorageUrl } from "@/shared/constants/theme";
 import type { DeckProperty } from "../types/swipe.types";
 import SwipeOverlays from "./SwipeOverlays";
 import SwipeCardInfo from "./SwipeCardInfo";
@@ -22,7 +22,7 @@ export default function SwipeCard({ property, isTop, stackIndex, onSwipe, onTap 
 
   const scale = 1 - stackIndex * 0.05;
   const translateY = stackIndex * 16;
-  const coverImg = property.cover_image || property.photos[0] || FALLBACK_COVER_HQ;
+  const coverImg = resolveStorageUrl(property.cover_image || property.photos[0] || "");
 
   function handleDragEnd(_: unknown, info: PanInfo) {
     if (info.offset.x > SWIPE_THRESHOLD) onSwipe("like");
@@ -31,7 +31,7 @@ export default function SwipeCard({ property, isTop, stackIndex, onSwipe, onTap 
 
   return (
     <motion.div
-      className="absolute inset-x-0 top-0 bottom-0 rounded-[2rem] shadow-xl overflow-hidden will-change-transform cursor-grab active:cursor-grabbing"
+      className="absolute inset-x-0 top-0 bottom-0 rounded-4xl shadow-xl overflow-hidden will-change-transform cursor-grab active:cursor-grabbing"
       style={{
         zIndex: 30 - stackIndex,
         y: translateY,

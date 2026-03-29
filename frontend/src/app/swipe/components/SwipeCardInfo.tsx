@@ -1,6 +1,7 @@
 "use client";
 
 import { MapPin } from "@/shared/ui/icons";
+import UserAvatar from "@/shared/ui/UserAvatar";
 import type { DeckProperty } from "../types/swipe.types";
 
 interface SwipeCardInfoProps {
@@ -9,7 +10,7 @@ interface SwipeCardInfoProps {
 
 export default function SwipeCardInfo({ property }: SwipeCardInfoProps) {
   return (
-    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8 text-white">
+    <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8 text-white">
       <div className="flex items-end justify-between w-full">
         <div className="flex-1 pr-4">
           <div className="flex items-center gap-2 mb-1">
@@ -30,19 +31,7 @@ export default function SwipeCardInfo({ property }: SwipeCardInfoProps) {
 
         {property.owner && (
           <div className="shrink-0 flex flex-col items-center">
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-white shadow-lg mb-1.5 bg-gray-600 flex items-center justify-center">
-              {property.owner.avatar_url ? (
-                <img
-                  src={property.owner.avatar_url}
-                  alt={property.owner.full_name || ""}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <span className="text-body-lg font-bold text-white">
-                  {(property.owner.full_name || "?")[0]}
-                </span>
-              )}
-            </div>
+            <UserAvatar avatarUrl={property.owner.avatar_url} name={property.owner.full_name} size="lg" className="border-2 border-white shadow-lg mb-1.5" />
             <span className="text-caption font-bold">
               {property.owner.full_name?.split(" ")[0] || ""}
             </span>

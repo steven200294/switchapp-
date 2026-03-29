@@ -2,10 +2,9 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { useAuthStore } from "@/shared/stores/auth.store";
-import { FALLBACK_COVER_HQ } from "@/shared/constants/theme";
 import { useProperty } from "@/app/explorer/hooks/useProperties";
-import { useAddFavorite } from "@/app/favoris/hooks/useFavorites";
-import PropertyHero from "@/app/explorer/components/PropertyHero";
+import { useFavorites, useAddFavorite, useRemoveFavorite } from "@/app/favoris/hooks/useFavorites";
+import PropertyImageCarousel from "@/app/explorer/components/PropertyImageCarousel";
 import PropertyInfo from "@/app/explorer/components/PropertyInfo";
 import PropertyOwnerCard from "@/app/explorer/components/PropertyOwnerCard";
 import PropertyFeatures from "@/app/explorer/components/PropertyFeatures";
@@ -17,7 +16,10 @@ export default function PropertyDetailPage() {
   const { isLoggedIn } = useAuthStore();
   const id = params.id as string;
   const { data: property, isLoading } = useProperty(id);
-  const favMutation = useAddFavorite();
+  const { data: favorites } = useFavorites(isLoggedIn);
+  const addFav = useAddFavorite();
+  const removeFav = useRemoveFavorite();
+  const isFavorited = favorites?.some((f: { property_id: string }) => f.property_id === id) ?? false;
 
   if (isLoading) {
     return (
@@ -38,15 +40,21 @@ export default function PropertyDetailPage() {
     );
   }
 
-  const coverImg = property.cover_image || property.photos[0] || FALLBACK_COVER_HQ;
+  const photos = [
+    ...(property.cover_image ? [property.cover_image] : []),
+    ...property.photos.filter((p) => p !== property.cover_image),
+  ].filter(Boolean);
 
   return (
     <div className="min-h-screen bg-white">
-      <PropertyHero
-        coverImg={coverImg}
+      <PropertyImageCarousel
+        photos={photos}
         onBack={() => router.back()}
-        onFavorite={() => isLoggedIn && favMutation.mutate(id)}
-        isFavorited={favMutation.isSuccess}
+        onFavorite={() => {
+          if (!isLoggedIn) return;
+          if (isFavorited) { removeFav.mutate(id); } else { addFav.mutate(id); }
+        }}
+        isFavorited={isFavorited}
       />
       <div className="w-full max-w-3xl mx-auto px-6 py-8 pb-32">
         <PropertyInfo property={property} />

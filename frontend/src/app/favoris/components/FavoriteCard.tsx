@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MapPin, Maximize, Bed, Heart } from "@/shared/ui/icons";
-import { FALLBACK_COVER } from "@/shared/constants/theme";
+import { resolveStorageUrl } from "@/shared/constants/theme";
 import type { FavoriteItem } from "../types/favorites.types";
 
 interface FavoriteCardProps {
@@ -10,12 +10,12 @@ interface FavoriteCardProps {
 
 export default function FavoriteCard({ fav, onRemove }: FavoriteCardProps) {
   const p = fav.property;
-  const coverImg = p.cover_image || p.photos[0] || FALLBACK_COVER;
+  const coverImg = resolveStorageUrl(p.cover_image || p.photos[0] || "");
 
   return (
     <div className="group relative">
       <Link href={`/explorer/${p.id}`} className="block">
-        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-3">
+        <div className="relative aspect-4/3 rounded-2xl overflow-hidden mb-3">
           <img
             src={coverImg}
             alt={p.title}

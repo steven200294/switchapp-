@@ -29,11 +29,11 @@ export default function SwipeDeck({
   return (
     <div className="relative w-full max-w-[92vw] md:max-w-[400px] h-[72vh] md:max-h-[600px] md:min-h-[450px] mb-8 lg:mb-12">
       {deckLoading ? (
-        <div className="absolute inset-0 bg-gray-100 rounded-[2rem] flex items-center justify-center animate-pulse">
+        <div className="absolute inset-0 bg-gray-100 rounded-4xl flex items-center justify-center animate-pulse">
           <div className="text-gray-400 font-bold text-title">Chargement...</div>
         </div>
       ) : isEmpty ? (
-        <div className="absolute inset-0 bg-gray-100 rounded-[2rem] border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-8">
+        <div className="absolute inset-0 bg-gray-100 rounded-4xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-8">
           <EmptyState
             icon={<Heart className="w-10 h-10 text-gray-400" />}
             title="Plus aucun logement !"

@@ -1,5 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { env } from '../../config/env.js';
+import { isAdminUser } from '../../modules/admin/admin.repository.js';
 import { AppError } from '../errors/AppError.js';
 import { ERROR_CODES, CLIENT_MESSAGES } from '../errors/errorCodes.js';
 
@@ -19,6 +21,23 @@ interface JwtPayload {
   role: string;
 }
 
+export function adminOnlyMiddleware(req: Request, _res: Response, next: NextFunction): void {
+  const userId = req.userId;
+  if (!userId) {
+    next(new AppError(ERROR_CODES.UNAUTHORIZED, 401, CLIENT_MESSAGES[ERROR_CODES.UNAUTHORIZED]));
+    return;
+  }
+  isAdminUser(userId)
+    .then((isAdmin) => {
+      if (!isAdmin) {
+        next(new AppError(ERROR_CODES.FORBIDDEN, 403, CLIENT_MESSAGES[ERROR_CODES.FORBIDDEN]));
+        return;
+      }
+      next();
+    })
+    .catch(next);
+}
+
 export function authMiddleware(req: Request, _res: Response, next: NextFunction): void {
   try {
     const header = req.headers.authorization;
@@ -31,12 +50,7 @@ export function authMiddleware(req: Request, _res: Response, next: NextFunction)
     }
 
     const token = header.slice(7);
-    const secret = process.env.JWT_SECRET;
-    if (!secret) {
-      throw new Error('JWT_SECRET environment variable is required');
-    }
-
-    const decoded = jwt.verify(token, secret) as JwtPayload;
+    const decoded = jwt.verify(token, env.jwt.secret) as JwtPayload;
     req.userId = decoded.sub;
     req.userEmail = decoded.email;
     next();

@@ -15,7 +15,7 @@ export default function AdminSidebar() {
   return (
     <aside className="w-64 bg-white border-r border-gray-200 hidden md:flex flex-col shrink-0">
       <div className="p-6 border-b border-gray-200">
-        <h1 className="text-xl font-bold bg-gradient-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
+        <h1 className="text-xl font-bold bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
           SwitchAdmin
         </h1>
       </div>
@@ -26,7 +26,7 @@ export default function AdminSidebar() {
             href={item.href}
             className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
               pathname === item.href
-                ? "bg-gradient-to-r from-blue-50 to-purple-50 text-gray-900"
+                ? "bg-linear-to-r from-blue-50 to-purple-50 text-gray-900"
                 : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
             }`}
           >
@@ -50,7 +50,7 @@ export function AdminMobileNav() {
   return (
     <>
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
-        <h1 className="text-lg font-bold bg-gradient-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
+        <h1 className="text-lg font-bold bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
           SwitchAdmin
         </h1>
         <Link href="/" className="text-sm text-gray-500 hover:text-gray-900">← Site</Link>

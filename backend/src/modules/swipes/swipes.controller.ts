@@ -1,21 +1,10 @@
 import type { Request, Response, NextFunction } from 'express';
-import { z } from 'zod';
+import { env } from '../../config/env.js';
 import * as swipesService from './swipes.service.js';
-import { AppError } from '../../shared/errors/AppError.js';
-import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js';
-
-const swipeSchema = z.object({
-  property_id: z.string().uuid(),
-  action: z.enum(['like', 'nope', 'super_like']),
-});
 
 export async function recordSwipe(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const parsed = swipeSchema.safeParse(req.body);
-    if (!parsed.success) {
-      throw new AppError(ERROR_CODES.VALIDATION, 400, CLIENT_MESSAGES[ERROR_CODES.VALIDATION], parsed.error.message);
-    }
-    const result = await swipesService.recordSwipe(req.userId!, parsed.data.property_id, parsed.data.action);
+    const result = await swipesService.recordSwipe(req.userId!, req.body.property_id, req.body.action);
     res.status(201).json({ data: result });
   } catch (err) { next(err); }
 }
@@ -29,7 +18,10 @@ export async function undo(req: Request, res: Response, next: NextFunction): Pro
 
 export async function getDeck(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const limit = Math.min(parseInt(req.query.limit as string) || 20, 50);
+    const limit = Math.min(
+      parseInt(req.query.limit as string) || env.pagination.defaultLimit,
+      env.pagination.maxLimit,
+    );
     const deck = await swipesService.getDeck(req.userId!, limit);
     res.json({ data: deck });
   } catch (err) { next(err); }

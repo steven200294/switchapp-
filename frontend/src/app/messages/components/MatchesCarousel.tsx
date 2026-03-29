@@ -1,13 +1,16 @@
 "use client";
 
-import type { MockMatch, MockConversation } from "../types/messages.types";
+import { resolveStorageUrl } from "@/shared/constants/theme";
+import type { ConversationThread, MatchListItem } from "../types/messages.types";
+import { matchToConversationThread } from "../utils/conversationDisplay";
 
 interface MatchesCarouselProps {
-  matches: MockMatch[];
-  onSelectMatch: (conv: MockConversation) => void;
+  matches: MatchListItem[];
+  onSelectMatch: (conv: ConversationThread) => void;
+  isLoading?: boolean;
 }
 
-export default function MatchesCarousel({ matches, onSelectMatch }: MatchesCarouselProps) {
+export default function MatchesCarousel({ matches, onSelectMatch, isLoading }: MatchesCarouselProps) {
   return (
     <div className="mb-10">
       <div className="flex items-center gap-2 mb-5">
@@ -18,34 +21,39 @@ export default function MatchesCarousel({ matches, onSelectMatch }: MatchesCarou
           width={28}
           height={28}
         />
-        <span className="w-5 h-5 rounded-full bg-gradient-to-r from-brand-cyan to-brand-purple flex items-center justify-center text-white text-body-xs font-black">
+        <span className="w-5 h-5 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple flex items-center justify-center text-white text-body-xs font-black">
           {matches.length}
         </span>
       </div>
+      {isLoading && matches.length === 0 ? (
+        <p className="text-body text-gray-400 mb-4">Chargement des matchs…</p>
+      ) : null}
+      {!isLoading && matches.length === 0 ? (
+        <p className="text-body text-gray-400 mb-4">Aucun nouveau match pour le moment.</p>
+      ) : null}
       <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 md:-mx-8 md:px-8 scrollbar-hide">
         {matches.map((match) => (
           <button
             key={match.id}
             type="button"
             className="flex flex-col items-center gap-2 shrink-0 cursor-pointer hover:scale-105 transition-transform"
-            onClick={() =>
-              onSelectMatch({
-                id: match.id,
-                name: match.name,
-                avatar: match.avatar,
-                lastMessage: "Envoyez le premier message !",
-                time: "À l'instant",
-                unread: false,
-                status: "",
-              })
-            }
+            onClick={() => {
+              const thread = matchToConversationThread(match);
+              if (thread) onSelectMatch(thread);
+            }}
           >
-            <div className="w-20 h-20 rounded-full overflow-hidden p-[2.5px] bg-gradient-to-r from-brand-cyan to-brand-purple">
+            <div className="w-20 h-20 rounded-full overflow-hidden p-[2.5px] bg-linear-to-r from-brand-cyan to-brand-purple">
               <div className="w-full h-full rounded-full overflow-hidden border-2 border-white">
-                <img src={match.avatar} alt={match.name} className="w-full h-full object-cover" />
+                <img
+                  src={resolveStorageUrl(match.otherUser?.avatar_url ?? "", "avatars")}
+                  alt={match.otherUser?.full_name ?? "Match"}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
-            <span className="text-body-sm font-semibold text-gray-800">{match.name}</span>
+            <span className="text-body-sm font-semibold text-gray-800">
+              {match.otherUser?.full_name ?? "Utilisateur"}
+            </span>
           </button>
         ))}
       </div>

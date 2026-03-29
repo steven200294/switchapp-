@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { MessageCircle } from "@/shared/ui/icons";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
@@ -9,11 +9,25 @@ import ChatWindow from "@/app/messages/components/ChatWindow";
 import MatchesCarousel from "@/app/messages/components/MatchesCarousel";
 import ConversationList from "@/app/messages/components/ConversationList";
 import EmptyChatPlaceholder from "@/app/messages/components/EmptyChatPlaceholder";
-import { MOCK_MATCHES, MOCK_CONVERSATIONS } from "@/app/messages/constants/messages.constants";
-import type { MockConversation } from "@/app/messages/types/messages.types";
+import { useConversations } from "@/app/messages/hooks/useMessages";
+import { useMatches } from "@/app/messages/hooks/useMatches";
+import type { ConversationThread } from "@/app/messages/types/messages.types";
+import { conversationItemToThread } from "@/app/messages/utils/conversationDisplay";
 
 export default function MessagesPage() {
-  const [activeChat, setActiveChat] = useState<MockConversation | null>(null);
+  const [activeChat, setActiveChat] = useState<ConversationThread | null>(null);
+  const { data: conversationsData, isPending: convosPending } = useConversations(true);
+  const { data: matchesData, isPending: matchesPending } = useMatches(true);
+
+  const conversationThreads = useMemo(
+    () => (conversationsData ?? []).map(conversationItemToThread),
+    [conversationsData],
+  );
+
+  const newMatches = useMemo(() => {
+    const all = matchesData ?? [];
+    return all.filter((m) => m.conversation);
+  }, [matchesData]);
 
   return (
     <AuthGate
@@ -39,11 +53,16 @@ export default function MessagesPage() {
             </div>
 
             <div className="px-6 md:px-8 py-4">
-              <MatchesCarousel matches={MOCK_MATCHES} onSelectMatch={setActiveChat} />
+              <MatchesCarousel
+                matches={newMatches}
+                onSelectMatch={setActiveChat}
+                isLoading={matchesPending}
+              />
               <ConversationList
-                conversations={MOCK_CONVERSATIONS}
+                conversations={conversationThreads}
                 activeChat={activeChat}
                 onSelect={setActiveChat}
+                isLoading={convosPending}
               />
             </div>
           </div>

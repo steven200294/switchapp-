@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function InformationsPage() {
   return (
-    <div className="fixed inset-0 z-[100] overflow-hidden">
+    <div className="fixed inset-0 z-100 overflow-hidden">
       <Link href="/profil/parametres" scroll={false} className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fade-in" />
       
       <div className="absolute inset-x-0 bottom-0 md:inset-0 md:left-auto md:w-full md:max-w-2xl h-full bg-white shadow-2xl flex flex-col md:animate-page-slide-right animate-page-slide-up overflow-hidden">
@@ -42,7 +42,7 @@ export default function InformationsPage() {
               <label className="text-body font-bold text-gray-900 mb-2">Adresse postale</label>
               <input type="text" defaultValue="Paris, France" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-body-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 focus:border-brand-purple transition-all" />
               <p className="text-body-sm text-gray-500 font-medium mt-3 leading-relaxed">
-                Votre adresse exacte ne sera jamais partagée avec les autres utilisateurs avant la validation concrète d'un Switch.
+                Votre adresse exacte ne sera jamais partagée avec les autres utilisateurs avant la validation concrète d&apos;un Switch.
               </p>
             </div>
             

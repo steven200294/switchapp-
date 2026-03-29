@@ -1,14 +1,17 @@
 import { Router } from 'express';
-import { authMiddleware } from '../../shared/middlewares/auth.middleware.js';
-import * as adminController from './admin.controller.js';
+import { authMiddleware, adminOnlyMiddleware } from '../../shared/middlewares/auth.middleware.js';
+import { validate } from '../../shared/middlewares/validate.js';
+import { uuidParamSchema } from '../../shared/schemas/pagination.schema.js';
+import * as ctrl from './admin.controller.js';
 
 const router = Router();
 
 router.use(authMiddleware);
+router.use(adminOnlyMiddleware);
 
-router.get('/dashboard', adminController.getDashboard);
-router.get('/users', adminController.listUsers);
-router.get('/users/:id', adminController.getUserById);
-router.get('/properties', adminController.listProperties);
+router.get('/dashboard', ctrl.getDashboard);
+router.get('/users', ctrl.listUsers);
+router.get('/users/:id', validate(uuidParamSchema, 'params'), ctrl.getUserById);
+router.get('/properties', ctrl.listProperties);
 
 export default router;

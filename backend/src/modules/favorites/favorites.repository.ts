@@ -1,5 +1,9 @@
 import prisma from '../../infra/prisma/client.js';
 
+export async function findPropertyById(id: string) {
+  return prisma.property.findUnique({ where: { id } });
+}
+
 export async function findByUserId(userId: string) {
   return prisma.favorite.findMany({
     where: { user_id: userId },

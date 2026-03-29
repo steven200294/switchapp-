@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ProfilPublicPage() {
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col justify-end items-center">
+    <div className="fixed inset-0 z-100 flex flex-col justify-end items-center">
       <Link href="/profil" scroll={false} className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fade-in" />
       
       <div className="relative w-full md:max-w-xl h-[90vh] md:h-[80vh] bg-white rounded-t-3xl md:rounded-3xl md:mb-10 shadow-2xl flex flex-col animate-page-slide-up overflow-hidden">
@@ -26,7 +26,7 @@ export default function ProfilPublicPage() {
               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?fit=crop&w=200&h=200&q=80" alt="Avatar" className="w-full h-full rounded-full object-cover" />
             </div>
             <h2 className="text-xl font-bold text-gray-900 mb-2">Ton Profil Public</h2>
-            <p className="text-gray-500 font-medium">C'est ici que tu pourras prévisualiser ton profil pour les autres usagers de SwitchAppart.</p>
+            <p className="text-gray-500 font-medium">C&apos;est ici que tu pourras prévisualiser ton profil pour les autres usagers de SwitchAppart.</p>
           </div>
         </main>
       </div>

@@ -1,3 +1,4 @@
+import React from "react";
 import type { IconProps } from "./types";
 
 const S = 2;
@@ -40,4 +41,26 @@ export function Coffee(p: IconProps) {
 
 export function Flame(p: IconProps) {
   return <svg {...base(p)}><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /></svg>;
+}
+
+const AMENITY_MAP: Record<string, (p: IconProps) => React.JSX.Element> = {
+  wifi: Wifi, internet: Wifi,
+  parking: ParkingCircle,
+  clim: Snowflake,
+  tv: Tv, télé: Tv,
+  "machine à laver": WashingMachine, lave: WashingMachine,
+  frigo: Refrigerator, réfrigérateur: Refrigerator,
+  micro: Microwave, "micro-ondes": Microwave,
+  café: Coffee, coffee: Coffee,
+  chauffage: Flame,
+};
+
+function FallbackIcon(p: IconProps) {
+  return <svg {...base(p)}><path d="M8 3H5a2 2 0 0 0-2 2v3" /><path d="M21 8V5a2 2 0 0 0-2-2h-3" /><path d="M3 16v3a2 2 0 0 0 2 2h3" /><path d="M16 21h3a2 2 0 0 0 2-2v-3" /></svg>;
+}
+
+export function AmenityIcon({ name, className = "w-5 h-5 text-gray-500" }: { name: string; className?: string }) {
+  const lower = name.toLowerCase();
+  const Icon = Object.entries(AMENITY_MAP).find(([key]) => lower.includes(key))?.[1] ?? FallbackIcon;
+  return <Icon className={className} />;
 }

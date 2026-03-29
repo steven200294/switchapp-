@@ -1,67 +1,57 @@
-'use client';
+"use client";
 
-import { useQuery } from '@tanstack/react-query';
-import { useRouter } from 'next/navigation';
-import { QUERY_KEYS } from '@/shared/constants/queryKeys';
-import { getAdminUsers } from '@/app/admin/services/admin.service';
-import type { AuthUser } from '@/shared/auth/types/auth.types';
+import { useQuery } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
+import { QUERY_KEYS } from "@/shared/constants/queryKeys";
+import { getAdminUsers, type AdminUser } from "@/app/admin/services/admin.service";
+import AdminUserTableRow from "@/app/admin/components/AdminUserTableRow";
 
 export default function AdminUsersPage() {
   const router = useRouter();
-  const { data: users, isLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: QUERY_KEYS.ADMIN_USERS,
     queryFn: getAdminUsers,
   });
 
+  const users: AdminUser[] = data?.users ?? [];
+
   return (
     <div>
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">Users</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">
+        Users <span className="text-gray-400 font-normal text-lg">({data?.total ?? 0})</span>
+      </h2>
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         {isLoading ? (
-          <div className="p-6">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="h-12 bg-gray-100 rounded mb-2 animate-pulse" />
+          <div className="p-6 space-y-3">
+            {[1, 2, 3, 5, 6, 7].map((i) => (
+              <div key={i} className="h-14 bg-gray-100 rounded-xl animate-pulse" />
             ))}
           </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead>
+              <thead className="bg-gray-50">
                 <tr className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  <th className="px-6 py-3">Email</th>
-                  <th className="px-6 py-3">Name</th>
-                  <th className="px-6 py-3">City</th>
-                  <th className="px-6 py-3">Verified</th>
-                  <th className="px-6 py-3">Joined</th>
+                  <th className="px-4 py-3">User</th>
+                  <th className="px-4 py-3">City</th>
+                  <th className="px-4 py-3">Email</th>
+                  <th className="px-4 py-3">Last login</th>
+                  <th className="px-4 py-3">Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {(users ?? []).map((user: AuthUser) => (
-                  <tr
-                    key={user.id}
-                    onClick={() => router.push(`/admin/users/${user.id}`)}
-                    className="hover:bg-gray-50 transition-colors cursor-pointer"
-                  >
-                    <td className="px-6 py-4 text-sm text-gray-900">{user.email}</td>
-                    <td className="px-6 py-4 text-sm text-gray-600">{user.full_name ?? '-'}</td>
-                    <td className="px-6 py-4 text-sm text-gray-600">{user.city ?? '-'}</td>
-                    <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                        user.verified ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600'
-                      }`}>
-                        {user.verified ? 'Yes' : 'No'}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-500">
-                      {user.created_at ? new Date(user.created_at).toLocaleDateString() : '-'}
-                    </td>
-                  </tr>
+                {users.map((user) => (
+                  <AdminUserTableRow
+                    key={user.user_id}
+                    user={user}
+                    onNavigate={(userId) => router.push(`/admin/users/${userId}`)}
+                  />
                 ))}
               </tbody>
             </table>
-            {(users ?? []).length === 0 && (
-              <p className="text-center text-gray-400 py-12">No users found.</p>
+            {users.length === 0 && (
+              <p className="text-center text-gray-400 py-12">No users.</p>
             )}
           </div>
         )}

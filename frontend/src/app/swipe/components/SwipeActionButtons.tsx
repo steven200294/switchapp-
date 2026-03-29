@@ -30,7 +30,7 @@ export default function SwipeActionButtons({ onNope, onLike, onSuperLike, onUndo
 
       <button
         onClick={onLike}
-        className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-gradient-to-tr from-brand-cyan to-brand-purple rounded-full shadow-xl text-white active:scale-95 hover:-translate-y-1 transition-all duration-200 shadow-brand-purple/40"
+        className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-linear-to-tr from-brand-cyan to-brand-purple rounded-full shadow-xl text-white active:scale-95 hover:-translate-y-1 transition-all duration-200 shadow-brand-purple/40"
       >
         <Heart className="w-8 h-8 md:w-10 md:h-10 fill-white" />
       </button>

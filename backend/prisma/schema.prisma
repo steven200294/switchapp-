@@ -237,6 +237,13 @@ model UserSwitchPass {
   @@schema("public")
 }
 
+model AdminUser {
+  user_id String @id @db.Uuid
+
+  @@map("admin_users")
+  @@schema("public")
+}
+
 model Notification {
   id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   user_id    String    @db.Uuid

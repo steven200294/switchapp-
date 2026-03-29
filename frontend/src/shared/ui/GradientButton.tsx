@@ -14,7 +14,7 @@ const sizeClasses = {
 export default function GradientButton({ children, size = "md", className = "", ...props }: GradientButtonProps) {
   return (
     <button
-      className={`bg-gradient-to-r from-brand-cyan to-brand-purple text-white font-bold rounded-full shadow-lg hover:scale-105 transition-transform disabled:opacity-60 ${sizeClasses[size]} ${className}`}
+      className={`bg-linear-to-r from-brand-cyan to-brand-purple text-white font-bold rounded-full shadow-lg hover:scale-105 transition-transform disabled:opacity-60 ${sizeClasses[size]} ${className}`}
       {...props}
     >
       {children}

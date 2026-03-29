@@ -1,8 +1,5 @@
 import type { Request, Response, NextFunction } from 'express';
-import { z } from 'zod';
 import * as messagesService from './messages.service.js';
-import { AppError } from '../../shared/errors/AppError.js';
-import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js';
 
 export async function listConversations(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
@@ -20,17 +17,9 @@ export async function getMessages(req: Request, res: Response, next: NextFunctio
   } catch (err) { next(err); }
 }
 
-const sendMessageSchema = z.object({
-  content: z.string().min(1).max(5000),
-});
-
 export async function sendMessage(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const parsed = sendMessageSchema.safeParse(req.body);
-    if (!parsed.success) {
-      throw new AppError(ERROR_CODES.VALIDATION, 400, CLIENT_MESSAGES[ERROR_CODES.VALIDATION], parsed.error.message);
-    }
-    const message = await messagesService.sendMessage(req.params.id as string, req.userId!, parsed.data.content);
+    const message = await messagesService.sendMessage(req.params.id as string, req.userId!, req.body.content);
     res.status(201).json({ data: message });
   } catch (err) { next(err); }
 }

@@ -20,7 +20,7 @@ export default function ChatInput() {
         />
         <button
           type="button"
-          className="w-9 h-9 rounded-full bg-gradient-to-r from-brand-cyan to-brand-purple text-white flex items-center justify-center shrink-0 ml-2 shadow-sm hover:scale-105 transition-transform active:scale-95"
+          className="w-9 h-9 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple text-white flex items-center justify-center shrink-0 ml-2 shadow-sm hover:scale-105 transition-transform active:scale-95"
           aria-label="Envoyer"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 ml-0.5">

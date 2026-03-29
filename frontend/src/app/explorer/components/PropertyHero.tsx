@@ -18,7 +18,7 @@ export default function PropertyHero({
   return (
     <div className="relative w-full h-[45vh] md:h-[50vh] min-h-[350px]">
       <img src={coverImg} alt="" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-gray-900/20 to-transparent" />
 
       <div className="absolute top-0 left-0 right-0 flex items-center justify-between p-4 pt-12 md:pt-6">
         <button

@@ -33,7 +33,7 @@ export default function BottomNav() {
       </svg>
 
       <div
-        className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex items-center justify-around pt-3 px-2 z-[100] md:hidden overflow-visible will-change-transform"
+        className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex items-center justify-around pt-3 px-2 z-100 md:hidden overflow-visible will-change-transform"
         style={{
           paddingBottom: "calc(16px + env(safe-area-inset-bottom))",
           transform: "translateZ(0)",
@@ -51,7 +51,7 @@ export default function BottomNav() {
                 href={tab.href}
                 className="flex flex-col items-center gap-1 min-w-16 relative"
               >
-                <div className="w-[66px] h-[66px] rounded-full bg-gradient-to-br from-brand-cyan to-brand-purple flex items-center justify-center shadow-[0_8px_16px_rgba(138,43,226,0.3)] absolute -top-[34px] left-1/2 -translate-x-1/2 z-[100]">
+                <div className="w-[66px] h-[66px] rounded-full bg-linear-to-br from-brand-cyan to-brand-purple flex items-center justify-center shadow-[0_8px_16px_rgba(138,43,226,0.3)] absolute -top-[34px] left-1/2 -translate-x-1/2 z-100">
                   <SwipeIcon />
                 </div>
                 <div className="h-6 w-[66px]" />
@@ -74,7 +74,7 @@ export default function BottomNav() {
               <span
                 className={`text-[11px] font-medium tracking-wide ${
                   isActive
-                    ? "bg-gradient-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent font-bold"
+                    ? "bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent font-bold"
                     : "text-[#7A8A9E]"
                 }`}
               >

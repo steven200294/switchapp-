@@ -6,7 +6,7 @@ import { Heart } from "@/shared/ui/icons";
 export default function MatchOverlay({ onClose }: { onClose: () => void }) {
   return (
     <motion.div
-      className="fixed inset-0 z-[200] bg-gradient-to-br from-brand-cyan to-brand-purple flex flex-col items-center justify-center text-white"
+      className="fixed inset-0 z-200 bg-linear-to-br from-brand-cyan to-brand-purple flex flex-col items-center justify-center text-white"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}

@@ -46,14 +46,18 @@ After the PWA is live and stable, the next phase is **React Native** for native 
 ```
 switchapp-/
   frontend/           — Next.js 16 + React 19 + TailwindCSS 4 + TanStack Query + Zustand
+  admin/              — Separate Next.js admin CRM (own Dockerfile, subdomain in production)
   backend/            — Express.js + TypeScript + Prisma + PostgreSQL
   worker/             — Heavy job processor (BullMQ consumers)
+  gateway/            — Caddy reverse proxy (single local entry: web, API, admin, Grafana, storage)
+  monitoring/         — Prometheus, Loki, Grafana, Alloy configs and dashboards
   shared/             — DTOs, enums, validators, constants shared across apps
   docs/               — PRD and specs
   memory-abderrazaq.md — Abderrazaq's Claude memory (backend/infra context)
   memory-steven.md     — Steven's Claude memory (frontend context)
   docker-compose.yml
   CLAUDE.md
+  CHANGELOG.md        — Keep a Changelog; update on user-visible or infra changes
 ```
 
 ---
@@ -326,3 +330,28 @@ When doing architecture work:
 3. All code, comments, commits, and docs in **English**
 4. Keep `/api/v1` prefix stable
 5. Never commit `.env` files — use `.env.example`
+
+---
+
+## Documentation and releases
+
+- **`CHANGELOG.md`**: Update when behavior, features, or notable infra changes ship. Use [Keep a Changelog](https://keepachangelog.com/) structure; bump SemVer via root `scripts/bump-version.mjs` when cutting a release.
+- **Memory files**: Keep `memory-abderrazaq.md` / `memory-steven.md` aligned with current architecture after large batches (no secrets).
+
+---
+
+## Mock database (convention — when implemented)
+
+- Use **`DATABASE_MODE`** (`real` \| `mock`) plus **`DATABASE_URL_MOCK`** pointing at a second Postgres database (e.g. `switchapp_mock` on the same server).
+- Resolve the active Prisma URL in one place (`backend/src/config/env.ts` + Prisma client). Never hardcode two URLs in repositories.
+- Mock seed must not touch production data; document seed commands in `backend/package.json` and `.env.example`.
+- **Auth schema remains sacred** — mock DB still mirrors `auth` + `public` expectations; do not truncate real Supabase-backed DBs from app code.
+
+---
+
+## AI compatibility score (convention — when implemented)
+
+- **Compatibility** compares the **logged-in user’s profile preferences** and **their own published property** (if any) against the **viewed property**; output is structured (score, common points, weak points, short recommendation).
+- Configure provider and model via environment (e.g. **`AI_PROVIDER`**, **`AI_MODEL`**, **`AI_API_KEY`**). Support swapping providers behind a small internal interface (OpenAI first; others optional).
+- **Never log or return raw API keys**; never send PII beyond what the product needs for the comparison. Log errors to Winston only; client gets generic messages on failure.
+- Expose a dedicated authenticated route under `/api/v1/...` with Zod validation; frontend uses a hook + service under `app/explorer/`.

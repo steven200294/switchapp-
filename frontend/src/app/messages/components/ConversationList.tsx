@@ -1,19 +1,21 @@
 "use client";
 
-import type { MockConversation } from "../types/messages.types";
+import type { ConversationThread } from "../types/messages.types";
 
 const FILTER_LABELS = ["Tous", "Non lus (1)", "Demandes (1)"] as const;
 
 interface ConversationListProps {
-  conversations: MockConversation[];
-  activeChat: MockConversation | null;
-  onSelect: (conv: MockConversation) => void;
+  conversations: ConversationThread[];
+  activeChat: ConversationThread | null;
+  onSelect: (conv: ConversationThread) => void;
+  isLoading?: boolean;
 }
 
 export default function ConversationList({
   conversations,
   activeChat,
   onSelect,
+  isLoading,
 }: ConversationListProps) {
   const inactiveTab =
     "px-5 py-2 min-w-max bg-white text-gray-700 border border-gray-200 text-body font-semibold rounded-full hover:bg-gray-50 transition-colors";
@@ -29,6 +31,12 @@ export default function ConversationList({
         ))}
       </div>
       <div className="flex flex-col">
+        {isLoading && conversations.length === 0 ? (
+          <p className="text-body text-gray-400 text-center py-10">Chargement de vos conversations…</p>
+        ) : null}
+        {!isLoading && conversations.length === 0 ? (
+          <p className="text-body text-gray-400 text-center py-10">Aucune conversation pour le moment.</p>
+        ) : null}
         {conversations.map((conv, index) => (
           <button
             key={conv.id}
@@ -43,7 +51,7 @@ export default function ConversationList({
                 <img src={conv.avatar} alt={conv.name} className="w-full h-full object-cover" />
               </div>
               {conv.unread && (
-                <div className="absolute top-0 right-0 w-3.5 h-3.5 bg-gradient-to-r from-brand-cyan to-brand-purple rounded-full border-2 border-white" />
+                <div className="absolute top-0 right-0 w-3.5 h-3.5 bg-linear-to-r from-brand-cyan to-brand-purple rounded-full border-2 border-white" />
               )}
             </div>
             <div className="flex-1 min-w-0 pr-2 pt-0.5">

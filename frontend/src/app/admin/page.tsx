@@ -2,44 +2,36 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "@/shared/constants/queryKeys";
-import { getAdminStats, getAdminUsers } from "@/app/admin/services/admin.service";
+import { getAdminStats } from "@/app/admin/services/admin.service";
 import StatCard from "@/app/admin/components/StatCard";
-import RecentUsersTable from "@/app/admin/components/RecentUsersTable";
-import type { AuthUser } from "@/shared/auth/types/auth.types";
 
 export default function AdminDashboard() {
-  const { data: stats, isLoading: statsLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: QUERY_KEYS.ADMIN_STATS,
     queryFn: getAdminStats,
   });
 
-  const { data: users, isLoading: usersLoading } = useQuery({
-    queryKey: QUERY_KEYS.ADMIN_USERS,
-    queryFn: getAdminUsers,
-  });
+  const stats = [
+    { label: "Total users", value: data?.userCount ?? 0 },
+    { label: "Email verified", value: data?.verifiedEmailCount ?? 0 },
+    { label: "With avatar", value: data?.withAvatarCount ?? 0 },
+    { label: "With property", value: data?.withPropertyCount ?? 0 },
+    { label: "Properties", value: data?.propertyCount ?? 0 },
+  ];
 
   return (
     <div>
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Dashboard</h2>
-
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-        {statsLoading ? (
-          [1, 2, 3].map((i) => (
-            <div key={i} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 animate-pulse">
-              <div className="h-4 bg-gray-200 rounded w-24 mb-3" />
-              <div className="h-8 bg-gray-200 rounded w-16" />
-            </div>
-          ))
-        ) : (
-          <>
-            <StatCard label="Total Users" value={stats?.totalUsers ?? 0} />
-            <StatCard label="Total Properties" value={stats?.totalProperties ?? 0} />
-            <StatCard label="Recent Signups (7d)" value={stats?.recentSignups ?? 0} />
-          </>
-        )}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        {isLoading
+          ? [1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="bg-white rounded-2xl border border-gray-100 p-6 animate-pulse">
+                <div className="h-4 bg-gray-200 rounded w-24 mb-3" />
+                <div className="h-8 bg-gray-200 rounded w-16" />
+              </div>
+            ))
+          : stats.map((s) => <StatCard key={s.label} label={s.label} value={s.value} />)}
       </div>
-
-      <RecentUsersTable users={(users ?? []) as AuthUser[]} isLoading={usersLoading} />
     </div>
   );
 }

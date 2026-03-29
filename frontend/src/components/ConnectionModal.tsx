@@ -49,7 +49,7 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
   }
 
   return (
-    <div className="fixed inset-0 z-[540] flex flex-col justify-end pointer-events-none">
+    <div className="fixed inset-0 z-540 flex flex-col justify-end pointer-events-none">
       <div
         className={`absolute inset-0 bg-black/40 transition-opacity duration-300 pointer-events-auto ${visible ? "opacity-100" : "opacity-0"}`}
         onClick={handleClose}
@@ -71,7 +71,7 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
           </div>
           {error && <div className="w-full bg-red-50 border border-red-100 text-red-600 text-[14px] font-medium rounded-2xl px-4 py-3 mb-4 text-center">{error}</div>}
           <AuthFormInputs activeTab={activeTab} email={email} setEmail={setEmail} password={password} setPassword={setPassword} confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword} fullName={fullName} setFullName={setFullName} />
-          <button type="submit" disabled={loading} className="w-full bg-gradient-to-r from-[#00BFFF] to-[#8A2BE2] text-white font-black rounded-full py-4 text-[16px] transition-opacity hover:opacity-90 shadow-md mb-8 flex items-center justify-center gap-2 disabled:opacity-60">
+          <button type="submit" disabled={loading} className="w-full bg-linear-to-r from-brand-cyan to-brand-purple text-white font-black rounded-full py-4 text-[16px] transition-opacity hover:opacity-90 shadow-md mb-8 flex items-center justify-center gap-2 disabled:opacity-60">
             {loading ? <><Loader2 className="w-5 h-5 animate-spin" /><span>{activeTab === "signin" ? "Connexion..." : "Création..."}</span></> : activeTab === "signin" ? "Se connecter" : "Créer un compte"}
           </button>
           <SocialLoginButtons />
