@@ -1,6 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
 import { listQuerySchema } from './properties.schemas.js';
 import * as propertiesService from './properties.service.js';
+import * as compatibilityService from '../compatibility/compatibility.service.js';
 
 export async function list(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
@@ -14,6 +15,16 @@ export async function getById(req: Request, res: Response, next: NextFunction): 
   try {
     const property = await propertiesService.getById(req.params.id as string);
     res.json({ data: property });
+  } catch (err) { next(err); }
+}
+
+export async function getCompatibility(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const data = await compatibilityService.getCompatibilityForProperty(
+      req.userId!,
+      req.params.id as string,
+    );
+    res.json({ data });
   } catch (err) { next(err); }
 }
 

@@ -7,9 +7,15 @@ versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-### Planned
-- Optional mock database (`DATABASE_MODE` / `DATABASE_URL_MOCK`) with rich seed data for demos
-- AI-powered property compatibility score (viewer preferences + own listing vs viewed property) with configurable provider and model via environment
+### Added
+- **Mock database** (`DATABASE_MODE=mock`, `DATABASE_URL_MOCK`): separate `switchapp_mock` database auto-created by Docker init; Prisma client switches at runtime via `env.database.effectiveUrl`
+- **Mock seed** (`backend/prisma/seed-mock.ts`): 7 users (1 admin + 6 fictifs), 7 properties across 6 villes, 3 matches, 3 conversations, 11 messages, 11 swipes, 5 favorites; scripts `npm run seed:mock` / `db:migrate:mock`
+- **Mock images** (`scripts/seed-mock-images.sh`): downloads 7 Unsplash apartment photos and uploads to MinIO `properties/mock/`
+- **Admin user**: `abderrazaq@mail.com` / `admin123` with `admin_users` table entry and verified profile
+- **AI compatibility endpoint** — GET `/api/v1/properties/:id/compatibility` (authenticated): GPT-4o-mini compares viewer preferences + own listing to viewed property; returns score 0–100, common/weak points, recommendation in French
+- **AI configuration**: `AI_PROVIDER`, `AI_MODEL`, `AI_API_KEY` env vars (default `openai` / `gpt-4o-mini`)
+- Explorer **property detail**: compatibility card (gauge, strengths, gaps, recommendation) displayed when logged in
+- **Automated smoke tests** (`scripts/test-mock-plan.sh`): 28-test bash suite covering auth, properties, images, matches, conversations, AI compatibility, edge cases
 
 ## [0.2.0] - 2026-03-30
 

@@ -10,6 +10,14 @@ function optional(key: string, fallback: string): string {
   return process.env[key] ?? fallback;
 }
 
+function databaseEffectiveUrl(): string {
+  const mode = optional('DATABASE_MODE', 'real');
+  if (mode === 'mock') {
+    return required('DATABASE_URL_MOCK');
+  }
+  return required('DATABASE_URL');
+}
+
 export const env = {
   nodeEnv: optional('NODE_ENV', 'development'),
   isDev: optional('NODE_ENV', 'development') === 'development',
@@ -18,7 +26,11 @@ export const env = {
   frontendUrl: optional('FRONTEND_URL', 'http://localhost:3001'),
 
   database: {
+    /** Prisma schema / CLI default */
     url: required('DATABASE_URL'),
+    mode: optional('DATABASE_MODE', 'real') as 'real' | 'mock',
+    /** Runtime DB (mock or real) */
+    effectiveUrl: databaseEffectiveUrl(),
   },
 
   jwt: {
@@ -49,5 +61,11 @@ export const env = {
     defaultLimit: 20,
     maxLimit: 50,
     adminDefaultLimit: 100,
+  },
+
+  ai: {
+    provider: optional('AI_PROVIDER', 'openai'),
+    model: optional('AI_MODEL', 'gpt-4o-mini'),
+    apiKey: process.env.AI_API_KEY ?? '',
   },
 } as const;

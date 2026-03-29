@@ -9,6 +9,8 @@ export const ERROR_CODES = {
   AUTH_INVALID_TOKEN: "AUTH_INVALID_TOKEN",
   AUTH_EXPIRED_TOKEN: "AUTH_EXPIRED_TOKEN",
   AUTH_INVALID_CREDENTIALS: "AUTH_INVALID_CREDENTIALS",
+  AI_NOT_CONFIGURED: "AI_NOT_CONFIGURED",
+  SERVICE_UNAVAILABLE: "SERVICE_UNAVAILABLE",
 } as const;
 
 export const CLIENT_MESSAGES: Record<string, string> = {
@@ -22,4 +24,6 @@ export const CLIENT_MESSAGES: Record<string, string> = {
   [ERROR_CODES.AUTH_INVALID_TOKEN]: "Invalid token",
   [ERROR_CODES.AUTH_EXPIRED_TOKEN]: "Token expired",
   [ERROR_CODES.AUTH_INVALID_CREDENTIALS]: "Invalid email or password",
+  [ERROR_CODES.AI_NOT_CONFIGURED]: "Compatibility service is not configured",
+  [ERROR_CODES.SERVICE_UNAVAILABLE]: "Service temporarily unavailable",
 };

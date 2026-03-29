@@ -9,6 +9,8 @@ import PropertyInfo from "@/app/explorer/components/PropertyInfo";
 import PropertyOwnerCard from "@/app/explorer/components/PropertyOwnerCard";
 import PropertyFeatures from "@/app/explorer/components/PropertyFeatures";
 import PropertyBottomBar from "@/app/explorer/components/PropertyBottomBar";
+import PropertyCompatibilityCard from "@/app/explorer/components/PropertyCompatibilityCard";
+import { useCompatibility } from "@/app/explorer/hooks/useCompatibility";
 
 export default function PropertyDetailPage() {
   const params = useParams();
@@ -16,6 +18,7 @@ export default function PropertyDetailPage() {
   const { isLoggedIn } = useAuthStore();
   const id = params.id as string;
   const { data: property, isLoading } = useProperty(id);
+  const compat = useCompatibility(id, isLoggedIn);
   const { data: favorites } = useFavorites(isLoggedIn);
   const addFav = useAddFavorite();
   const removeFav = useRemoveFavorite();
@@ -61,6 +64,13 @@ export default function PropertyDetailPage() {
       <div className="w-full max-w-3xl mx-auto px-6 py-8 pb-32">
         <PropertyInfo property={property} />
         {property.owner && <PropertyOwnerCard owner={property.owner} />}
+        {isLoggedIn && (
+          <PropertyCompatibilityCard
+            isLoading={compat.isPending}
+            error={compat.error instanceof Error ? compat.error : null}
+            data={compat.data}
+          />
+        )}
         {property.description && (
           <div className="mb-8">
             <h3 className="text-title font-bold text-gray-900 mb-3">À propos de ce logement</h3>

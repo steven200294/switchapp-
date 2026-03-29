@@ -26,7 +26,9 @@ Backend/infra engineer on SwitchAppart. Taking over from a previous dev who left
 - **Real users exist in Supabase** — must not lose auth/credentials on migration
 - Supabase project ref: `aakdzvvwhvmbpjpmbpep`
 - **CHANGELOG**: `CHANGELOG.md` follows Keep a Changelog; **0.2.0** documents admin, gateway, monitoring, explorer sections, icons, query/auth fixes.
-- **Roadmap (documented in `CLAUDE.md`)**: optional mock DB (`DATABASE_MODE` + `DATABASE_URL_MOCK`); AI compatibility score with configurable `AI_PROVIDER` / `AI_MODEL` / `AI_API_KEY` — not shipped until implemented.
+- **Mock DB (implemented)**: `DATABASE_MODE=mock` + `DATABASE_URL_MOCK` switches Prisma runtime to `switchapp_mock`; seeded with 7 users (1 admin `abderrazaq@mail.com`/`admin123`, 6 fictifs), 7 properties, 3 matches, 3 convos, images in MinIO `mock/`
+- **AI compatibility (implemented)**: GET `/api/v1/properties/:id/compatibility` — GPT-4o-mini scores viewer vs property; `AI_PROVIDER` / `AI_MODEL` / `AI_API_KEY` configurable via `.env`
+- **Smoke tests**: `scripts/test-mock-plan.sh` — 28 automated curl tests (auth, properties, images, matches, messages, AI, edge cases)
 
 **Architecture:**
 - `backend/` — Express.js + TypeScript + Prisma, flat module structure (all files in module root)
@@ -248,5 +250,13 @@ Use v4 class names: `bg-linear-to-*` (not `bg-gradient-to-*`), `shrink-0` (not `
 
 ### Infra and docs (2026-03-30)
 - Documented **0.2.0** in `CHANGELOG.md` (admin app, gateway, monitoring, explorer UX, icons, React Query auth behavior)
-- Extended **`CLAUDE.md`**: repo map (`admin/`, `gateway/`, `monitoring/`), changelog discipline, future mock DB + AI compatibility conventions
-- **Commit message** for documentation + release notes batch: `docs: changelog 0.2.0, CLAUDE rules, memory sync`
+- Extended **`CLAUDE.md`**: repo map (`admin/`, `gateway/`, `monitoring/`), changelog discipline, mock DB + AI compatibility conventions
+
+### Mock database & AI compatibility (2026-03-30)
+- Created `switchapp_mock` database (Docker init SQL + manual creation for existing volumes)
+- Seed script: 7 users (admin `abderrazaq@mail.com` / `admin123`, 6 mock users / `mock12345`), 7 properties (Paris, Lyon, Bordeaux, Marseille, Toulouse, Nice), 3 matches, 3 conversations, 11 messages, 11 swipes, 5 favorites
+- 7 Unsplash images downloaded and uploaded to MinIO via `scripts/seed-mock-images.sh`
+- `backend/src/modules/compatibility/` — AI module: provider (OpenAI), service (prompt builder), schemas (Zod validation of AI JSON output)
+- Frontend: `CompatibilityGauge`, `PropertyCompatibilityCard`, `useCompatibility` hook on property detail page
+- Fixed corrupted `migration.sql` (npm warning baked into line 1)
+- 28/28 automated smoke tests pass (`scripts/test-mock-plan.sh`)

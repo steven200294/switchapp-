@@ -18,6 +18,7 @@ export const ROUTES = {
     BASE: `${API_PREFIX}/properties`,
     SEARCH: `${API_PREFIX}/properties/search`,
     BY_ID: `${API_PREFIX}/properties/:id`,
+    compatibility: (id: string) => `${API_PREFIX}/properties/${id}/compatibility`,
   },
   SWIPES: {
     BASE: `${API_PREFIX}/swipes`,

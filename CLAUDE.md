@@ -340,18 +340,18 @@ When doing architecture work:
 
 ---
 
-## Mock database (convention — when implemented)
+## Mock database (implemented)
 
-- Use **`DATABASE_MODE`** (`real` \| `mock`) plus **`DATABASE_URL_MOCK`** pointing at a second Postgres database (e.g. `switchapp_mock` on the same server).
-- Resolve the active Prisma URL in one place (`backend/src/config/env.ts` + Prisma client). Never hardcode two URLs in repositories.
-- Mock seed must not touch production data; document seed commands in `backend/package.json` and `.env.example`.
-- **Auth schema remains sacred** — mock DB still mirrors `auth` + `public` expectations; do not truncate real Supabase-backed DBs from app code.
+- **`DATABASE_MODE`** (`real` \| `mock`) and **`DATABASE_URL_MOCK`**: resolved in `backend/src/config/env.ts`; Prisma client uses `env.database.effectiveUrl` in `backend/src/infra/prisma/client.ts`.
+- Docker Postgres init creates **`switchapp_mock`** via `backend/prisma/02-mock-database.sql` (existing volumes: create the DB manually once if missing).
+- Mock data: `backend/prisma/seed-mock.ts`, `npm run seed:mock` / `db:migrate:mock`; images: `scripts/seed-mock-images.sh` (Unsplash → MinIO). Documented in `.env.example`.
+- **Auth schema remains sacred** — never truncate real Supabase-backed DBs from app code.
 
 ---
 
-## AI compatibility score (convention — when implemented)
+## AI compatibility score (implemented)
 
-- **Compatibility** compares the **logged-in user’s profile preferences** and **their own published property** (if any) against the **viewed property**; output is structured (score, common points, weak points, short recommendation).
-- Configure provider and model via environment (e.g. **`AI_PROVIDER`**, **`AI_MODEL`**, **`AI_API_KEY`**). Support swapping providers behind a small internal interface (OpenAI first; others optional).
-- **Never log or return raw API keys**; never send PII beyond what the product needs for the comparison. Log errors to Winston only; client gets generic messages on failure.
-- Expose a dedicated authenticated route under `/api/v1/...` with Zod validation; frontend uses a hook + service under `app/explorer/`.
+- **GET `/api/v1/properties/:id/compatibility`** (auth): compares viewer **profile preferences** and **own published listing** (if any) to the **viewed property**; returns score, common/weak points, recommendation (module: `backend/src/modules/compatibility/`).
+- **`AI_PROVIDER`** (default `openai`), **`AI_MODEL`** (default `gpt-4o-mini`), **`AI_API_KEY`**: extend `compatibility.provider.ts` for other providers.
+- **Never log or return API keys**; failures return generic client messages; details in Winston only.
+- Frontend: `useCompatibility`, `PropertyCompatibilityCard` on `app/explorer/[id]/page.tsx`.

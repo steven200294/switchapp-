@@ -9,6 +9,12 @@ const router = Router();
 
 router.get('/', validate(listQuerySchema, 'query'), ctrl.list);
 router.get('/mine', authMiddleware, ctrl.myProperties);
+router.get(
+  '/:id/compatibility',
+  authMiddleware,
+  validate(uuidParamSchema, 'params'),
+  ctrl.getCompatibility,
+);
 router.get('/:id', validate(uuidParamSchema, 'params'), ctrl.getById);
 router.post('/', authMiddleware, validate(createPropertySchema), ctrl.create);
 router.put('/:id', authMiddleware, validate(uuidParamSchema, 'params'), validate(updatePropertySchema), ctrl.update);

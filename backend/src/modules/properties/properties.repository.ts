@@ -74,3 +74,10 @@ export async function remove(id: string) {
 export async function findByOwnerId(ownerId: string) {
   return prisma.property.findMany({ where: { owner_id: ownerId }, orderBy: { created_at: 'desc' } });
 }
+
+export async function findFirstPublishedByOwner(ownerId: string) {
+  return prisma.property.findFirst({
+    where: { owner_id: ownerId, published: true, status: 'published' },
+    orderBy: { created_at: 'desc' },
+  });
+}
