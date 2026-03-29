@@ -1,7 +1,7 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { Search } from "lucide-react";
+import { Search } from "@/shared/ui/icons";
 
 interface ExplorerSearchBarProps {
   searchCity: string;

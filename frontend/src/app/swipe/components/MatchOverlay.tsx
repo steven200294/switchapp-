@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart } from "@/shared/ui/icons";
 
 export default function MatchOverlay({ onClose }: { onClose: () => void }) {
   return (

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Globe, Menu, User } from "lucide-react";
+import { Globe, Menu, User } from "@/shared/ui/icons";
 import type { AuthUser } from "@/shared/auth/types/auth.types";
 
 type Props = {

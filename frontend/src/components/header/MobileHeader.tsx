@@ -1,4 +1,4 @@
-import { Search } from "lucide-react";
+import { Search } from "@/shared/ui/icons";
 
 type Props = {
   activeTab: "logements" | "utilisateurs";

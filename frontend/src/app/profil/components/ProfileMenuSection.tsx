@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight } from "@/shared/ui/icons";
 import type { ProfileMenuItem } from "../types/profile-menu-types";
 import ProfileMenuDesktopGrid from "./ProfileMenuDesktopGrid";
 

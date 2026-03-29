@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Search, SlidersHorizontal } from "lucide-react";
+import { Search, SlidersHorizontal } from "@/shared/ui/icons";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
 import { useProperties } from "@/app/explorer/hooks/useProperties";

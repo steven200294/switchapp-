@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart } from "@/shared/ui/icons";
 import EmptyState from "@/shared/ui/EmptyState";
 import type { DeckProperty } from "../types/swipe.types";
 import SwipeCard from "./SwipeCard";

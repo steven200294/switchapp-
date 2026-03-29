@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight, Crown } from "lucide-react";
+import { ChevronRight, Crown } from "@/shared/ui/icons";
 
 export default function PremiumBanner() {
   return (

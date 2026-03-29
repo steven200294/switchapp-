@@ -1,4 +1,4 @@
-import { Dog, Sofa } from "lucide-react";
+import { Dog, Sofa } from "@/shared/ui/icons";
 import type { Property } from "@/app/explorer/types/properties.types";
 import AmenityIcon from "@/shared/ui/AmenityIcon";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader2 } from "@/shared/ui/icons";
 import { loginUser, registerUser } from "@/shared/auth/services/auth.service";
 import { useAuthStore } from "@/shared/stores/auth.store";
 import DecorativeBubbles from "./connection/DecorativeBubbles";

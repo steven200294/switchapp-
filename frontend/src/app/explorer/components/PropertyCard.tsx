@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Maximize, Bed, Heart } from "lucide-react";
+import { MapPin, Maximize, Bed, Heart } from "@/shared/ui/icons";
 import { FALLBACK_COVER } from "@/shared/constants/theme";
 import type { Property } from "../types/properties.types";
 

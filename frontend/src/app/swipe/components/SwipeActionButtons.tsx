@@ -1,6 +1,6 @@
 "use client";
 
-import { X, Heart, Star, Undo2 } from "lucide-react";
+import { X, Heart, Star, Undo2 } from "@/shared/ui/icons";
 
 interface SwipeActionButtonsProps {
   onNope: () => void;

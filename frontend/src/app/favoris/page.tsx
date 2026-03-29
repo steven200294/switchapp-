@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart } from "lucide-react";
+import { Heart } from "@/shared/ui/icons";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
 import AuthGate from "@/shared/ui/AuthGate";

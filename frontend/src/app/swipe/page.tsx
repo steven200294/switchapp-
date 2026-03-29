@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { Heart } from "lucide-react";
+import { Heart } from "@/shared/ui/icons";
 import { useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";

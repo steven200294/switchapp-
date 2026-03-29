@@ -8,7 +8,7 @@ import ProfileCard from "@/app/profil/components/ProfileCard";
 import ProfileMenuSection, { type ProfileMenuItem } from "@/app/profil/components/ProfileMenuSection";
 import PremiumBanner from "@/app/profil/components/PremiumBanner";
 import { useAuthStore } from "@/shared/stores/auth.store";
-import { FileText, Gift, HelpCircle, Home, LogOut, Settings, Share2, Shield, UserCircle, UserRound } from "lucide-react";
+import { FileText, Gift, HelpCircle, Home, LogOut, Settings, Share2, Shield, UserCircle, UserRound } from "@/shared/ui/icons";
 
 export default function ProfilLayout({ children }: { children: ReactNode }) {
   const { user, logout } = useAuthStore();

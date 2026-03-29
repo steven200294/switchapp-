@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, Heart, Share2 } from "lucide-react";
+import { ChevronLeft, Heart, Share2 } from "@/shared/ui/icons";
 
 interface PropertyHeroProps {
   coverImg: string;

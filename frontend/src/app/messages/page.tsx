@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle } from "@/shared/ui/icons";
 import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
 import AuthGate from "@/shared/ui/AuthGate";

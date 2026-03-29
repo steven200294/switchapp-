@@ -1,7 +1,7 @@
 import {
   Wifi, ParkingCircle, Snowflake, Dog, Sofa,
   Bed, Bath, Maximize,
-} from "lucide-react";
+} from "@/shared/ui/icons";
 
 const AMENITY_MAP: Record<string, typeof Wifi> = {
   wifi: Wifi,

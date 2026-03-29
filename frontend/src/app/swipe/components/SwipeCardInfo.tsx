@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin } from "lucide-react";
+import { MapPin } from "@/shared/ui/icons";
 import type { DeckProperty } from "../types/swipe.types";
 
 interface SwipeCardInfoProps {

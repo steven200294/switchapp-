@@ -1,4 +1,4 @@
-import { MapPin, Maximize, Bed, Bath } from "lucide-react";
+import { MapPin, Maximize, Bed, Bath } from "@/shared/ui/icons";
 import type { Property } from "@/app/explorer/types/properties.types";
 
 interface PropertyInfoProps {
