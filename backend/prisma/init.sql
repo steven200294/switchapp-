@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict f0mgEy1Nw0DJLPhKKuuFQvj7w7gydLXG8j0TVeSL7SGwjLfuRfvsgJDBTr83R5x
+-- pg_dump artifact removed
 
 -- Dumped from database version 16.13
 -- Dumped by pg_dump version 16.13
@@ -17,6 +17,361 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
+
+--
+-- Name: auth; Type: SCHEMA; Schema: -; Owner: -
+--
+
+CREATE SCHEMA IF NOT EXISTS auth;
+
+
+--
+-- Name: public; Type: SCHEMA; Schema: -; Owner: -
+--
+
+CREATE SCHEMA IF NOT EXISTS public;
+
+
+--
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
+
+--
+-- Name: document_status; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.document_status AS ENUM (
+    'missing',
+    'uploaded',
+    'pending_review',
+    'rejected',
+    'approved'
+);
+
+
+--
+-- Name: identity_status; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.identity_status AS ENUM (
+    'not_submitted',
+    'pending',
+    'verified',
+    'rejected'
+);
+
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: users; Type: TABLE; Schema: auth; Owner: -
+--
+
+CREATE TABLE auth.users (
+    instance_id uuid,
+    id uuid NOT NULL,
+    aud character varying(255),
+    role character varying(255),
+    email character varying(255),
+    encrypted_password character varying(255),
+    email_confirmed_at timestamp with time zone,
+    invited_at timestamp with time zone,
+    confirmation_token character varying(255),
+    confirmation_sent_at timestamp with time zone,
+    recovery_token character varying(255),
+    recovery_sent_at timestamp with time zone,
+    email_change_token_new character varying(255),
+    email_change character varying(255),
+    email_change_sent_at timestamp with time zone,
+    last_sign_in_at timestamp with time zone,
+    raw_app_meta_data jsonb,
+    raw_user_meta_data jsonb,
+    is_super_admin boolean,
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone,
+    phone text,
+    phone_confirmed_at timestamp with time zone,
+    phone_change text DEFAULT ''::text,
+    phone_change_token character varying(255) DEFAULT ''::character varying,
+    phone_change_sent_at timestamp with time zone,
+    confirmed_at timestamp with time zone,
+    email_change_token_current character varying(255) DEFAULT ''::character varying,
+    email_change_confirm_status smallint DEFAULT 0,
+    banned_until timestamp with time zone,
+    reauthentication_token character varying(255) DEFAULT ''::character varying,
+    reauthentication_sent_at timestamp with time zone,
+    is_sso_user boolean DEFAULT false NOT NULL,
+    deleted_at timestamp with time zone,
+    is_anonymous boolean DEFAULT false NOT NULL
+);
+
+
+--
+-- Name: city_districts; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.city_districts (
+    id bigint NOT NULL,
+    city text NOT NULL,
+    district text NOT NULL,
+    label text NOT NULL
+);
+
+
+--
+-- Name: city_districts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.city_districts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: city_districts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.city_districts_id_seq OWNED BY public.city_districts.id;
+
+
+--
+-- Name: conversation_participants; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.conversation_participants (
+    conversation_id uuid NOT NULL,
+    user_id uuid NOT NULL,
+    joined_at timestamp with time zone DEFAULT now() NOT NULL,
+    last_read_at timestamp with time zone
+);
+
+
+--
+-- Name: conversations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.conversations (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    updated_at timestamp with time zone DEFAULT now() NOT NULL,
+    last_message_at timestamp with time zone,
+    last_message_text text,
+    match_id uuid
+);
+
+
+--
+-- Name: favorites; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.favorites (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    user_id uuid NOT NULL,
+    property_id uuid NOT NULL,
+    created_at timestamp with time zone DEFAULT now()
+);
+
+
+--
+-- Name: matches; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.matches (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    user_a uuid NOT NULL,
+    user_b uuid NOT NULL,
+    property_a uuid NOT NULL,
+    property_b uuid NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL
+);
+
+
+--
+-- Name: matching_swipes; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.matching_swipes (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    user_id uuid NOT NULL,
+    property_id uuid NOT NULL,
+    action text NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    CONSTRAINT matching_swipes_action_check CHECK ((action = ANY (ARRAY['like'::text, 'nope'::text])))
+);
+
+
+--
+-- Name: messages; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.messages (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    conversation_id uuid NOT NULL,
+    sender_id uuid NOT NULL,
+    content text,
+    attachment_url text,
+    created_at timestamp with time zone DEFAULT now() NOT NULL
+);
+
+
+--
+-- Name: notifications; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.notifications (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    user_id uuid NOT NULL,
+    type text NOT NULL,
+    title text NOT NULL,
+    body text,
+    data jsonb DEFAULT '{}'::jsonb NOT NULL,
+    is_read boolean DEFAULT false NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    read_at timestamp with time zone,
+    content text
+);
+
+
+--
+-- Name: properties; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.properties (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    owner_id uuid NOT NULL,
+    title text NOT NULL,
+    description text DEFAULT ''::text,
+    property_type text DEFAULT 'apartment'::text,
+    address text DEFAULT ''::text,
+    city text DEFAULT ''::text,
+    postal_code text DEFAULT ''::text,
+    country text DEFAULT 'France'::text,
+    latitude double precision,
+    longitude double precision,
+    surface_area integer DEFAULT 0,
+    rooms integer DEFAULT 1,
+    bedrooms integer DEFAULT 1,
+    bathrooms integer DEFAULT 1,
+    max_occupants integer DEFAULT 1,
+    amenities text[] DEFAULT '{}'::text[],
+    monthly_rent integer DEFAULT 0,
+    deposit integer DEFAULT 0,
+    utilities_included boolean DEFAULT false,
+    furnished boolean DEFAULT false,
+    smoking_allowed boolean DEFAULT false,
+    pets_allowed boolean DEFAULT false,
+    photos text[] DEFAULT '{}'::text[],
+    available_from timestamp with time zone,
+    available_until timestamp with time zone,
+    minimum_stay integer DEFAULT 7,
+    maximum_stay integer,
+    instant_booking boolean DEFAULT false,
+    status text DEFAULT 'published'::text,
+    roommates integer DEFAULT 0,
+    max_roommates integer DEFAULT 1,
+    cover_image text,
+    compatibility_score integer DEFAULT 80,
+    tags text[] DEFAULT '{}'::text[],
+    created_at timestamp with time zone DEFAULT now(),
+    updated_at timestamp with time zone DEFAULT now(),
+    district text,
+    neighborhood text,
+    is_available boolean DEFAULT true NOT NULL,
+    occupancy_status text DEFAULT 'tenant'::text,
+    lease_type text DEFAULT 'classic'::text,
+    exchange_authorization_status text DEFAULT 'not_declared'::text,
+    equipment jsonb DEFAULT '{}'::jsonb,
+    published boolean DEFAULT false NOT NULL,
+    photo_paths text[] DEFAULT '{}'::text[] NOT NULL,
+    cover_path text
+);
+
+
+--
+-- Name: user_profiles; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.user_profiles (
+    id uuid DEFAULT gen_random_uuid(),
+    email text,
+    full_name text,
+    city text,
+    country text DEFAULT 'France'::text,
+    created_at timestamp with time zone DEFAULT now(),
+    updated_at timestamp with time zone DEFAULT now(),
+    budget_min integer DEFAULT 0,
+    budget_max integer DEFAULT 100000,
+    preferred_property_types text[] DEFAULT '{}'::text[],
+    preferred_amenities text[] DEFAULT '{}'::text[],
+    surface_min integer,
+    preferred_district text,
+    preferred_neighborhood text,
+    user_id uuid NOT NULL,
+    avatar_url text,
+    age integer,
+    profession text,
+    phone text,
+    birthdate date,
+    bio text,
+    first_name text,
+    last_name text,
+    date_of_birth date,
+    languages text DEFAULT '{}'::text,
+    verified boolean DEFAULT false,
+    last_seen_at timestamp with time zone,
+    user_type text DEFAULT 'tenant'::text
+);
+
+
+--
+-- Name: user_switch_passes; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.user_switch_passes (
+    user_id uuid NOT NULL,
+    balance integer DEFAULT 0 NOT NULL,
+    updated_at timestamp with time zone DEFAULT now()
+);
+
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.users (
+    id uuid NOT NULL,
+    first_name text,
+    last_name text,
+    age integer,
+    profession text,
+    phone text,
+    bio text,
+    avatar_url text,
+    updated_at timestamp without time zone DEFAULT now(),
+    username text,
+    is_verified boolean DEFAULT false NOT NULL,
+    display_name text,
+    email text,
+    full_name text,
+    date_of_birth date,
+    created_at timestamp with time zone DEFAULT now()
+);
+
+
+--
+-- Name: city_districts id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.city_districts ALTER COLUMN id SET DEFAULT nextval('public.city_districts_id_seq'::regclass);
+
 
 --
 -- Data for Name: users; Type: TABLE DATA; Schema: auth; Owner: -
@@ -686,8 +1041,120 @@ SELECT pg_catalog.setval('public.city_districts_id_seq', 29, true);
 
 
 --
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: auth; Owner: -
+--
+
+ALTER TABLE ONLY auth.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: city_districts city_districts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.city_districts
+    ADD CONSTRAINT city_districts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: conversation_participants conversation_participants_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.conversation_participants
+    ADD CONSTRAINT conversation_participants_pkey PRIMARY KEY (conversation_id, user_id);
+
+
+--
+-- Name: conversations conversations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.conversations
+    ADD CONSTRAINT conversations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: favorites favorites_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.favorites
+    ADD CONSTRAINT favorites_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: matches matches_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.matches
+    ADD CONSTRAINT matches_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: matching_swipes matching_swipes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.matching_swipes
+    ADD CONSTRAINT matching_swipes_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: messages messages_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.messages
+    ADD CONSTRAINT messages_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: notifications notifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.notifications
+    ADD CONSTRAINT notifications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: properties properties_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.properties
+    ADD CONSTRAINT properties_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_profiles user_profiles_email_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.user_profiles
+    ADD CONSTRAINT user_profiles_email_key UNIQUE (email);
+
+
+--
+-- Name: user_profiles user_profiles_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.user_profiles
+    ADD CONSTRAINT user_profiles_pkey PRIMARY KEY (user_id);
+
+
+--
+-- Name: user_switch_passes user_switch_passes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.user_switch_passes
+    ADD CONSTRAINT user_switch_passes_pkey PRIMARY KEY (user_id);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
-\unrestrict f0mgEy1Nw0DJLPhKKuuFQvj7w7gydLXG8j0TVeSL7SGwjLfuRfvsgJDBTr83R5x
+-- pg_dump artifact removed
 
