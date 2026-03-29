@@ -3,7 +3,7 @@ import { Search } from "@/shared/ui/icons";
 export default function DesktopSearchBar() {
   return (
     <div className="max-w-[700px] mx-auto pb-6 px-6 hidden md:block">
-      <div className="bg-white border border-gray-200 rounded-full shadow-md flex items-center h-16 relative">
+      <div className="bg-white border border-gray-200 rounded-full shadow-md flex items-center h-16 relative overflow-hidden">
         <div className="flex-1 h-full rounded-full hover:bg-gray-100 flex flex-col justify-center px-8 cursor-pointer transition-colors focus-within:bg-white focus-within:shadow-lg">
           <label htmlFor="ville-search" className="text-caption font-bold text-black tracking-wide cursor-pointer mb-0.5">
             Ville

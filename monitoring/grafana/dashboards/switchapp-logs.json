@@ -1,0 +1,39 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "id": 1,
+      "title": "All Logs",
+      "type": "logs",
+      "gridPos": { "h": 30, "w": 24, "x": 0, "y": 0 },
+      "datasource": { "type": "loki", "uid": "loki" },
+      "targets": [{ "expr": "{container_name=~\".+\"}", "refId": "A" }],
+      "options": {
+        "showTime": true,
+        "showLabels": true,
+        "showCommonLabels": false,
+        "wrapLogMessage": true,
+        "prettifyLogMessage": false,
+        "enableLogDetails": true,
+        "sortOrder": "Descending",
+        "dedupStrategy": "none"
+      }
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "tags": ["switchappart", "logs"],
+  "templating": { "list": [] },
+  "time": { "from": "now-1h", "to": "now" },
+  "timepicker": {
+    "refresh_intervals": ["5s", "10s", "30s", "1m"],
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h"]
+  },
+  "title": "SwitchAppart Logs",
+  "uid": "switchappart-logs",
+  "version": 2
+}

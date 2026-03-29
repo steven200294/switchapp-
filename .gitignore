@@ -41,6 +41,9 @@ backups/
 # vercel
 .vercel
 
+# IDE / tooling
+.playwright-mcp/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ChevronLeft, Smartphone } from "@/shared/ui/icons";
 
 export default function SecuritePage() {
   return (
@@ -9,7 +10,7 @@ export default function SecuritePage() {
         
         <header className="px-5 py-4 flex items-center justify-start sticky top-0 bg-white/95 backdrop-blur-sm z-10 w-full mb-2">
           <Link href="/profil/parametres" scroll={false} className="p-2 -ml-2 rounded-full hover:bg-gray-100 transition-colors text-gray-900 flex items-center justify-center w-10 h-10 shrink-0">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
           </Link>
         </header>
 
@@ -56,7 +57,7 @@ export default function SecuritePage() {
               <h3 className="text-title-sm font-bold text-gray-900 mb-4">Appareils connectés</h3>
               <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 shadow-sm text-gray-400">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+                  <Smartphone className="w-5 h-5" />
                 </div>
                 <div className="flex-1">
                   <p className="text-body-md font-bold text-gray-900">iPhone 14 Pro Max</p>

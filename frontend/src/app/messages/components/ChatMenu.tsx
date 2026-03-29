@@ -1,5 +1,7 @@
 "use client";
 
+import type { ReactNode } from "react";
+import { Home, UserRound, Trash, AlertTriangle } from "@/shared/ui/icons";
 import type { ConversationThread } from "../types/messages.types";
 
 interface ChatMenuProps {
@@ -8,24 +10,11 @@ interface ChatMenuProps {
   onClose: () => void;
 }
 
-const MENU_ITEMS: { icon: string; label: string; isCircle?: boolean }[] = [
-  {
-    icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
-    label: "Voir le logement proposé",
-  },
-  {
-    icon: "M12 7a4 4 0 100 8 4 4 0 000-8zM6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2",
-    label: "Consulter son profil public",
-    isCircle: true,
-  },
-  {
-    icon: "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16",
-    label: "Supprimer la conversation",
-  },
-  {
-    icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
-    label: "Signaler ou Bloquer",
-  },
+const MENU_ITEMS: { icon: ReactNode; label: string }[] = [
+  { icon: <Home className="w-6 h-6" strokeWidth={1.5} />, label: "Voir le logement proposé" },
+  { icon: <UserRound className="w-6 h-6" strokeWidth={1.5} />, label: "Consulter son profil public" },
+  { icon: <Trash className="w-6 h-6" strokeWidth={1.5} />, label: "Supprimer la conversation" },
+  { icon: <AlertTriangle className="w-6 h-6" strokeWidth={1.5} />, label: "Signaler ou Bloquer" },
 ];
 
 export default function ChatMenu({ activeChat, isMobile, onClose }: ChatMenuProps) {
@@ -59,10 +48,7 @@ export default function ChatMenu({ activeChat, isMobile, onClose }: ChatMenuProp
             }`}
           >
             <div className="text-gray-900 flex items-center justify-center group-active:scale-95 transition-transform">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
-                {item.isCircle && <circle cx="12" cy="7" r="4" />}
-                <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-              </svg>
+              {item.icon}
             </div>
             <span className="text-body-xl font-medium text-gray-900">{item.label}</span>
           </button>

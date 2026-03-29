@@ -38,6 +38,19 @@ export function resolveStorageUrl(path: string, bucket = "properties"): string {
   return `${base}/${bucket}/${path}`;
 }
 
+/**
+ * Pick the best available cover source from a property record.
+ * Prefers relative paths (cover_path / photo_paths) over full Supabase URLs.
+ */
+export function pickCover(p: {
+  cover_path?: string | null;
+  cover_image?: string | null;
+  photo_paths?: string[];
+  photos?: string[];
+}): string {
+  return p.cover_path || p.photo_paths?.[0] || p.cover_image || p.photos?.[0] || "";
+}
+
 export const SWIPE_THRESHOLD = 120;
 export const DECK_SIZE = 30;
 export const STALE_TIME = 5 * 60 * 1000;

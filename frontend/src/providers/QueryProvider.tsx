@@ -10,7 +10,10 @@ export default function QueryProvider({ children }: { children: ReactNode }) {
         defaultOptions: {
           queries: {
             staleTime: 60 * 1000,
-            retry: 1,
+            retry: (failureCount, error) => {
+              if (error instanceof Error && error.message.includes("Authentication required")) return false;
+              return failureCount < 1;
+            },
           },
         },
       })

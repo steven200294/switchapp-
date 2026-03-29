@@ -1,5 +1,7 @@
 "use client";
 
+import { Plus, Send } from "@/shared/ui/icons";
+
 export default function ChatInput() {
   return (
     <div className="p-3 bg-white border-t border-gray-200 shrink-0">
@@ -9,9 +11,7 @@ export default function ChatInput() {
           className="p-1 mr-2 text-gray-400 hover:text-brand-cyan transition-colors"
           aria-label="Ajouter"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
+          <Plus className="w-6 h-6" strokeWidth={2.5} />
         </button>
         <input
           type="text"
@@ -23,9 +23,7 @@ export default function ChatInput() {
           className="w-9 h-9 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple text-white flex items-center justify-center shrink-0 ml-2 shadow-sm hover:scale-105 transition-transform active:scale-95"
           aria-label="Envoyer"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 ml-0.5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-          </svg>
+          <Send className="w-4 h-4 ml-0.5" strokeWidth={2.5} />
         </button>
       </div>
     </div>

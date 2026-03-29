@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader2 } from "@/shared/ui/icons";
+import { Loader2, X } from "@/shared/ui/icons";
 import { loginUser, registerUser } from "@/shared/auth/services/auth.service";
 import { useAuthStore } from "@/shared/stores/auth.store";
 import DecorativeBubbles from "./connection/DecorativeBubbles";
@@ -60,7 +60,7 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
       >
         <DecorativeBubbles />
         <button onClick={handleClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors bg-white hover:bg-gray-100 p-2 rounded-full z-50" aria-label="Fermer">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><path d="M21 7L7 21M7 7l14 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+          <X className="w-6 h-6" />
         </button>
 
         <form onSubmit={handleSubmit} className="flex flex-col items-center pt-12 pb-8 px-6 w-full max-w-md mx-auto overflow-y-auto scrollbar-hide max-h-[80vh] relative z-10">

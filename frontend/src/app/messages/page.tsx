@@ -11,13 +11,15 @@ import ConversationList from "@/app/messages/components/ConversationList";
 import EmptyChatPlaceholder from "@/app/messages/components/EmptyChatPlaceholder";
 import { useConversations } from "@/app/messages/hooks/useMessages";
 import { useMatches } from "@/app/messages/hooks/useMatches";
+import { useAuthStore } from "@/shared/stores/auth.store";
 import type { ConversationThread } from "@/app/messages/types/messages.types";
 import { conversationItemToThread } from "@/app/messages/utils/conversationDisplay";
 
 export default function MessagesPage() {
+  const isLoggedIn = useAuthStore((s) => s.isLoggedIn);
   const [activeChat, setActiveChat] = useState<ConversationThread | null>(null);
-  const { data: conversationsData, isPending: convosPending } = useConversations(true);
-  const { data: matchesData, isPending: matchesPending } = useMatches(true);
+  const { data: conversationsData, isPending: convosPending } = useConversations(isLoggedIn);
+  const { data: matchesData, isPending: matchesPending } = useMatches(isLoggedIn);
 
   const conversationThreads = useMemo(
     () => (conversationsData ?? []).map(conversationItemToThread),

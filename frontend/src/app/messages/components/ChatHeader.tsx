@@ -1,5 +1,7 @@
 "use client";
 
+import { ChevronLeft, MoreHorizontal } from "@/shared/ui/icons";
+
 interface ChatHeaderProps {
   name: string;
   avatar: string;
@@ -20,9 +22,7 @@ export default function ChatHeader({ name, avatar, onBack, onMenuOpen, isMobile 
           }`}
           aria-label="Retour"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
+          <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
         </button>
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm relative">
@@ -38,11 +38,7 @@ export default function ChatHeader({ name, avatar, onBack, onMenuOpen, isMobile 
         className="p-2 rounded-full hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-500"
         aria-label="Menu"
       >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-          <circle cx="12" cy="12" r="1" />
-          <circle cx="19" cy="12" r="1" />
-          <circle cx="5" cy="12" r="1" />
-        </svg>
+        <MoreHorizontal className="w-5 h-5" />
       </button>
     </header>
   );

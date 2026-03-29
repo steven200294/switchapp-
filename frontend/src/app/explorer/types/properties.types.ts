@@ -27,7 +27,9 @@ export interface Property {
   smoking_allowed: boolean | null;
   utilities_included: boolean | null;
   photos: string[];
+  photo_paths: string[];
   cover_image: string | null;
+  cover_path: string | null;
   amenities: string[];
   available_from: string | null;
   available_until: string | null;

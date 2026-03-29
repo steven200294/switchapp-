@@ -1,0 +1,11 @@
+**/node_modules
+**/.next
+**/.git
+**/dist
+**/backups
+**/monitoring
+oldversion
+docs
+.env
+.env.local
+*.md

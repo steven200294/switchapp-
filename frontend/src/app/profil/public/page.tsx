@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { X } from "@/shared/ui/icons";
 
 export default function ProfilPublicPage() {
   return (
@@ -16,7 +17,7 @@ export default function ProfilPublicPage() {
             Voir le profil
           </h1>
           <Link href="/profil" scroll={false} className="p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-900 flex items-center justify-center w-10 h-10">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            <X className="w-5 h-5" strokeWidth={2.5} />
           </Link>
         </header>
 

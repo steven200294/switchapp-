@@ -40,9 +40,11 @@ export default function PropertyDetailPage() {
     );
   }
 
+  const bestPhotos = property.photo_paths?.length ? property.photo_paths : property.photos;
+  const bestCover = property.cover_path || property.cover_image;
   const photos = [
-    ...(property.cover_image ? [property.cover_image] : []),
-    ...property.photos.filter((p) => p !== property.cover_image),
+    ...(bestCover ? [bestCover] : []),
+    ...bestPhotos.filter((p) => p !== bestCover),
   ].filter(Boolean);
 
   return (

@@ -8,7 +8,7 @@ import ProfileCard from "@/app/profil/components/ProfileCard";
 import ProfileMenuSection, { type ProfileMenuItem } from "@/app/profil/components/ProfileMenuSection";
 import PremiumBanner from "@/app/profil/components/PremiumBanner";
 import { useAuthStore } from "@/shared/stores/auth.store";
-import { FileText, Gift, HelpCircle, Home, LogOut, Settings, Share2, Shield, UserCircle, UserRound } from "@/shared/ui/icons";
+import { Bell, ChevronRight, FileText, Gift, HelpCircle, Home, LogOut, Settings, Share2, Shield, UserCircle, UserRound } from "@/shared/ui/icons";
 
 export default function ProfilLayout({ children }: { children: ReactNode }) {
   const { user, logout } = useAuthStore();
@@ -42,9 +42,7 @@ export default function ProfilLayout({ children }: { children: ReactNode }) {
           <div className="flex items-center justify-between gap-4 mb-6 mt-2 md:mt-0 w-full max-w-2xl mx-auto md:max-w-none">
             <h1 className="text-display md:text-display-md font-bold text-gray-900 tracking-tight">Profil</h1>
             <button type="button" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors text-gray-800" aria-label="Notifications">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5" aria-hidden>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-              </svg>
+              <Bell className="w-5 h-5" />
             </button>
           </div>
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-10 w-full max-w-2xl mx-auto md:max-w-none">
@@ -62,9 +60,7 @@ export default function ProfilLayout({ children }: { children: ReactNode }) {
               </div>
             </div>
             <div className="hidden sm:flex w-8 h-8 rounded-full bg-gray-50 items-center justify-center text-gray-400 group-hover:bg-brand-purple/10 group-hover:text-brand-purple transition-colors" aria-hidden>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6" />
-              </svg>
+              <ChevronRight className="w-5 h-5" strokeWidth={2.5} />
             </div>
           </button>
           <ProfileMenuSection variant="mobile-list" items={menuGroup1} />
