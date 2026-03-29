@@ -7,7 +7,6 @@ import BottomNav from "@/components/BottomNav";
 import { useProperties } from "@/app/explorer/hooks/useProperties";
 import PropertyCard from "@/app/explorer/components/PropertyCard";
 import PropertyCardSkeleton from "@/app/explorer/components/PropertyCardSkeleton";
-import ExplorerSearchBar from "@/app/explorer/components/ExplorerSearchBar";
 import CityFilters from "@/app/explorer/components/CityFilters";
 import EmptyState from "@/shared/ui/EmptyState";
 
@@ -53,10 +52,9 @@ export default function ExplorerPage() {
             Filtres
           </button>
         </div>
-        <ExplorerSearchBar searchCity={searchCity} setSearchCity={setSearchCity} onSubmit={handleSearch} />
         <CityFilters cities={QUICK_CITIES} activeSearch={activeSearch} onSelect={handleCitySelect} />
         {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
             {[...Array(8)].map((_, i) => <PropertyCardSkeleton key={i} />)}
           </div>
         ) : properties.length === 0 ? (
@@ -67,7 +65,7 @@ export default function ExplorerPage() {
             action={activeSearch ? <button type="button" onClick={clearSearch} className="text-brand-purple font-bold text-body-md hover:underline">Voir tous les logements</button> : undefined}
           />
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
             {properties.map((property) => (
               <PropertyCard key={property.id} property={property} />
             ))}

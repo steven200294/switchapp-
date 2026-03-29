@@ -1,11 +1,22 @@
 export default function PropertyCardSkeleton() {
   return (
     <div className="animate-pulse">
-      <div className="aspect-[4/3] rounded-2xl bg-gray-200 mb-3" />
-      <div className="px-1">
-        <div className="h-3 bg-gray-200 rounded w-24 mb-2" />
-        <div className="h-4 bg-gray-200 rounded w-48 mb-2" />
-        <div className="h-3 bg-gray-200 rounded w-32" />
+      {/* Image Skeleton */}
+      <div className="aspect-square rounded-xl bg-gray-200 mb-3" />
+      
+      {/* Content Skeleton */}
+      <div className="flex flex-col space-y-2">
+        {/* Title / City */}
+        <div className="h-4 bg-gray-200 rounded w-3/4" />
+        
+        {/* Subtitle / Description */}
+        <div className="h-4 bg-gray-200 rounded w-5/6 mt-1" />
+        
+        {/* Details */}
+        <div className="h-4 bg-gray-200 rounded w-2/3" />
+        
+        {/* Price */}
+        <div className="h-4 bg-gray-200 rounded w-1/3 mt-2" />
       </div>
     </div>
   );

@@ -51,10 +51,10 @@ export default function BottomNav() {
                 href={tab.href}
                 className="flex flex-col items-center gap-1 min-w-16 relative"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-brand-cyan to-brand-purple flex items-center justify-center shadow-md absolute -top-8 left-1/2 -translate-x-1/2 z-[100]">
+                <div className="w-[66px] h-[66px] rounded-full bg-gradient-to-br from-brand-cyan to-brand-purple flex items-center justify-center shadow-[0_8px_16px_rgba(138,43,226,0.3)] absolute -top-[34px] left-1/2 -translate-x-1/2 z-[100]">
                   <SwipeIcon />
                 </div>
-                <div className="h-6 w-14" />
+                <div className="h-6 w-[66px]" />
               </Link>
             );
           }
@@ -65,17 +65,17 @@ export default function BottomNav() {
               href={tab.href}
               className="flex flex-col items-center gap-1 min-w-16 transition-colors"
             >
-              <div className={isActive ? "" : "text-gray-500 hover:text-gray-900"}>
+              <div className={isActive ? "" : "text-[#7A8A9E]"}>
                 {tab.label === "Explorer" && <ExplorerIcon isActive={isActive} />}
                 {tab.label === "Favoris" && <FavorisIcon isActive={isActive} />}
                 {tab.label === "Messages" && <MessagesIcon isActive={isActive} />}
                 {tab.label === "Profil" && <ProfilIcon isActive={isActive} />}
               </div>
               <span
-                className={`text-body-2xs font-medium tracking-wide ${
+                className={`text-[11px] font-medium tracking-wide ${
                   isActive
                     ? "bg-gradient-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent font-bold"
-                    : "text-gray-500 hover:text-gray-900"
+                    : "text-[#7A8A9E]"
                 }`}
               >
                 {tab.label}

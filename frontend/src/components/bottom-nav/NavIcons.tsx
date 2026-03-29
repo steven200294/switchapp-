@@ -18,7 +18,7 @@ export function FavorisIcon({ isActive }: { isActive: boolean }) {
 
 export function SwipeIcon() {
   return (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="var(--background)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: "block" }}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: "block" }}>
       <rect x="2" y="6" width="14" height="14" rx="2" ry="2" />
       <path d="M6 6V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-2" />
     </svg>
