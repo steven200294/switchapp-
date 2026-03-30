@@ -52,6 +52,8 @@ switchapp-/
   gateway/            — Caddy reverse proxy (single local entry: web, API, admin, Grafana, storage)
   monitoring/         — Prometheus, Loki, Grafana, Alloy configs and dashboards
   shared/             — DTOs, enums, validators, constants shared across apps
+  data/               — SQL init scripts, mock seeds, image seeder, DB backup, smoke tests
+  scripts/            — Version bump and other utility scripts
   docs/               — PRD and specs
   memory-abderrazaq.md — Abderrazaq's Claude memory (backend/infra context)
   memory-steven.md     — Steven's Claude memory (frontend context)
@@ -343,8 +345,8 @@ When doing architecture work:
 ## Mock database (implemented)
 
 - **`DATABASE_MODE`** (`real` \| `mock`) and **`DATABASE_URL_MOCK`**: resolved in `backend/src/config/env.ts`; Prisma client uses `env.database.effectiveUrl` in `backend/src/infra/prisma/client.ts`.
-- Docker Postgres init creates **`switchapp_mock`** via `backend/prisma/02-mock-database.sql` (existing volumes: create the DB manually once if missing).
-- Mock data: `backend/prisma/seed-mock.ts`, `npm run seed:mock` / `db:migrate:mock`; images: `scripts/seed-mock-images.sh` (Unsplash → MinIO). Documented in `.env.example`.
+- Docker Postgres init creates **`switchapp_mock`** via `data/02-mock-database.sql` (existing volumes: create the DB manually once if missing).
+- Mock data: `data/seed-mock.ts`, `npm run seed:mock` / `db:migrate:mock`; images: `data/seed-mock-images.sh` (Unsplash → MinIO). Documented in `.env.example`.
 - **Auth schema remains sacred** — never truncate real Supabase-backed DBs from app code.
 
 ---

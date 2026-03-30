@@ -10,8 +10,8 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
     "db:migrate:mock": "sh -c 'export DATABASE_URL=\"$DATABASE_URL_MOCK\" && prisma migrate deploy'",
-    "seed:mock": "tsx prisma/seed-mock.ts",
-    "seed:mock:images": "bash ../scripts/seed-mock-images.sh"
+    "seed:mock": "tsx ../data/seed-mock.ts",
+    "seed:mock:images": "bash ../data/seed-mock-images.sh"
   },
   "dependencies": {
     "@prisma/client": "^6.19.2",

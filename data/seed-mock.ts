@@ -1,6 +1,6 @@
 /**
  * Seeds the mock database (DATABASE_URL_MOCK). Run after: prisma migrate deploy with DATABASE_URL pointing at switchapp_mock.
- * Usage: DATABASE_URL_MOCK=postgresql://.../switchapp_mock npx tsx prisma/seed-mock.ts
+ * Usage: DATABASE_URL_MOCK=postgresql://.../switchapp_mock npx tsx ../data/seed-mock.ts
  */
 import { PrismaClient } from "@prisma/client";
 
