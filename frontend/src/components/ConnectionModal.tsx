@@ -49,13 +49,13 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
   }
 
   return (
-    <div className="fixed inset-0 z-540 flex flex-col justify-end pointer-events-none">
+    <div className="fixed inset-0 z-540 flex flex-col justify-end pointer-events-none overflow-hidden">
       <div
         className={`absolute inset-0 bg-black/40 transition-opacity duration-300 pointer-events-auto ${visible ? "opacity-100" : "opacity-0"}`}
         onClick={handleClose}
       />
       <div
-        className="w-full bg-white border-t border-gray-200 shadow-2xl transition-transform duration-300 ease-out min-h-[80vh] rounded-t-[3rem] relative pointer-events-auto"
+        className="w-full bg-white border-t border-gray-200 shadow-2xl transition-transform duration-300 ease-out min-h-[90vh] rounded-t-[3rem] relative pointer-events-auto overflow-hidden"
         style={{ transform: visible ? "translateY(0)" : "translateY(100%)" }}
       >
         <DecorativeBubbles />
@@ -63,7 +63,7 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
           <X className="w-6 h-6" />
         </button>
 
-        <form onSubmit={handleSubmit} className="flex flex-col items-center pt-12 pb-8 px-6 w-full max-w-md mx-auto overflow-y-auto scrollbar-hide max-h-[80vh] relative z-10">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center pt-12 pb-8 px-6 w-full max-w-md mx-auto overflow-y-auto overflow-x-hidden scrollbar-hide max-h-[88vh] relative z-10">
           <AuthFormHeader activeTab={activeTab} />
           <div className="bg-gray-100 p-[5px] rounded-2xl flex w-full mb-8">
             <button type="button" onClick={() => { setActiveTab("signin"); setError(null); }} className={`flex-1 py-3 text-center text-[15px] font-semibold rounded-xl transition-all ${activeTab === "signin" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"}`}>Connexion</button>
@@ -71,7 +71,7 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
           </div>
           {error && <div className="w-full bg-red-50 border border-red-100 text-red-600 text-[14px] font-medium rounded-2xl px-4 py-3 mb-4 text-center">{error}</div>}
           <AuthFormInputs activeTab={activeTab} email={email} setEmail={setEmail} password={password} setPassword={setPassword} confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword} fullName={fullName} setFullName={setFullName} />
-          <button type="submit" disabled={loading} className="w-full bg-linear-to-r from-brand-cyan to-brand-purple text-white font-black rounded-full py-4 text-[16px] transition-opacity hover:opacity-90 shadow-md mb-8 flex items-center justify-center gap-2 disabled:opacity-60">
+          <button type="submit" disabled={loading} className="w-full rounded-full bg-linear-to-r from-brand-cyan to-brand-purple text-white font-black py-4 text-body-lg shadow-[0_0_14px_rgba(0,191,255,0.35),0_0_14px_rgba(138,43,226,0.35)] hover:shadow-[0_0_22px_rgba(0,191,255,0.5),0_0_22px_rgba(138,43,226,0.5)] transition-shadow mb-8 flex items-center justify-center gap-2 disabled:opacity-50">
             {loading ? <><Loader2 className="w-5 h-5 animate-spin" /><span>{activeTab === "signin" ? "Connexion..." : "Création..."}</span></> : activeTab === "signin" ? "Se connecter" : "Créer un compte"}
           </button>
           <SocialLoginButtons />

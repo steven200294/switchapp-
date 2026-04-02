@@ -1,0 +1,16 @@
+FROM node:20-alpine
+WORKDIR /app
+
+COPY shared/package.json shared/
+RUN cd shared && npm install
+
+COPY frontend/package.json frontend/package-lock.json frontend/
+RUN cd frontend && npm install
+
+COPY shared/ shared/
+COPY frontend/next.config.ts frontend/tsconfig.json frontend/postcss.config.mjs frontend/tailwind.config.ts* frontend/
+COPY frontend/public frontend/public
+
+ENV NEXT_TELEMETRY_DISABLED=1
+EXPOSE ${FRONTEND_PORT:-3001}
+CMD ["npm", "run", "dev", "--prefix", "frontend"]

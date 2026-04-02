@@ -33,7 +33,7 @@ export default function AuthGate({ icon, title, description, children }: AuthGat
           <p className="text-gray-500 text-body-md mb-8 max-w-sm">{description}</p>
           <button
             onClick={() => setShowAuth(true)}
-            className="bg-linear-to-r from-brand-cyan to-brand-purple text-white font-bold px-8 py-4 rounded-full text-body-lg shadow-lg hover:scale-105 transition-transform"
+            className="bg-linear-to-r from-brand-cyan to-brand-purple text-white font-bold px-8 py-4 rounded-full text-body-lg shadow-[0_0_14px_rgba(0,191,255,0.35),0_0_14px_rgba(138,43,226,0.35)] hover:shadow-[0_0_22px_rgba(0,191,255,0.5),0_0_22px_rgba(138,43,226,0.5)] transition-shadow"
           >
             Se connecter
           </button>

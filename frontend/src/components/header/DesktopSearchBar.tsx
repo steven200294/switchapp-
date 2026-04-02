@@ -34,7 +34,7 @@ export default function DesktopSearchBar() {
 
             <button
               type="button"
-              className="w-12 h-12 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple hover:opacity-90 flex items-center justify-center text-background transition-opacity shrink-0 shadow-md"
+              className="w-12 h-12 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple flex items-center justify-center text-white shrink-0 shadow-[0_0_12px_rgba(0,191,255,0.35),0_0_12px_rgba(138,43,226,0.35)] hover:shadow-[0_0_20px_rgba(0,191,255,0.5),0_0_20px_rgba(138,43,226,0.5)] transition-shadow"
               aria-label="Rechercher"
             >
               <Search className="w-4 h-4" />

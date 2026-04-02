@@ -43,6 +43,10 @@ export function Flame(p: IconProps) {
   return <svg {...base(p)}><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /></svg>;
 }
 
+export function AirConditioning(p: IconProps) {
+  return <svg {...base(p)}><path d="M12 12h.01" /><path d="M19.071 4.929a9 9 0 0 1 0 12.142" /><path d="M4.929 4.929a9 9 0 0 1 12.142 0" /><path d="M12 20h.01" /><path d="M4 12h.01" /><path d="M20 12h.01" /><path d="M12 4v.01" /></svg>;
+}
+
 const AMENITY_MAP: Record<string, (p: IconProps) => React.JSX.Element> = {
   wifi: Wifi, internet: Wifi,
   parking: ParkingCircle,
@@ -53,6 +57,8 @@ const AMENITY_MAP: Record<string, (p: IconProps) => React.JSX.Element> = {
   micro: Microwave, "micro-ondes": Microwave,
   café: Coffee, coffee: Coffee,
   chauffage: Flame,
+  air_conditioning: AirConditioning,
+  
 };
 
 function FallbackIcon(p: IconProps) {

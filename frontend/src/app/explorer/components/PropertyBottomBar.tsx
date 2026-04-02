@@ -15,7 +15,7 @@ export default function PropertyBottomBar({ monthlyRent }: PropertyBottomBarProp
         </div>
         <button
           type="button"
-          className="px-8 py-4 bg-linear-to-r from-brand-cyan to-brand-purple text-white rounded-2xl font-bold text-body-lg hover:scale-[1.02] transition-transform shadow-xl shadow-brand-purple/20"
+          className="px-8 py-4 bg-linear-to-r from-brand-cyan to-brand-purple text-white rounded-full font-bold text-body-lg shadow-[0_0_14px_rgba(0,191,255,0.35),0_0_14px_rgba(138,43,226,0.35)] hover:shadow-[0_0_22px_rgba(0,191,255,0.5),0_0_22px_rgba(138,43,226,0.5)] transition-shadow"
         >
           Proposer un Switch
         </button>

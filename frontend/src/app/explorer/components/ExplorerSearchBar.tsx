@@ -35,7 +35,7 @@ export default function ExplorerSearchBar({
       </div>
       <button
         type="submit"
-        className="shrink-0 px-5 py-3 rounded-2xl bg-linear-to-r from-brand-cyan to-brand-purple text-white text-body font-bold shadow-lg shadow-brand-purple/20"
+        className="shrink-0 px-5 py-3 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple text-white text-body font-bold shadow-[0_0_14px_rgba(0,191,255,0.35),0_0_14px_rgba(138,43,226,0.35)] hover:shadow-[0_0_22px_rgba(0,191,255,0.5),0_0_22px_rgba(138,43,226,0.5)] transition-shadow"
       >
         Go
       </button>

@@ -27,7 +27,7 @@ export default function HorizontalSection({ title, subtitle, action, children }:
           </button>
         )}
       </div>
-      <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pl-6 pr-6 pb-2">
+      <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pl-6 pr-6 pb-2 ml-4">
         {children}
       </div>
     </section>

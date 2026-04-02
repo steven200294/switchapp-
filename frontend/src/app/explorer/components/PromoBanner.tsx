@@ -67,7 +67,7 @@ export default function PromoBanner({ variant }: { variant: BannerVariant }) {
         </div>
         <Link
           href={b.href}
-          className="shrink-0 self-center px-4 py-2 rounded-full text-[12px] font-bold text-white bg-linear-to-r from-brand-cyan to-brand-purple hover:opacity-90 transition-opacity"
+          className="shrink-0 self-center px-4 py-2 rounded-full text-[12px] font-bold text-white bg-linear-to-r from-brand-cyan to-brand-purple shadow-[0_0_10px_rgba(0,191,255,0.3),0_0_10px_rgba(138,43,226,0.3)] hover:shadow-[0_0_18px_rgba(0,191,255,0.45),0_0_18px_rgba(138,43,226,0.45)] transition-shadow"
         >
           {b.cta}
         </Link>

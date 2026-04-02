@@ -20,7 +20,7 @@ export default function ChatInput() {
         />
         <button
           type="button"
-          className="w-9 h-9 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple text-white flex items-center justify-center shrink-0 ml-2 shadow-sm hover:scale-105 transition-transform active:scale-95"
+          className="w-9 h-9 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple text-white flex items-center justify-center shrink-0 ml-2 shadow-[0_0_10px_rgba(0,191,255,0.35),0_0_10px_rgba(138,43,226,0.35)] hover:shadow-[0_0_18px_rgba(0,191,255,0.5),0_0_18px_rgba(138,43,226,0.5)] transition-shadow active:scale-95"
           aria-label="Envoyer"
         >
           <Send className="w-4 h-4 ml-0.5" strokeWidth={2.5} />
