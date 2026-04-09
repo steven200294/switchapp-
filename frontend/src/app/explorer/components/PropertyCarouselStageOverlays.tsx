@@ -44,7 +44,7 @@ export default function PropertyCarouselStageOverlays({
             onClick={onFavorite}
             className="w-10 h-10 flex items-center justify-center bg-white/70 backdrop-blur-md rounded-full shadow-md text-gray-700 hover:bg-white transition-colors"
           >
-            <Heart className={`w-5 h-5 ${isFavorited ? "fill-brand-purple text-brand-purple" : ""}`} />
+            <Heart className={`w-5 h-5 ${isFavorited ? "fill-brand-cyan text-brand-cyan" : ""}`} />
           </button>
         </div>
       </div>

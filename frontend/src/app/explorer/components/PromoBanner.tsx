@@ -11,14 +11,16 @@ const BANNERS: Record<BannerVariant, {
   href: string;
   gradient: string;
   icon: string;
+  dark?: boolean;
 }> = {
   "verify-profile": {
     title: "Vérifiez votre profil",
     description: "Les profils vérifiés ont 3x plus de chances de matcher.",
     cta: "Vérifier",
     href: "/profil",
-    gradient: "from-blue-50 to-cyan-50",
+    gradient: "from-brand-dark to-brand-dark-alt",
     icon: "🛡️",
+    dark: true,
   },
   "complete-listing": {
     title: "Complétez votre annonce",
@@ -58,20 +60,20 @@ export default function PromoBanner({ variant }: { variant: BannerVariant }) {
   const b = BANNERS[variant];
 
   return (
-    <div className={`mx-6 rounded-2xl bg-linear-to-r ${b.gradient} border border-gray-100 p-5 md:p-6`}>
-      <div className="flex items-start gap-4">
-        <span className="text-2xl shrink-0 mt-0.5">{b.icon}</span>
+    <div className={`mx-6 rounded-2xl bg-linear-to-r ${b.gradient} border ${b.dark ? "border-white/10 shadow-xl" : "border-gray-100"} p-7 md:p-10 relative overflow-hidden`}>
+      <div className="flex items-start gap-4 relative z-10">
         <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-gray-900 text-[15px]">{b.title}</h3>
-          <p className="text-[13px] text-gray-500 mt-1 leading-relaxed">{b.description}</p>
+          <h3 className={`font-bold text-[15px] ${b.dark ? "text-white" : "text-gray-900"}`}>{b.title}</h3>
+          <p className={`text-[13px] mt-1 leading-relaxed ${b.dark ? "text-gray-400" : "text-gray-500"}`}>{b.description}</p>
         </div>
         <Link
           href={b.href}
-          className="shrink-0 self-center px-4 py-2 rounded-full text-[12px] font-bold text-white bg-linear-to-r from-brand-cyan to-brand-purple shadow-[0_0_10px_rgba(0,191,255,0.3),0_0_10px_rgba(138,43,226,0.3)] hover:shadow-[0_0_18px_rgba(0,191,255,0.45),0_0_18px_rgba(138,43,226,0.45)] transition-shadow"
+          className={`shrink-0 self-center px-4 py-2 rounded-full text-[12px] font-bold transition-colors ${b.dark ? "bg-white/10 text-white hover:bg-white/20" : "bg-gray-900 text-white hover:bg-gray-800"}`}
         >
           {b.cta}
         </Link>
       </div>
+      {b.dark && <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-gradient-to-br from-brand-cyan/20 via-brand-purple/20 to-transparent rounded-full blur-[50px] -mr-16 -mt-16 pointer-events-none" />}
     </div>
   );
 }

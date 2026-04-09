@@ -1,17 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import { FavoriteHeart } from "@/shared/ui/icons";
 import { resolveStorageUrl, pickCover } from "@/shared/constants/theme";
 import type { Property } from "../types/properties.types";
 
-export default function PropertyCardCompact({ property }: { property: Property }) {
+export default function PropertyCardCompact({ property, onOpen, isFavorited, onToggleFavorite }: { property: Property; onOpen?: (id: string) => void; isFavorited?: boolean; onToggleFavorite?: (id: string) => void }) {
   const coverImg = resolveStorageUrl(pickCover(property));
 
   return (
-    <Link
-      href={`/explorer/${property.id}`}
-      className="group block shrink-0 w-[240px] md:w-[270px] snap-start"
+    <div
+      onClick={() => onOpen?.(property.id)}
+      className="group block shrink-0 w-[240px] md:w-[270px] snap-start cursor-pointer"
     >
       <div className="relative aspect-4/3 rounded-2xl overflow-hidden mb-2.5">
         <img
@@ -23,9 +22,9 @@ export default function PropertyCardCompact({ property }: { property: Property }
 
         <button
           className="absolute top-2.5 right-2.5 transition-transform active:scale-95"
-          onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+          onClick={(e) => { e.preventDefault(); e.stopPropagation(); onToggleFavorite?.(property.id); }}
         >
-          <FavoriteHeart size={24} style={{ fill: "rgba(0,0,0,0.5)", stroke: "#fff", strokeWidth: "2" }} />
+          <FavoriteHeart size={24} style={{ fill: isFavorited ? "var(--brand-cyan)" : "rgba(0,0,0,0.5)", stroke: isFavorited ? "var(--brand-cyan)" : "#fff", strokeWidth: "2" }} />
         </button>
 
         {property.monthly_rent != null && (
@@ -48,6 +47,6 @@ export default function PropertyCardCompact({ property }: { property: Property }
           property.rooms && `${property.rooms} p.`,
         ].filter(Boolean).join(" · ") || "Particulier"}
       </p>
-    </Link>
+    </div>
   );
 }

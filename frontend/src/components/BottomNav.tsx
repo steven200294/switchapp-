@@ -74,7 +74,7 @@ export default function BottomNav() {
               <span
                 className={`text-[11px] font-medium tracking-wide ${
                   isActive
-                    ? "bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent font-bold"
+                    ? "text-gray-900 font-bold"
                     : "text-[#7A8A9E]"
                 }`}
               >

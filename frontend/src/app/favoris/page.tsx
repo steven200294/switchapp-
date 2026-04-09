@@ -25,7 +25,7 @@ export default function FavorisPage() {
           <Header />
         </div>
 
-        <main className="flex-1 w-full max-w-6xl mx-auto px-4 md:px-6 pt-8 pb-6">
+        <main className="flex-1 w-full max-w-6xl mx-auto px-4 md:px-6 pt-8 pb-6 md:pt-[200px]">
           <h1 className="text-display-sm md:text-display font-black text-gray-900 mb-2 tracking-tight">
             Favoris
           </h1>

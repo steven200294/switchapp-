@@ -9,6 +9,7 @@ import AuthFormHeader from "./connection/AuthFormHeader";
 import AuthFormInputs from "./connection/AuthFormInputs";
 import SocialLoginButtons from "./connection/SocialLoginButtons";
 import AuthFormFooter from "./connection/AuthFormFooter";
+import ProposeModal from "./ProposeModal";
 
 export default function ConnectionModal({ onClose }: { onClose: () => void }) {
   const [visible, setVisible] = useState(false);
@@ -19,6 +20,7 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
   const [fullName, setFullName] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [showProposeModal, setShowProposeModal] = useState(false);
   const setAuth = useAuthStore((s) => s.setAuth);
 
   useEffect(() => {
@@ -42,10 +44,14 @@ export default function ConnectionModal({ onClose }: { onClose: () => void }) {
         ? await loginUser({ email, password })
         : await registerUser({ email, password, full_name: fullName });
       setAuth(result.user, result.token);
-      handleClose();
+      setShowProposeModal(true);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Une erreur est survenue.");
     } finally { setLoading(false); }
+  }
+
+  if (showProposeModal) {
+    return <ProposeModal onClose={handleClose} />;
   }
 
   return (

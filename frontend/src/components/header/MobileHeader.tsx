@@ -3,9 +3,10 @@ import { Search } from "@/shared/ui/icons";
 type Props = {
   activeTab: "logements" | "utilisateurs";
   setActiveTab: (t: "logements" | "utilisateurs") => void;
+  onSearchClick?: () => void;
 };
 
-export default function MobileHeader({ activeTab, setActiveTab }: Props) {
+export default function MobileHeader({ activeTab, setActiveTab, onSearchClick }: Props) {
   const tabCls = (on: boolean) =>
     `text-body transition-colors pb-3 border-b-2 ${
       on
@@ -17,6 +18,7 @@ export default function MobileHeader({ activeTab, setActiveTab }: Props) {
     <div className="block md:hidden px-4 pt-4 pb-0 bg-white shadow-sm">
       <button
         type="button"
+        onClick={onSearchClick}
         className="w-full h-14 bg-white border border-gray-300 shadow-md rounded-full flex items-center justify-center gap-3 active:scale-[0.98] transition-transform"
       >
         <Search className="w-4 h-4 text-gray-900" />
@@ -28,7 +30,7 @@ export default function MobileHeader({ activeTab, setActiveTab }: Props) {
           Logements
         </button>
         <button type="button" onClick={() => setActiveTab("utilisateurs")} className={tabCls(activeTab === "utilisateurs")}>
-          Utilisateurs
+          Filtres
         </button>
       </div>
     </div>

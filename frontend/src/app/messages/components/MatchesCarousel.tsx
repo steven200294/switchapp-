@@ -10,53 +10,65 @@ interface MatchesCarouselProps {
   isLoading?: boolean;
 }
 
+const PLACEHOLDER_AVATARS = [
+  "https://i.pravatar.cc/150?img=1",
+  "https://i.pravatar.cc/150?img=5",
+  "https://i.pravatar.cc/150?img=9",
+  "https://i.pravatar.cc/150?img=12",
+];
+
 export default function MatchesCarousel({ matches, onSelectMatch, isLoading }: MatchesCarouselProps) {
+  const avatars = matches.length > 0
+    ? matches.slice(0, 4).map((m) => resolveStorageUrl(m.otherUser?.avatar_url ?? "", "avatars"))
+    : PLACEHOLDER_AVATARS;
+
+  const count = matches.length;
+
   return (
-    <div className="mb-10">
-      <div className="flex items-center gap-2 mb-5">
-        <h2 className="text-title-sm font-bold text-gray-900">Nouveaux matchs</h2>
-        <img
-          src="/emojis/grinning.png"
-          alt=""
-          width={28}
-          height={28}
-        />
-        <span className="w-5 h-5 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple flex items-center justify-center text-white text-body-xs font-black">
-          {matches.length}
-        </span>
-      </div>
-      {isLoading && matches.length === 0 ? (
-        <p className="text-body text-gray-400 mb-4">Chargement des matchs…</p>
-      ) : null}
-      {!isLoading && matches.length === 0 ? (
-        <p className="text-body text-gray-400 mb-4">Aucun nouveau match pour le moment.</p>
-      ) : null}
-      <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 md:-mx-8 md:px-8 scrollbar-hide">
-        {matches.map((match) => (
-          <button
-            key={match.id}
-            type="button"
-            className="flex flex-col items-center gap-2 shrink-0 cursor-pointer hover:scale-105 transition-transform"
-            onClick={() => {
-              const thread = matchToConversationThread(match);
-              if (thread) onSelectMatch(thread);
+    <div className="mb-8 flex items-center gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
+      <div className="relative flex items-center shrink-0" style={{ width: `${28 + avatars.length * 26}px`, height: "56px" }}>
+        {avatars.map((src, i) => (
+          <div
+            key={i}
+            className="absolute w-14 h-14 rounded-full border-2 border-white overflow-hidden animate-float shadow-md"
+            style={{
+              left: `${i * 26}px`,
+              zIndex: avatars.length - i,
+              animationDelay: `${i * 0.25}s`,
             }}
           >
-            <div className="w-20 h-20 rounded-full overflow-hidden p-[2.5px] bg-linear-to-r from-brand-cyan to-brand-purple">
-              <div className="w-full h-full rounded-full overflow-hidden border-2 border-white">
-                <img
-                  src={resolveStorageUrl(match.otherUser?.avatar_url ?? "", "avatars")}
-                  alt={match.otherUser?.full_name ?? "Match"}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <span className="text-body-sm font-semibold text-gray-800">
-              {match.otherUser?.full_name ?? "Utilisateur"}
-            </span>
-          </button>
+            <img src={src} alt="" className="w-full h-full object-cover" />
+          </div>
         ))}
       </div>
+
+      <div className="flex-1 min-w-0">
+        <p className="text-body-md font-bold text-gray-900">
+          {count > 0 ? `${count} nouveau${count > 1 ? "x" : ""} match${count > 1 ? "s" : ""}` : "Vos futurs matchs"}
+        </p>
+        <p className="text-body-xs text-gray-400 truncate">
+          {count > 0 ? "Commencez à discuter !" : "Swipez pour matcher avec des profils"}
+        </p>
+      </div>
+
+      {count > 0 && (
+        <button
+          type="button"
+          onClick={() => {
+            const thread = matchToConversationThread(matches[0]);
+            if (thread) onSelectMatch(thread);
+          }}
+          className="shrink-0 px-4 py-2 rounded-full bg-black text-white text-body-xs font-bold hover:bg-gray-800 transition-colors"
+        >
+          Voir
+        </button>
+      )}
+
+      {count === 0 && !isLoading && (
+        <div className="shrink-0 px-4 py-2 rounded-full border border-gray-200 text-body-xs font-semibold text-gray-400">
+          0 match
+        </div>
+      )}
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default function MessagesPage() {
           <Header />
         </div>
 
-        <main className="flex-1 w-full max-w-[1400px] mx-auto flex md:p-6 gap-6 overflow-hidden relative">
+        <main className="flex-1 w-full max-w-[1400px] mx-auto flex md:p-6 gap-6 overflow-hidden relative md:pt-[180px]">
           <div
             className={`w-full md:w-[400px] lg:w-[450px] shrink-0 h-full overflow-y-auto scrollbar-hide flex-col pb-[90px] md:pb-0 ${
               activeChat ? "hidden md:flex" : "flex"

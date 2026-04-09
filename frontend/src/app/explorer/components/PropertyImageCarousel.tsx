@@ -10,6 +10,7 @@ interface PropertyImageCarouselProps {
   onBack: () => void;
   onFavorite: () => void;
   isFavorited: boolean;
+  hideOverlays?: boolean;
 }
 
 export default function PropertyImageCarousel({
@@ -17,6 +18,7 @@ export default function PropertyImageCarousel({
   onBack,
   onFavorite,
   isFavorited,
+  hideOverlays = false,
 }: PropertyImageCarouselProps) {
   const images = photos.length > 0 ? photos.map((p) => resolveStorageUrl(p)) : [resolveStorageUrl("")];
   const [current, setCurrent] = useState(0);
@@ -57,7 +59,26 @@ export default function PropertyImageCarousel({
         onFavorite={onFavorite}
         isFavorited={isFavorited}
         scrollTo={scrollTo}
+        hideOverlays={hideOverlays}
       />
+
+      {images.length > 1 && (
+        <div className="flex gap-2 px-6 py-4 overflow-x-auto scrollbar-hide">
+          {images.map((src, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => scrollTo(i)}
+              className={`shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
+                i === current ? "border-brand-purple shadow-md" : "border-transparent opacity-70 hover:opacity-100"
+              }`}
+            >
+              <img src={src} alt="" className="w-full h-full object-cover" />
+            </button>
+          ))}
+        </div>
+      )}
+
       {lightbox && (
         <PropertyImageCarouselLightbox
           images={images}

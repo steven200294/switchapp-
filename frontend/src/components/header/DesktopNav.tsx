@@ -34,12 +34,12 @@ export default function DesktopNav({ activeTab, setActiveTab, isLoggedIn, user, 
       <div className="flex-1 flex justify-center gap-8">
         {(["logements", "utilisateurs"] as const).map((id) => (
           <button key={id} type="button" onClick={() => setActiveTab(id)} className={tabCls(activeTab === id)}>
-            {id === "logements" ? "Logements" : "Utilisateurs"}
+            {id === "logements" ? "Logements" : "Filtres"}
           </button>
         ))}
       </div>
       <div className="flex-1 flex items-center justify-end gap-2 text-gray-700">
-        <Link href="/explorer" className="hidden lg:block text-body font-semibold hover:bg-gray-100 px-4 py-3 rounded-full transition-colors truncate">
+        <Link href="/profil/hote" className="hidden lg:block text-body font-semibold hover:bg-gray-100 px-4 py-3 rounded-full transition-colors truncate">
           Proposer son logement
         </Link>
         <button type="button" className="flex items-center justify-center w-11 h-11 rounded-full hover:bg-gray-100 transition-colors" aria-label="Langue">

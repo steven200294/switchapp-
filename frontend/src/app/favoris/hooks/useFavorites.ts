@@ -14,7 +14,19 @@ export function useAddFavorite() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (propertyId: string) => addFavorite(propertyId),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: QUERY_KEYS.FAVORITES }),
+    onMutate: async (propertyId) => {
+      await queryClient.cancelQueries({ queryKey: QUERY_KEYS.FAVORITES });
+      const prev = queryClient.getQueryData(QUERY_KEYS.FAVORITES);
+      queryClient.setQueryData(QUERY_KEYS.FAVORITES, (old: { property_id: string }[] | undefined) => [
+        ...(old ?? []),
+        { property_id: propertyId },
+      ]);
+      return { prev };
+    },
+    onError: (_err, _id, context) => {
+      if (context?.prev) queryClient.setQueryData(QUERY_KEYS.FAVORITES, context.prev);
+    },
+    onSettled: () => queryClient.invalidateQueries({ queryKey: QUERY_KEYS.FAVORITES }),
   });
 }
 
@@ -22,6 +34,17 @@ export function useRemoveFavorite() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (propertyId: string) => removeFavorite(propertyId),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: QUERY_KEYS.FAVORITES }),
+    onMutate: async (propertyId) => {
+      await queryClient.cancelQueries({ queryKey: QUERY_KEYS.FAVORITES });
+      const prev = queryClient.getQueryData(QUERY_KEYS.FAVORITES);
+      queryClient.setQueryData(QUERY_KEYS.FAVORITES, (old: { property_id: string }[] | undefined) =>
+        (old ?? []).filter((f) => f.property_id !== propertyId),
+      );
+      return { prev };
+    },
+    onError: (_err, _id, context) => {
+      if (context?.prev) queryClient.setQueryData(QUERY_KEYS.FAVORITES, context.prev);
+    },
+    onSettled: () => queryClient.invalidateQueries({ queryKey: QUERY_KEYS.FAVORITES }),
   });
 }

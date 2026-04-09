@@ -1,15 +1,14 @@
 "use client";
 
-import Link from "next/link";
 import { FavoriteHeart } from "@/shared/ui/icons";
 import { resolveStorageUrl, pickCover } from "@/shared/constants/theme";
 import type { Property } from "../types/properties.types";
 
-export default function PropertyCard({ property }: { property: Property }) {
+export default function PropertyCard({ property, onOpen, isFavorited, onToggleFavorite }: { property: Property; onOpen?: (id: string) => void; isFavorited?: boolean; onToggleFavorite?: (id: string) => void }) {
   const coverImg = resolveStorageUrl(pickCover(property));
 
   return (
-    <Link href={`/explorer/${property.id}`} className="group block min-w-0 overflow-hidden">
+    <div onClick={() => onOpen?.(property.id)} className="group block min-w-0 overflow-hidden cursor-pointer">
       <div className="relative aspect-square rounded-xl overflow-hidden mb-3">
         <img
           src={coverImg}
@@ -20,9 +19,9 @@ export default function PropertyCard({ property }: { property: Property }) {
 
         <button
           className="absolute top-3 right-3 transition-transform active:scale-95"
-          onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+          onClick={(e) => { e.preventDefault(); e.stopPropagation(); onToggleFavorite?.(property.id); }}
         >
-          <FavoriteHeart size={24} style={{ fill: "rgba(0,0,0,0.5)", stroke: "#fff", strokeWidth: "2" }} />
+          <FavoriteHeart size={24} style={{ fill: isFavorited ? "var(--brand-cyan)" : "rgba(0,0,0,0.5)", stroke: isFavorited ? "var(--brand-cyan)" : "#fff", strokeWidth: "2" }} />
         </button>
       </div>
 
@@ -50,6 +49,6 @@ export default function PropertyCard({ property }: { property: Property }) {
         </div>
 
       </div>
-    </Link>
+    </div>
   );
 }

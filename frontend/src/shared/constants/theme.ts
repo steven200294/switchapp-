@@ -22,20 +22,21 @@ export const FALLBACK_COVER_HQ =
   "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?fit=crop&w=800&q=100";
 
 const SUPABASE_STORAGE_RE = /^https?:\/\/[^/]+\/storage\/v1\/object\/public\/[^/]+\//;
+const SUPABASE_STORAGE_BASE =
+  "https://aakdzvvwhvmbpjpmbpep.supabase.co/storage/v1/object/public/make-515d6ac6-property-photos";
 
 /**
  * Resolve a storage path or URL to a public browser-accessible URL.
  * Handles: relative paths, full Supabase URLs, internal Docker URLs.
  */
-export function resolveStorageUrl(path: string, bucket = "properties"): string {
+export function resolveStorageUrl(path: string): string {
   if (!path) return FALLBACK_COVER_HQ;
-  const base = process.env.NEXT_PUBLIC_STORAGE_URL ?? "http://localhost:9000";
-  if (path.startsWith("http")) {
-    const stripped = path.replace(SUPABASE_STORAGE_RE, "");
-    if (stripped !== path) return `${base}/${bucket}/${stripped.split("?")[0]}`;
-    return path.replace(/^https?:\/\/[^/]+/, base);
-  }
-  return `${base}/${bucket}/${path}`;
+  // Full Supabase URLs are already publicly accessible — return as-is
+  if (SUPABASE_STORAGE_RE.test(path)) return path;
+  // Any other full URL — return as-is
+  if (path.startsWith("http")) return path;
+  // Relative path — build Supabase URL
+  return `${SUPABASE_STORAGE_BASE}/${path}`;
 }
 
 /**
@@ -48,7 +49,7 @@ export function pickCover(p: {
   photo_paths?: string[];
   photos?: string[];
 }): string {
-  return p.cover_path || p.photo_paths?.[0] || p.cover_image || p.photos?.[0] || "";
+  return p.cover_image || p.cover_path || p.photo_paths?.[0] || p.photos?.[0] || "";
 }
 
 export const SWIPE_THRESHOLD = 120;

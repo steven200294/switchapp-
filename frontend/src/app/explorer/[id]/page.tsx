@@ -43,15 +43,15 @@ export default function PropertyDetailPage() {
     );
   }
 
-  const bestPhotos = property.photo_paths?.length ? property.photo_paths : property.photos;
-  const bestCover = property.cover_path || property.cover_image;
+  const bestPhotos = property.photos?.length ? property.photos : property.photo_paths;
+  const bestCover = property.cover_image || property.cover_path;
   const photos = [
     ...(bestCover ? [bestCover] : []),
     ...bestPhotos.filter((p) => p !== bestCover),
   ].filter(Boolean);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white max-w-3xl mx-auto animate-page-slide-up">
       <PropertyImageCarousel
         photos={photos}
         onBack={() => router.back()}
@@ -61,7 +61,7 @@ export default function PropertyDetailPage() {
         }}
         isFavorited={isFavorited}
       />
-      <div className="w-full max-w-3xl mx-auto px-6 py-8 pb-32">
+      <div className="px-6 py-8 pb-32">
         <PropertyInfo property={property} />
         {property.owner && <PropertyOwnerCard owner={property.owner} />}
         {isLoggedIn && (
@@ -73,7 +73,7 @@ export default function PropertyDetailPage() {
         )}
         {property.description && (
           <div className="mb-8">
-            <h3 className="text-title font-bold text-gray-900 mb-3">À propos de ce logement</h3>
+            <h3 className="text-title font-bold text-gray-900 mb-3">A propos de ce logement</h3>
             <p className="text-body-lg text-gray-600 leading-relaxed whitespace-pre-line">{property.description}</p>
           </div>
         )}

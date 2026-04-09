@@ -13,6 +13,7 @@ interface PropertyImageCarouselStageProps {
   onFavorite: () => void;
   isFavorited: boolean;
   scrollTo: (index: number) => void;
+  hideOverlays?: boolean;
 }
 
 export default function PropertyImageCarouselStage({
@@ -25,6 +26,7 @@ export default function PropertyImageCarouselStage({
   onFavorite,
   isFavorited,
   scrollTo,
+  hideOverlays = false,
 }: PropertyImageCarouselStageProps) {
   return (
     <div className="relative w-full h-[45vh] md:h-[50vh] min-h-[350px] overflow-hidden">
@@ -45,16 +47,19 @@ export default function PropertyImageCarouselStage({
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-linear-to-t from-gray-900/20 to-transparent pointer-events-none" />
-
-      <PropertyCarouselStageOverlays
-        imageCount={images.length}
-        current={current}
-        onBack={onBack}
-        onFavorite={onFavorite}
-        isFavorited={isFavorited}
-        scrollTo={scrollTo}
-      />
+      {!hideOverlays && (
+        <>
+          <div className="absolute inset-0 bg-linear-to-t from-gray-900/20 to-transparent pointer-events-none" />
+          <PropertyCarouselStageOverlays
+            imageCount={images.length}
+            current={current}
+            onBack={onBack}
+            onFavorite={onFavorite}
+            isFavorited={isFavorited}
+            scrollTo={scrollTo}
+          />
+        </>
+      )}
     </div>
   );
 }
