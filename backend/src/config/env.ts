@@ -57,6 +57,14 @@ export const env = {
     rounds: 10,
   },
 
+  captcha: {
+    secretKey: process.env.CAPTCHA_SECRET_KEY ?? '',
+  },
+
+  emailVerify: {
+    secret: process.env.EMAIL_VERIFY_SECRET ?? process.env.JWT_SECRET ?? 'dev-email-verify-secret',
+  },
+
   pagination: {
     defaultLimit: 20,
     maxLimit: 50,

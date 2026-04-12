@@ -357,3 +357,25 @@ When doing architecture work:
 - **`AI_PROVIDER`** (default `openai`), **`AI_MODEL`** (default `gpt-4o-mini`), **`AI_API_KEY`**: extend `compatibility.provider.ts` for other providers.
 - **Never log or return API keys**; failures return generic client messages; details in Winston only.
 - Frontend: `useCompatibility`, `PropertyCompatibilityCard` on `app/explorer/[id]/page.tsx`.
+
+---
+
+## Geocoding pipeline (implemented)
+
+- **`GeocodingCache`** Prisma model (`geocoding_cache` table): stores address → lat/lng with unique constraint on `(address, city, postal_code, country)`. Avoids redundant Nominatim calls.
+- **Backend module** `backend/src/modules/geocoding/`:
+  - `geocoding.provider.ts` — Nominatim HTTP call with 5s timeout and `User-Agent: SwitchAppart/1.0`.
+  - `geocoding.repository.ts` — cache lookup/upsert via Prisma.
+  - `geocoding.service.ts` — orchestration: check cache → call Nominatim → store → return. Never throws; returns `null` on failure.
+  - `geocoding.constants.ts` — Nominatim URL, user agent, timeout, job name.
+- **Properties integration** (`properties.service.ts`):
+  - `create()` — geocodes `address + city + postal_code` synchronously, stores lat/lng on the new property.
+  - `update()` — re-geocodes only when address/city/postal_code actually changed.
+  - Failure-safe: if geocoding returns null, property is created/updated with `latitude = null`.
+- **BullMQ job** (`geocoding` queue, `geocode-property` job name):
+  - Worker processes in `worker/src/jobs/geocode-property.ts`.
+  - Rate-limited to 1 job per 1.1s (Nominatim policy).
+  - Used for batch backfill and async geocoding.
+- **Redis infra** `backend/src/infra/redis/`: shared IORedis connection + BullMQ queue factory.
+- **Backfill script**: `data/backfill-geocode.ts` (`npm run backfill:geocode` from `backend/`). Geocodes all properties with NULL coords.
+- **Zod schemas unchanged** — lat/lng are backend-internal, never client-provided.

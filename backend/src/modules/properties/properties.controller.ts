@@ -1,6 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
-import { listQuerySchema } from './properties.schemas.js';
+import { listQuerySchema, categoryQuerySchema } from './properties.schemas.js';
 import * as propertiesService from './properties.service.js';
+import * as feedService from './feed.service.js';
 import * as compatibilityService from '../compatibility/compatibility.service.js';
 
 export async function list(req: Request, res: Response, next: NextFunction): Promise<void> {
@@ -13,7 +14,7 @@ export async function list(req: Request, res: Response, next: NextFunction): Pro
 
 export async function getById(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const property = await propertiesService.getById(req.params.id as string);
+    const property = await propertiesService.getById(req.params.id as string, req.userId);
     res.json({ data: property });
   } catch (err) { next(err); }
 }
@@ -49,9 +50,32 @@ export async function remove(req: Request, res: Response, next: NextFunction): P
   } catch (err) { next(err); }
 }
 
-export async function myProperties(req: Request, res: Response, next: NextFunction): Promise<void> {
+export async function myProperty(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const properties = await propertiesService.getByOwnerId(req.userId!);
-    res.json({ data: properties });
+    const result = await propertiesService.getMyProperty(req.userId!);
+    res.json({ data: result });
+  } catch (err) { next(err); }
+}
+
+export async function feed(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const result = await feedService.getFeed(req.userId);
+    res.json({ data: result });
+  } catch (err) { next(err); }
+}
+
+export async function feedCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const { page, limit, city } = categoryQuerySchema.parse(req.query);
+    const slug = req.params.slug as string;
+    const result = await feedService.getCategoryPage(slug, page, limit, req.userId, city);
+    res.json({ data: result });
+  } catch (err) { next(err); }
+}
+
+export async function saveDraft(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const property = await propertiesService.saveDraft(req.userId!, req.body);
+    res.status(200).json({ data: property });
   } catch (err) { next(err); }
 }

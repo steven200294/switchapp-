@@ -117,3 +117,11 @@ export function CreditCard(p: IconProps) {
 export function ChatBubbleDots(p: IconProps) {
   return ab(p, <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />);
 }
+
+export function Wallet(p: IconProps) {
+  return ab(p, <><rect x="1" y="5" width="22" height="16" rx="2" /><path d="M1 10h22" /><path d="M17 15h2" /></>);
+}
+
+export function Sparkles(p: IconProps) {
+  return ab(p, <><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /><path d="M5 3v4" /><path d="M19 17v4" /><path d="M3 5h4" /><path d="M17 19h4" /></>);
+}

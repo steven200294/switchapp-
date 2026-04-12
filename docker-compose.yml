@@ -46,7 +46,7 @@ services:
     volumes:
       - minio_data:/data
     healthcheck:
-      test: ["CMD", "mc", "ready", "local"]
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
       interval: 5s
       timeout: 3s
       retries: 5
@@ -67,7 +67,15 @@ services:
         condition: service_healthy
       minio:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://localhost:${API_PORT}/api/v1/health').then(r=>{if(!r.ok)throw r.status;process.exit(0)}).catch(()=>process.exit(1))\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
     volumes:
+      # NOTE: src mounts don't enable hot-reload (container runs compiled dist/).
+      # They allow referencing source for debugging.
       - ./backend/src:/app/backend/src
       - ./shared/src:/app/shared/src
 
@@ -99,10 +107,12 @@ services:
       WATCHPACK_POLLING: "true"
     env_file: .env
     depends_on:
-      - api
+      api:
+        condition: service_healthy
     volumes:
       - ./frontend/src:/app/frontend/src
       - ./frontend/public:/app/frontend/public
+      - ./frontend/messages:/app/frontend/messages
       - ./shared/src:/app/shared/src
 
   admin:

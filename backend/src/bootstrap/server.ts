@@ -14,6 +14,8 @@ import { swipesRouter } from "../modules/swipes/index.js";
 import { matchesRouter } from "../modules/matches/index.js";
 import { messagesRouter } from "../modules/messages/index.js";
 import { favoritesRouter } from "../modules/favorites/index.js";
+import { uploadsRouter } from "../modules/uploads/index.js";
+import { verificationRouter } from "../modules/verification/index.js";
 
 const app = express();
 
@@ -30,6 +32,8 @@ app.get("/api/v1/health", (_req, res) => {
   res.json({ data: { status: "ok", timestamp: new Date().toISOString() } });
 });
 
+// Prometheus metrics endpoint - accessible internally for scraping.
+// In production, restrict access via network policies (not exposed publicly).
 app.get("/api/v1/metrics", async (_req, res) => {
   res.set("Content-Type", register.contentType);
   res.end(await register.metrics());
@@ -43,6 +47,8 @@ app.use("/api/v1/swipes", swipesRouter);
 app.use("/api/v1/matches", matchesRouter);
 app.use("/api/v1/messages", messagesRouter);
 app.use("/api/v1/favorites", favoritesRouter);
+app.use("/api/v1/uploads", uploadsRouter);
+app.use("/api/v1/verification", verificationRouter);
 
 app.use(errorHandler);
 

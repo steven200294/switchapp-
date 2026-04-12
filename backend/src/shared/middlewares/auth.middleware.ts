@@ -38,6 +38,20 @@ export function adminOnlyMiddleware(req: Request, _res: Response, next: NextFunc
     .catch(next);
 }
 
+export function optionalAuth(req: Request, _res: Response, next: NextFunction): void {
+  try {
+    const header = req.headers.authorization;
+    if (header?.startsWith('Bearer ')) {
+      const decoded = jwt.verify(header.slice(7), env.jwt.secret) as JwtPayload;
+      req.userId = decoded.sub;
+      req.userEmail = decoded.email;
+    }
+  } catch {
+    // Invalid/expired token — treat as anonymous
+  }
+  next();
+}
+
 export function authMiddleware(req: Request, _res: Response, next: NextFunction): void {
   try {
     const header = req.headers.authorization;

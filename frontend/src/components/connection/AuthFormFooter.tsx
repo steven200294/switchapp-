@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 type Props = {
   activeTab: "signin" | "signup";
   setActiveTab: (t: "signin" | "signup") => void;
@@ -5,22 +7,23 @@ type Props = {
 };
 
 export default function AuthFormFooter({ activeTab, setActiveTab, setError }: Props) {
+  const t = useTranslations("auth");
   const clear = () => setError(null);
 
   return (
-    <p className="text-[13px] text-gray-400 text-center pb-4">
+    <p className="text-body-sm text-gray-400 text-center pb-4">
       {activeTab === "signin" ? (
         <>
-          Pas encore de compte ?{" "}
+          {t("noAccount")}{" "}
           <button type="button" onClick={() => { setActiveTab("signup"); clear(); }} className="text-gray-900 font-semibold hover:underline">
-            S&apos;inscrire
+            {t("signUp")}
           </button>
         </>
       ) : (
         <>
-          Déjà un compte ?{" "}
+          {t("hasAccount")}{" "}
           <button type="button" onClick={() => { setActiveTab("signin"); clear(); }} className="text-gray-900 font-semibold hover:underline">
-            Se connecter
+            {t("signIn")}
           </button>
         </>
       )}

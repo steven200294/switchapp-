@@ -10,6 +10,26 @@ export const updateProfileSchema = z.object({
   profession: z.string().max(100).optional(),
   date_of_birth: z.string().optional(),
   avatar_url: z.string().url().optional(),
+  user_type: z.enum(['tenant', 'owner', 'both']).optional(),
+  budget_min: z.number().int().min(0).optional(),
+  budget_max: z.number().int().min(0).optional(),
+  preferred_property_types: z.array(z.string()).optional(),
+  preferred_amenities: z.array(z.string()).optional(),
+  surface_min: z.number().int().min(0).optional(),
+  preferred_district: z.string().max(100).optional(),
+  preferred_neighborhood: z.string().max(100).optional(),
+}).strict();
+
+export const updatePreferencesSchema = z.object({
+  city: z.string().max(100).optional(),
+  budget_min: z.number().int().min(0).optional(),
+  budget_max: z.number().int().min(0).optional(),
+  preferred_property_types: z.array(z.string()).optional(),
+  preferred_amenities: z.array(z.string()).optional(),
+  surface_min: z.number().int().min(0).optional(),
+  preferred_district: z.string().max(100).optional(),
+  preferred_neighborhood: z.string().max(100).optional(),
 }).strict();
 
 export type UpdateProfileInput = z.infer<typeof updateProfileSchema>;
+export type UpdatePreferencesInput = z.infer<typeof updatePreferencesSchema>;

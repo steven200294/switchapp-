@@ -10,6 +10,7 @@ RUN cd frontend && npm install
 COPY shared/ shared/
 COPY frontend/next.config.ts frontend/tsconfig.json frontend/postcss.config.mjs frontend/tailwind.config.ts* frontend/
 COPY frontend/public frontend/public
+COPY frontend/messages frontend/messages
 
 ENV NEXT_TELEMETRY_DISABLED=1
 EXPOSE ${FRONTEND_PORT:-3001}

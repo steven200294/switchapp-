@@ -18,11 +18,11 @@ const SIZE_MAP = {
 } as const;
 
 const TEXT_MAP = {
-  xs: "text-[10px]",
-  sm: "text-xs",
-  md: "text-sm",
-  lg: "text-base",
-  xl: "text-lg",
+  xs: "text-body-2xs",
+  sm: "text-body-xs",
+  md: "text-body-sm",
+  lg: "text-body",
+  xl: "text-body-lg",
 } as const;
 
 export default function UserAvatar({ avatarUrl, name, size = "md", className = "" }: UserAvatarProps) {

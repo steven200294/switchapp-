@@ -5,8 +5,10 @@ global:
 scrape_configs:
   - job_name: "switchapp-api"
     metrics_path: /api/v1/metrics
+    # NOTE: /api/v1/metrics is accessible without auth for internal scraping.
+    # It should not be exposed publicly; restrict via network policies in production.
     static_configs:
-      # Uses the internal Docker network — must match API_PORT in .env
+      # IMPORTANT: port must match API_PORT in .env (default 4001)
       - targets: ["api:4001"]
         labels:
           service: "api"

@@ -4,8 +4,8 @@ CREATE SCHEMA IF NOT EXISTS "auth";
 -- CreateSchema
 CREATE SCHEMA IF NOT EXISTS "public";
 
--- CreateTable
-CREATE TABLE "auth"."users" (
+-- CreateTable (IF NOT EXISTS because init.sql may have already created it)
+CREATE TABLE IF NOT EXISTS "auth"."users" (
     "id" UUID NOT NULL,
     "email" VARCHAR(255),
     "encrypted_password" VARCHAR(255),
@@ -16,6 +16,7 @@ CREATE TABLE "auth"."users" (
     "raw_user_meta_data" JSONB,
     "aud" VARCHAR(255),
     "role" VARCHAR(255),
+    "last_sign_in_at" TIMESTAMPTZ(6),
     "is_sso_user" BOOLEAN NOT NULL DEFAULT false,
     "is_anonymous" BOOLEAN NOT NULL DEFAULT false,
 

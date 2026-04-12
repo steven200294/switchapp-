@@ -68,7 +68,33 @@ export async function update(id: string, data: Prisma.PropertyUpdateInput) {
 }
 
 export async function remove(id: string) {
-  return prisma.property.delete({ where: { id } });
+  return prisma.$transaction(async (tx) => {
+    const matches = await tx.match.findMany({
+      where: { OR: [{ property_a: id }, { property_b: id }] },
+      select: { id: true },
+    });
+    const matchIds = matches.map((m) => m.id);
+
+    if (matchIds.length > 0) {
+      const conversations = await tx.conversation.findMany({
+        where: { match_id: { in: matchIds } },
+        select: { id: true },
+      });
+      const conversationIds = conversations.map((c) => c.id);
+
+      if (conversationIds.length > 0) {
+        await tx.message.deleteMany({ where: { conversation_id: { in: conversationIds } } });
+        await tx.conversationParticipant.deleteMany({ where: { conversation_id: { in: conversationIds } } });
+        await tx.conversation.deleteMany({ where: { id: { in: conversationIds } } });
+      }
+
+      await tx.match.deleteMany({ where: { id: { in: matchIds } } });
+    }
+
+    await tx.swipe.deleteMany({ where: { property_id: id } });
+    await tx.favorite.deleteMany({ where: { property_id: id } });
+    await tx.property.delete({ where: { id } });
+  });
 }
 
 export async function findByOwnerId(ownerId: string) {
@@ -78,6 +104,13 @@ export async function findByOwnerId(ownerId: string) {
 export async function findFirstPublishedByOwner(ownerId: string) {
   return prisma.property.findFirst({
     where: { owner_id: ownerId, published: true, status: 'published' },
+    orderBy: { created_at: 'desc' },
+  });
+}
+
+export async function findFirstByOwner(ownerId: string) {
+  return prisma.property.findFirst({
+    where: { owner_id: ownerId },
     orderBy: { created_at: 'desc' },
   });
 }

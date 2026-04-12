@@ -22,6 +22,7 @@ model AuthUser {
   raw_user_meta_data Json?
   aud                String?   @db.VarChar(255)
   role               String?   @db.VarChar(255)
+  last_sign_in_at    DateTime? @db.Timestamptz(6)
   is_sso_user        Boolean   @default(false)
   is_anonymous       Boolean   @default(false)
 
@@ -82,6 +83,10 @@ model UserProfile {
   verified                 Boolean?  @default(false)
   last_seen_at             DateTime? @db.Timestamptz(6)
   user_type                String?   @default("tenant")
+  registration_ip          String?
+  phone_verified_at        DateTime? @db.Timestamptz(6)
+  phone_country_code       String?
+  phone_number             String?
 
   properties Property[]
 
@@ -142,6 +147,10 @@ model Property {
   swipes   Swipe[]
   favorites Favorite[]
 
+  @@index([owner_id])
+  @@index([published, status])
+  @@index([city])
+  @@index([created_at])
   @@map("properties")
   @@schema("public")
 }
@@ -155,6 +164,8 @@ model Swipe {
 
   property Property @relation(fields: [property_id], references: [id])
 
+  @@unique([user_id, property_id])
+  @@index([user_id])
   @@map("matching_swipes")
   @@schema("public")
 }
@@ -169,6 +180,8 @@ model Match {
 
   conversations Conversation[]
 
+  @@index([user_a])
+  @@index([user_b])
   @@map("matches")
   @@schema("public")
 }
@@ -198,6 +211,7 @@ model ConversationParticipant {
   conversation Conversation @relation(fields: [conversation_id], references: [id])
 
   @@id([conversation_id, user_id])
+  @@index([user_id])
   @@map("conversation_participants")
   @@schema("public")
 }
@@ -212,6 +226,7 @@ model Message {
 
   conversation Conversation @relation(fields: [conversation_id], references: [id])
 
+  @@index([conversation_id, created_at])
   @@map("messages")
   @@schema("public")
 }
@@ -224,6 +239,8 @@ model Favorite {
 
   property Property @relation(fields: [property_id], references: [id])
 
+  @@unique([user_id, property_id])
+  @@index([user_id])
   @@map("favorites")
   @@schema("public")
 }
@@ -257,5 +274,21 @@ model Notification {
   content    String?
 
   @@map("notifications")
+  @@schema("public")
+}
+
+model GeocodingCache {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  address     String   @default("")
+  city        String
+  postal_code String   @default("")
+  country     String   @default("France")
+  latitude    Float
+  longitude   Float
+  provider    String   @default("nominatim")
+  created_at  DateTime @default(now()) @db.Timestamptz(6)
+
+  @@unique([address, city, postal_code, country])
+  @@map("geocoding_cache")
   @@schema("public")
 }

@@ -141,3 +141,34 @@ body {
 .animate-float {
   animation: float 2.8s ease-in-out infinite;
 }
+
+@keyframes chatSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-chat-slide-up {
+  animation: chatSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes chatCardIn {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-chat-card-in {
+  animation: chatCardIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes chatCollapse {
+  from { opacity: 1; max-height: 500px; transform: scale(1); }
+  to { opacity: 0; max-height: 0; transform: scale(0.95); overflow: hidden; }
+}
+
+.animate-chat-collapse {
+  animation: chatCollapse 0.25s ease-in forwards;
+}
+
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}

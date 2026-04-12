@@ -7,6 +7,15 @@ export async function findUserProfile(userId: string) {
   });
 }
 
+export async function findUserProfilesBatch(userIds: string[]) {
+  if (userIds.length === 0) return new Map<string, { user_id: string; full_name: string | null; avatar_url: string | null; city: string | null }>();
+  const profiles = await prisma.userProfile.findMany({
+    where: { user_id: { in: userIds } },
+    select: { user_id: true, full_name: true, avatar_url: true, city: true },
+  });
+  return new Map(profiles.map((p) => [p.user_id, p]));
+}
+
 export async function findByUserId(userId: string) {
   return prisma.match.findMany({
     where: {

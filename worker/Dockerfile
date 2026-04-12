@@ -10,14 +10,17 @@ RUN cd shared && npm install
 COPY worker/package.json worker/
 RUN cd worker && npm install
 
-# Copy source
-COPY shared/ shared/
-COPY worker/ worker/
-
-# Generate Prisma client (shares schema with backend)
+# Generate Prisma client using backend's pinned prisma version
 COPY backend/prisma/ backend/prisma/
 COPY backend/package.json backend/
 RUN cd backend && npm install --omit=dev && npx prisma generate
+
+# Copy generated client into worker's node_modules (replace stubs)
+RUN rm -rf worker/node_modules/.prisma && cp -r backend/node_modules/.prisma worker/node_modules/.prisma
+
+# Copy source
+COPY shared/ shared/
+COPY worker/ worker/
 
 EXPOSE ${WORKER_PORT}
 

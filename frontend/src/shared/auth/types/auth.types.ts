@@ -7,4 +7,6 @@ export type AuthUser = {
   verified?: boolean;
   role?: string;
   created_at?: string;
+  email_confirmed_at?: string | null;
+  phone_verified_at?: string | null;
 };

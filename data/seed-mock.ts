@@ -31,6 +31,7 @@ async function clear(prisma: PrismaClient): Promise<void> {
   await prisma.swipe.deleteMany();
   await prisma.favorite.deleteMany();
   await prisma.property.deleteMany();
+  await prisma.geocodingCache.deleteMany();
   await prisma.notification.deleteMany();
   await prisma.adminUser.deleteMany();
   await prisma.userSwitchPass.deleteMany();
@@ -152,6 +153,7 @@ async function main(): Promise<void> {
       owner_id: U.admin, title: "Loft moderne – Paris 10e",
       description: "Grand loft rénové, verrière, idéal coworking et vie quotidienne.",
       city: "Paris", district: "10e", postal_code: "75010",
+      latitude: 48.8763, longitude: 2.3614,
       monthly_rent: 1600, surface_area: 65, rooms: 3, bedrooms: 2, bathrooms: 1,
       property_type: "loft", furnished: true, pets_allowed: true,
       published: true, status: "published",
@@ -166,6 +168,7 @@ async function main(): Promise<void> {
       owner_id: U.alice, title: "Studio lumineux – Paris 11e",
       description: "Calme, proche métro, idéal pour un switch court.",
       city: "Paris", district: "11e", postal_code: "75011",
+      latitude: 48.8588, longitude: 2.3811,
       monthly_rent: 1100, surface_area: 32, rooms: 2, bedrooms: 1, bathrooms: 1,
       property_type: "apartment", furnished: true, pets_allowed: false,
       published: true, status: "published",
@@ -180,6 +183,7 @@ async function main(): Promise<void> {
       owner_id: U.bob, title: "T2 centre Lyon",
       description: "Vue dégagée, fibre, quartier vivant.",
       city: "Lyon", district: "Presqu'île",
+      latitude: 45.7640, longitude: 4.8357,
       monthly_rent: 850, surface_area: 45, rooms: 3, bedrooms: 1, bathrooms: 1,
       property_type: "apartment", furnished: true, pets_allowed: true,
       published: true, status: "published",
@@ -194,6 +198,7 @@ async function main(): Promise<void> {
       owner_id: U.clara, title: "Maison Chartrons – Bordeaux",
       description: "Maison de ville avec jardin, quartier prisé des Chartrons.",
       city: "Bordeaux", district: "Chartrons", postal_code: "33300",
+      latitude: 44.8554, longitude: -0.5698,
       monthly_rent: 780, surface_area: 55, rooms: 4, bedrooms: 2, bathrooms: 1,
       property_type: "house", furnished: true, pets_allowed: true,
       published: true, status: "published",
@@ -208,6 +213,7 @@ async function main(): Promise<void> {
       owner_id: U.david, title: "T3 vue mer – Marseille",
       description: "Terrasse plein sud, Vieux-Port à 5 min.",
       city: "Marseille", district: "Vieux-Port", postal_code: "13001",
+      latitude: 43.2965, longitude: 5.3698,
       monthly_rent: 1050, surface_area: 52, rooms: 3, bedrooms: 2, bathrooms: 1,
       property_type: "apartment", furnished: true, pets_allowed: false,
       published: true, status: "published",
@@ -222,6 +228,7 @@ async function main(): Promise<void> {
       owner_id: U.emma, title: "Villa avec piscine – Toulouse",
       description: "Maison spacieuse, piscine, proche centre.",
       city: "Toulouse", district: "Saint-Cyprien", postal_code: "31300",
+      latitude: 43.5976, longitude: 1.4282,
       monthly_rent: 950, surface_area: 90, rooms: 5, bedrooms: 3, bathrooms: 2,
       property_type: "house", furnished: true, pets_allowed: true,
       published: true, status: "published",
@@ -236,6 +243,7 @@ async function main(): Promise<void> {
       owner_id: U.frank, title: "Studio Promenade – Nice",
       description: "À 200m de la plage, climatisé, parfait pour télétravail.",
       city: "Nice", district: "Promenade des Anglais", postal_code: "06000",
+      latitude: 43.6947, longitude: 7.2654,
       monthly_rent: 1200, surface_area: 38, rooms: 2, bedrooms: 1, bathrooms: 1,
       property_type: "apartment", furnished: true, pets_allowed: false,
       published: true, status: "published",

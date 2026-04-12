@@ -28,7 +28,7 @@ export async function getCompatibilityForProperty(
   const [viewerProfile, property] = await Promise.all([
     prisma.userProfile.findUnique({ where: { user_id: viewerUserId } }),
     prisma.property.findUnique({
-      where: { id: propertyId },
+      where: { id: propertyId, published: true, status: 'published' },
       include: { owner: true },
     }),
   ]);

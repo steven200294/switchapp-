@@ -21,6 +21,7 @@ COPY --from=builder /app/backend/node_modules backend/node_modules
 COPY --from=builder /app/backend/dist backend/dist
 COPY --from=builder /app/backend/prisma backend/prisma
 COPY --from=builder /app/backend/package.json backend/
+COPY backend/entrypoint.sh backend/entrypoint.sh
 
 EXPOSE ${API_PORT:-4001}
-CMD ["node", "backend/dist/bootstrap/server.js"]
+CMD ["sh", "backend/entrypoint.sh"]

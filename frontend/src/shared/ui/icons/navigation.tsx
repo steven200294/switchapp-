@@ -17,6 +17,10 @@ export function ChevronRight(p: IconProps) {
   return ab(p, <path d="m9 18 6-6-6-6" />);
 }
 
+export function ArrowRight(p: IconProps) {
+  return ab(p, <><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></>);
+}
+
 export function Menu(p: IconProps) {
   return ab(p, <><path d="M4 12h16" /><path d="M4 6h16" /><path d="M4 18h16" /></>);
 }

@@ -5,6 +5,7 @@ export interface CreateAuthUserData {
   email: string;
   encryptedPassword: string;
   fullName: string;
+  registrationIp?: string;
 }
 
 export async function findAuthUserByEmail(email: string) {
@@ -30,7 +31,7 @@ export async function createAuthUser(data: CreateAuthUserData) {
       encrypted_password: data.encryptedPassword,
       aud: 'authenticated',
       role: 'authenticated',
-      email_confirmed_at: now,
+      email_confirmed_at: null,
       created_at: now,
       updated_at: now,
       raw_app_meta_data: { provider: 'email', providers: ['email'] },
@@ -38,6 +39,45 @@ export async function createAuthUser(data: CreateAuthUserData) {
       is_sso_user: false,
       is_anonymous: false,
     },
+  });
+}
+
+export async function createUserWithProfile(data: CreateAuthUserData) {
+  const id = randomUUID();
+  const now = new Date();
+
+  return prisma.$transaction(async (tx) => {
+    const authUser = await tx.authUser.create({
+      data: {
+        id,
+        email: data.email,
+        encrypted_password: data.encryptedPassword,
+        aud: 'authenticated',
+        role: 'authenticated',
+        email_confirmed_at: null,
+        created_at: now,
+        updated_at: now,
+        raw_app_meta_data: { provider: 'email', providers: ['email'] },
+        raw_user_meta_data: { full_name: data.fullName },
+        is_sso_user: false,
+        is_anonymous: false,
+      },
+    });
+
+    await tx.userProfile.create({
+      data: {
+        user_id: authUser.id,
+        email: data.email,
+        full_name: data.fullName,
+        registration_ip: data.registrationIp ?? null,
+      },
+    });
+
+    await tx.userSwitchPass.create({
+      data: { user_id: authUser.id, balance: 0 },
+    });
+
+    return authUser;
   });
 }
 

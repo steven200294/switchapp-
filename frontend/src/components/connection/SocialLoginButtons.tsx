@@ -1,9 +1,13 @@
+import { useTranslations } from "next-intl";
+
 export default function SocialLoginButtons() {
+  const t = useTranslations("auth");
+
   return (
     <>
       <div className="flex items-center w-full mb-6">
         <div className="flex-1 h-px bg-gray-200" />
-        <span className="px-4 text-[13px] text-gray-400 font-medium">Ou continuer avec</span>
+        <span className="px-4 text-body-sm text-gray-400 font-medium">{t("socialSeparator")}</span>
         <div className="flex-1 h-px bg-gray-200" />
       </div>
 

@@ -2,7 +2,12 @@ import * as repo from './users.repository.js';
 import { AppError } from '../../shared/errors/AppError.js';
 import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js';
 
-const ALLOWED_FIELDS = ['full_name', 'first_name', 'last_name', 'avatar_url', 'city', 'phone', 'bio', 'profession', 'date_of_birth', 'user_type'];
+const ALLOWED_FIELDS = [
+  'full_name', 'first_name', 'last_name', 'avatar_url', 'city', 'phone',
+  'bio', 'profession', 'date_of_birth', 'user_type',
+  'budget_min', 'budget_max', 'preferred_property_types', 'preferred_amenities',
+  'surface_min', 'preferred_district', 'preferred_neighborhood',
+];
 
 export async function getMyProfile(userId: string) {
   const profile = await repo.findProfileByUserId(userId);

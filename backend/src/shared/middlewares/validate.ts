@@ -21,6 +21,22 @@ export function validate(schema: ZodSchema, source: Source = 'body') {
     }
     if (source === 'body') {
       req.body = parsed.data;
+    } else if (source === 'query') {
+      // Express 5: req.query is a getter, so direct assignment may not persist.
+      // Controllers should re-parse with the schema for coerced types.
+      try {
+        const q = req.query;
+        for (const key of Object.keys(q)) delete q[key];
+        Object.assign(q, parsed.data);
+      } catch {
+        // Silently ignore if req.query is truly immutable; validation still passed.
+      }
+    } else if (source === 'params') {
+      try {
+        Object.assign(req.params, parsed.data);
+      } catch {
+        // Same fallback for params
+      }
     }
     next();
   };

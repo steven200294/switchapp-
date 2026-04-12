@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import type { AuthUser } from '@/shared/auth/types/auth.types';
-import { getMe } from '@/shared/auth/services/auth.service';
 
 type AuthState = {
   user: AuthUser | null;
@@ -8,8 +7,9 @@ type AuthState = {
   isLoggedIn: boolean;
   isLoading: boolean;
   setAuth: (user: AuthUser, token: string) => void;
+  setUser: (user: AuthUser) => void;
   logout: () => void;
-  loadFromStorage: () => Promise<void>;
+  hydrateToken: () => string | null;
 };
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -22,32 +22,28 @@ export const useAuthStore = create<AuthState>((set) => ({
     if (typeof window !== 'undefined') {
       localStorage.setItem('token', token);
     }
-    set({ user, token, isLoggedIn: true });
+    set({ user, token, isLoggedIn: true, isLoading: false });
+  },
+
+  setUser: (user) => {
+    set({ user, isLoggedIn: true, isLoading: false });
   },
 
   logout: () => {
     if (typeof window !== 'undefined') {
       localStorage.removeItem('token');
     }
-    set({ user: null, token: null, isLoggedIn: false });
+    set({ user: null, token: null, isLoggedIn: false, isLoading: false });
   },
 
-  loadFromStorage: async () => {
-    if (typeof window === 'undefined') {
-      set({ isLoading: false });
-      return;
-    }
+  hydrateToken: () => {
+    if (typeof window === 'undefined') return null;
     const token = localStorage.getItem('token');
-    if (!token) {
+    if (token) {
+      set({ token, isLoading: true });
+    } else {
       set({ isLoading: false });
-      return;
     }
-    try {
-      const { user } = await getMe();
-      set({ user, token, isLoggedIn: true, isLoading: false });
-    } catch {
-      localStorage.removeItem('token');
-      set({ user: null, token: null, isLoggedIn: false, isLoading: false });
-    }
+    return token;
   },
 }));

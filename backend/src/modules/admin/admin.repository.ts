@@ -287,8 +287,8 @@ export async function getSwipeStats(): Promise<{
   return {
     totalSwipes: Object.values(map).reduce((a, b) => a + b, 0),
     likes: map['like'] ?? 0,
-    dislikes: map['dislike'] ?? 0,
-    superLikes: map['super_like'] ?? 0,
+    dislikes: map['nope'] ?? 0,
+    superLikes: 0,
   };
 }
 
@@ -369,7 +369,7 @@ export async function getMetricsSummary(): Promise<{
     prisma.match.count({ where: { created_at: { gte: new Date(Date.now() - 604800000) } } }),
     prisma.swipe.count(),
     prisma.swipe.count({ where: { action: 'like' } }),
-    prisma.swipe.count({ where: { action: 'dislike' } }),
+    prisma.swipe.count({ where: { action: 'nope' } }),
     prisma.swipe.count({ where: { created_at: { gte: new Date(Date.now() - 86400000) } } }),
     prisma.conversation.count(),
     prisma.$queryRaw<[{ cnt: bigint }]>`

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useTranslations } from "next-intl";
 import { UserRound, Mail, Lock } from "@/shared/ui/icons";
 
 interface AuthFormInputsProps {
@@ -14,31 +15,33 @@ interface AuthFormInputsProps {
 }
 
 export default function AuthFormInputs(p: AuthFormInputsProps) {
+  const t = useTranslations("auth");
+
   return (
     <div className="w-full space-y-4 mb-6">
       {p.activeTab === "signup" && (
         <FormField
           icon={<UserRound size={22} strokeWidth={1.8} />}
-          label="Nom complet" type="text" value={p.fullName}
-          onChange={p.setFullName} placeholder="Jean Dupont"
+          label={t("fullName")} type="text" value={p.fullName}
+          onChange={p.setFullName} placeholder={t("namePlaceholder")}
         />
       )}
       <FormField
         icon={<Mail size={22} strokeWidth={1.8} />}
-        label="Adresse email" type="email" value={p.email}
-        onChange={p.setEmail} placeholder="votre@email.com" autoComplete="email"
+        label={t("email")} type="email" value={p.email}
+        onChange={p.setEmail} placeholder={t("emailPlaceholder")} autoComplete="email"
       />
       <FormField
         icon={<Lock size={22} strokeWidth={1.8} />}
-        label="Mot de passe" type="password" value={p.password}
-        onChange={p.setPassword} placeholder="••••••••"
+        label={t("password")} type="password" value={p.password}
+        onChange={p.setPassword} placeholder={t("passwordPlaceholder")}
         autoComplete={p.activeTab === "signin" ? "current-password" : "new-password"} tracking
       />
       {p.activeTab === "signup" && (
         <FormField
           icon={<Lock size={22} strokeWidth={1.8} />}
-          label="Confirmer le mot de passe" type="password" value={p.confirmPassword}
-          onChange={p.setConfirmPassword} placeholder="••••••••" autoComplete="new-password" tracking
+          label={t("confirmPassword")} type="password" value={p.confirmPassword}
+          onChange={p.setConfirmPassword} placeholder={t("passwordPlaceholder")} autoComplete="new-password" tracking
         />
       )}
     </div>
@@ -56,11 +59,11 @@ function FormField({ icon, label, type, value, onChange, placeholder, autoComple
       </div>
       <div className="w-px h-8 bg-gray-200 shrink-0 mx-1" />
       <div className="flex-1 flex flex-col justify-center pl-3 pr-2">
-        <label className="text-[11px] text-gray-500 font-medium mb-0.5">{label}</label>
+        <label className="text-body-xs text-gray-500 font-medium mb-0.5">{label}</label>
         <input
           type={type} value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder}
           autoComplete={autoComplete}
-          className={`text-[14px] font-bold text-black outline-none bg-transparent w-full placeholder:font-normal placeholder:text-gray-300${tracking ? " tracking-widest" : ""}`}
+          className={`text-body font-bold text-black outline-none bg-transparent w-full placeholder:font-normal placeholder:text-gray-300${tracking ? " tracking-widest" : ""}`}
         />
       </div>
     </div>

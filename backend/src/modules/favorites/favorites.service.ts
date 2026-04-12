@@ -14,7 +14,7 @@ export async function addFavorite(userId: string, propertyId: string) {
 
   const existing = await repo.findExisting(userId, propertyId);
   if (existing) {
-    throw new AppError(ERROR_CODES.CONFLICT, 409, 'Already in favorites');
+    throw new AppError(ERROR_CODES.CONFLICT, 409, CLIENT_MESSAGES[ERROR_CODES.CONFLICT], 'Duplicate favorite');
   }
 
   return repo.create(userId, propertyId);

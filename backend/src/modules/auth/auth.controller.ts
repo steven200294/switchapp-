@@ -5,7 +5,8 @@ import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js'
 
 export async function register(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const result = await authService.register(req.body);
+    const { captcha_token: _captcha, ...input } = req.body;
+    const result = await authService.register(input, req.ip ?? undefined);
     res.status(201).json({ data: result });
   } catch (err) { next(err); }
 }

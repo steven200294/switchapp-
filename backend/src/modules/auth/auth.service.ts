@@ -1,11 +1,13 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { env } from '../../config/env.js';
+import { logger } from '../../config/logger.js';
 import { AppError } from '../../shared/errors/AppError.js';
 import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js';
 import { activeUsers } from '../../infra/metrics/prometheus.js';
 import * as authRepo from './auth.repository.js';
 import { isAdminUser } from '../admin/admin.repository.js';
+import * as verificationService from '../verification/verification.service.js';
 import type { RegisterInput, LoginInput } from './auth.schemas.js';
 
 function signToken(userId: string, email: string): string {
@@ -16,7 +18,7 @@ function signToken(userId: string, email: string): string {
   );
 }
 
-export async function register(input: RegisterInput) {
+export async function register(input: RegisterInput, registrationIp?: string) {
   const existing = await authRepo.findAuthUserByEmail(input.email);
   if (existing) {
     throw new AppError(
@@ -29,19 +31,26 @@ export async function register(input: RegisterInput) {
 
   const encryptedPassword = await bcrypt.hash(input.password, env.bcrypt.rounds);
 
-  const authUser = await authRepo.createAuthUser({
+  const authUser = await authRepo.createUserWithProfile({
     email: input.email,
     encryptedPassword,
     fullName: input.full_name,
+    registrationIp,
   });
-
-  await authRepo.createUserProfile(authUser.id, input.email, input.full_name);
-  await authRepo.createUserSwitchPass(authUser.id);
 
   const token = signToken(authUser.id, input.email);
 
+  verificationService.sendVerificationEmail(authUser.id, input.email).catch((err) => {
+    logger.warn(`Failed to send verification email for ${input.email}: ${err instanceof Error ? err.message : String(err)}`);
+  });
+
   return {
-    user: { id: authUser.id, email: input.email, full_name: input.full_name },
+    user: {
+      id: authUser.id,
+      email: input.email,
+      full_name: input.full_name,
+      email_confirmed_at: null,
+    },
     token,
   };
 }
@@ -83,6 +92,7 @@ export async function login(input: LoginInput) {
       city: profile?.city ?? null,
       verified: profile?.verified ?? false,
       role: admin ? 'admin' : 'user',
+      email_confirmed_at: authUser.email_confirmed_at?.toISOString() ?? null,
     },
     token,
   };
@@ -113,5 +123,7 @@ export async function getMe(userId: string) {
     verified: profile?.verified ?? false,
     role: admin ? 'admin' : 'user',
     created_at: profile?.created_at?.toISOString() ?? null,
+    email_confirmed_at: authUser.email_confirmed_at?.toISOString() ?? null,
+    phone_verified_at: profile?.phone_verified_at?.toISOString() ?? null,
   };
 }

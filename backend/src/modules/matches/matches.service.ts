@@ -4,19 +4,21 @@ import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js'
 
 export async function listMyMatches(userId: string) {
   const matches = await repo.findByUserId(userId);
-  return Promise.all(
-    matches.map(async (m) => {
-      const otherUserId = m.user_a === userId ? m.user_b : m.user_a;
-      const otherUser = await repo.findUserProfile(otherUserId);
-      const conversation = m.conversations[0] ?? null;
-      return {
-        id: m.id,
-        created_at: m.created_at,
-        otherUser,
-        conversation,
-      };
-    }),
-  );
+
+  const otherUserIds = [...new Set(
+    matches.map((m) => (m.user_a === userId ? m.user_b : m.user_a)),
+  )];
+  const profileMap = await repo.findUserProfilesBatch(otherUserIds);
+
+  return matches.map((m) => {
+    const otherUserId = m.user_a === userId ? m.user_b : m.user_a;
+    return {
+      id: m.id,
+      created_at: m.created_at,
+      otherUser: profileMap.get(otherUserId) ?? null,
+      conversation: m.conversations[0] ?? null,
+    };
+  });
 }
 
 export async function getMatchById(id: string, userId: string) {
