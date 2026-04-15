@@ -5,7 +5,7 @@ import { env } from '../../config/env.js';
 import { AppError } from '../../shared/errors/AppError.js';
 import { ERROR_CODES, CLIENT_MESSAGES } from '../../shared/errors/errorCodes.js';
 
-const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 const MAX_FILES = 10;
 
 export async function uploadPhotos(req: Request, res: Response, next: NextFunction): Promise<void> {

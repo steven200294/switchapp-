@@ -8,6 +8,7 @@ interface Props {
   property: MyProperty;
   onSave: (data: Record<string, unknown>) => void;
   saving: boolean;
+  savedField?: string | null;
 }
 
 const ALL_AMENITIES = [
@@ -24,8 +25,8 @@ const AMENITY_LABEL_KEYS: Record<string, string> = {
   chauffage_central: "centralHeating",
 };
 
-function ToggleRow({ label, active, onToggle, disabled }: {
-  label: string; active: boolean; onToggle: () => void; disabled: boolean;
+function ToggleRow({ label, active, onToggle, disabled, saved }: {
+  label: string; active: boolean; onToggle: () => void; disabled: boolean; saved?: boolean;
 }) {
   return (
     <button
@@ -34,7 +35,14 @@ function ToggleRow({ label, active, onToggle, disabled }: {
       disabled={disabled}
       className="w-full flex items-center justify-between py-3 border-b border-gray-50 last:border-0"
     >
-      <span className="text-body text-gray-700 font-medium">{label}</span>
+      <span className="text-body text-gray-700 font-medium flex items-center gap-1">
+        {label}
+        {saved && (
+          <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5 text-green-600 animate-fade-in">
+            <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" />
+          </svg>
+        )}
+      </span>
       <div className={`w-11 h-6 rounded-full relative transition-colors ${active ? "bg-brand-cyan" : "bg-gray-300"}`}>
         <div className={`absolute top-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform ${active ? "left-5.5" : "left-0.5"}`} />
       </div>
@@ -42,7 +50,7 @@ function ToggleRow({ label, active, onToggle, disabled }: {
   );
 }
 
-export default function PropertyEditSections({ property: p, onSave, saving }: Props) {
+export default function PropertyEditSections({ property: p, onSave, saving, savedField }: Props) {
   const t = useTranslations("propertyManage");
   const tAmenity = useTranslations("amenities");
   const [editingAmenities, setEditingAmenities] = useState(false);
@@ -61,10 +69,10 @@ export default function PropertyEditSections({ property: p, onSave, saving }: Pr
     <>
       <div className="mt-5 bg-white rounded-2xl border border-gray-100 p-4">
         <h3 className="text-body-lg font-bold text-gray-900 mb-1">{t("conditions")}</h3>
-        <ToggleRow label={t("furnished")} active={!!p.furnished} onToggle={() => toggleCondition("furnished", p.furnished)} disabled={saving} />
-        <ToggleRow label={t("petsAllowed")} active={!!p.pets_allowed} onToggle={() => toggleCondition("pets_allowed", p.pets_allowed)} disabled={saving} />
-        <ToggleRow label={t("smokerAllowed")} active={!!p.smoking_allowed} onToggle={() => toggleCondition("smoking_allowed", p.smoking_allowed)} disabled={saving} />
-        <ToggleRow label={t("utilitiesIncluded")} active={!!p.utilities_included} onToggle={() => toggleCondition("utilities_included", p.utilities_included)} disabled={saving} />
+        <ToggleRow label={t("furnished")} active={!!p.furnished} onToggle={() => toggleCondition("furnished", p.furnished)} disabled={saving} saved={savedField === "furnished"} />
+        <ToggleRow label={t("petsAllowed")} active={!!p.pets_allowed} onToggle={() => toggleCondition("pets_allowed", p.pets_allowed)} disabled={saving} saved={savedField === "pets_allowed"} />
+        <ToggleRow label={t("smokerAllowed")} active={!!p.smoking_allowed} onToggle={() => toggleCondition("smoking_allowed", p.smoking_allowed)} disabled={saving} saved={savedField === "smoking_allowed"} />
+        <ToggleRow label={t("utilitiesIncluded")} active={!!p.utilities_included} onToggle={() => toggleCondition("utilities_included", p.utilities_included)} disabled={saving} saved={savedField === "utilities_included"} />
       </div>
 
       <div className="mt-5 bg-white rounded-2xl border border-gray-100 p-4">

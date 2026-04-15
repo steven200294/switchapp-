@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ChevronLeft, MapPin, Maximize, Bed, Bath, Trash } from "@/shared/ui/icons";
 import type { MyProperty } from "../../types/property.types";
 import { useUnpublish, useDeleteProperty, useUpdateProperty } from "../hooks/usePropertyMutations";
-import { EditableTextField, EditableNumberField } from "./EditableField";
+import { EditableTextField, EditableNumberField, EditableSelectField } from "./EditableField";
 import PropertyEditSections from "./PropertyEditSections";
 import PhotoGallery from "./PhotoGallery";
 
@@ -18,19 +18,34 @@ export default function PropertyManageView({ property: p, onClose }: Props) {
   const t = useTranslations("propertyManage");
   const tCommon = useTranslations("common");
   const [confirmAction, setConfirmAction] = useState<"unpublish" | "delete" | null>(null);
+  const [savedField, setSavedField] = useState<string | null>(null);
 
   const unpublishMutation = useUnpublish(onClose);
   const deleteMutation = useDeleteProperty(onClose);
   const updateMutation = useUpdateProperty();
   const actionLoading = unpublishMutation.isPending || deleteMutation.isPending;
 
-  const save = (data: Record<string, unknown>) => updateMutation.mutate({ id: p.id, data });
+  const save = useCallback((data: Record<string, unknown>) => {
+    const field = Object.keys(data)[0];
+    updateMutation.mutate(
+      { id: p.id, data },
+      {
+        onSuccess: () => {
+          setSavedField(field);
+          setTimeout(() => setSavedField(null), 2000);
+        },
+      },
+    );
+  }, [p.id, updateMutation]);
 
   const tSearch = useTranslations("search");
-  const typeLabels: Record<string, string> = {
-    apartment: tSearch("apartment"), house: tSearch("house"), studio: tSearch("studio"),
-    loft: tSearch("loft"), room: tSearch("room"),
-  };
+  const typeOptions = [
+    { value: "apartment", label: tSearch("apartment") },
+    { value: "house", label: tSearch("house") },
+    { value: "studio", label: tSearch("studio") },
+    { value: "loft", label: tSearch("loft") },
+    { value: "room", label: tSearch("room") },
+  ];
 
   return (
     <div className="flex flex-col h-full">
@@ -62,6 +77,7 @@ export default function PropertyManageView({ property: p, onClose }: Props) {
               value={p.title ?? ""}
               onSave={(v) => save({ title: v })}
               saving={updateMutation.isPending}
+              saved={savedField === "title"}
             />
           </div>
 
@@ -78,6 +94,7 @@ export default function PropertyManageView({ property: p, onClose }: Props) {
               value={p.description ?? ""}
               onSave={(v) => save({ description: v })}
               saving={updateMutation.isPending}
+              saved={savedField === "description"}
               multiline
               placeholder={t("descriptionPlaceholder")}
               maxLength={2000}
@@ -103,21 +120,16 @@ export default function PropertyManageView({ property: p, onClose }: Props) {
           </div>
 
           <div className="mt-5 bg-white rounded-2xl border border-gray-100 p-4">
-            <EditableTextField
-              label={t("type")}
-              value={typeLabels[p.property_type ?? ""] ?? p.property_type ?? ""}
-              onSave={() => {}}
-              saving={false}
-            />
-            <EditableNumberField label={t("surface")} value={p.surface_area} onSave={(v) => save({ surface_area: v })} saving={updateMutation.isPending} suffix="m²" min={1} max={10000} />
-            <EditableNumberField label={t("rooms")} value={p.rooms} onSave={(v) => save({ rooms: v })} saving={updateMutation.isPending} min={1} max={50} />
-            <EditableNumberField label={t("bedrooms")} value={p.bedrooms} onSave={(v) => save({ bedrooms: v })} saving={updateMutation.isPending} min={0} max={50} />
-            <EditableNumberField label={t("bathrooms")} value={p.bathrooms} onSave={(v) => save({ bathrooms: v })} saving={updateMutation.isPending} min={0} max={20} />
-            <EditableNumberField label={t("rent")} value={p.monthly_rent} onSave={(v) => save({ monthly_rent: v })} saving={updateMutation.isPending} suffix={tCommon("currency")} min={0} />
-            <EditableNumberField label={t("deposit")} value={p.deposit} onSave={(v) => save({ deposit: v })} saving={updateMutation.isPending} suffix={tCommon("currency")} min={0} />
+            <EditableSelectField label={t("type")} value={p.property_type ?? "apartment"} options={typeOptions} onSave={(v) => save({ property_type: v })} saving={updateMutation.isPending} saved={savedField === "property_type"} />
+            <EditableNumberField label={t("surface")} value={p.surface_area} onSave={(v) => save({ surface_area: v })} saving={updateMutation.isPending} saved={savedField === "surface_area"} suffix="m²" min={1} max={10000} />
+            <EditableNumberField label={t("rooms")} value={p.rooms} onSave={(v) => save({ rooms: v })} saving={updateMutation.isPending} saved={savedField === "rooms"} min={1} max={50} />
+            <EditableNumberField label={t("bedrooms")} value={p.bedrooms} onSave={(v) => save({ bedrooms: v })} saving={updateMutation.isPending} saved={savedField === "bedrooms"} min={0} max={50} />
+            <EditableNumberField label={t("bathrooms")} value={p.bathrooms} onSave={(v) => save({ bathrooms: v })} saving={updateMutation.isPending} saved={savedField === "bathrooms"} min={0} max={20} />
+            <EditableNumberField label={t("rent")} value={p.monthly_rent} onSave={(v) => save({ monthly_rent: v })} saving={updateMutation.isPending} saved={savedField === "monthly_rent"} suffix={tCommon("currency")} min={0} />
+            <EditableNumberField label={t("deposit")} value={p.deposit} onSave={(v) => save({ deposit: v })} saving={updateMutation.isPending} saved={savedField === "deposit"} suffix={tCommon("currency")} min={0} />
           </div>
 
-          <PropertyEditSections property={p} onSave={save} saving={updateMutation.isPending} />
+          <PropertyEditSections property={p} onSave={save} saving={updateMutation.isPending} savedField={savedField} />
 
           <div className="mt-6 bg-gray-50 rounded-2xl p-4 flex items-center gap-3">
             <span className="text-body text-gray-500">{t("completion")}</span>

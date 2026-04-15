@@ -8,6 +8,7 @@ import {
   sendPhoneOtp,
   verifyPhoneOtp,
   updatePreferences,
+  updateProfile,
   getMyProfile,
 } from "../services/auth.service";
 
@@ -77,6 +78,17 @@ export function useUpdatePreferencesMutation() {
     mutationFn: (data: Record<string, unknown>) => updatePreferences(data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.PROPERTIES_FEED });
+      queryClient.invalidateQueries({ queryKey: QUERY_KEYS.MY_PROFILE });
+    },
+  });
+}
+
+export function useUpdateProfileMutation() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (data: Record<string, unknown>) => updateProfile(data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: QUERY_KEYS.AUTH_ME });
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.MY_PROFILE });
     },
   });

@@ -3,17 +3,29 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
+function SavedBadge({ visible }: { visible: boolean }) {
+  if (!visible) return null;
+  return (
+    <span className="inline-flex items-center gap-0.5 text-green-600 text-body-xs font-semibold animate-fade-in ml-1">
+      <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
+        <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" />
+      </svg>
+    </span>
+  );
+}
+
 interface TextFieldProps {
   label: string;
   value: string;
   onSave: (v: string) => void;
   saving?: boolean;
+  saved?: boolean;
   multiline?: boolean;
   placeholder?: string;
   maxLength?: number;
 }
 
-export function EditableTextField({ label, value, onSave, saving, multiline, placeholder, maxLength }: TextFieldProps) {
+export function EditableTextField({ label, value, onSave, saving, saved, multiline, placeholder, maxLength }: TextFieldProps) {
   const tCommon = useTranslations("common");
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value);
@@ -66,7 +78,7 @@ export function EditableTextField({ label, value, onSave, saving, multiline, pla
 
   return (
     <button type="button" onClick={start} className="w-full flex items-start justify-between py-3 border-b border-gray-50 last:border-0 text-left group">
-      <span className="text-body text-gray-500 font-medium">{label}</span>
+      <span className="text-body text-gray-500 font-medium flex items-center">{label}<SavedBadge visible={!!saved} /></span>
       <span className="text-body font-semibold text-gray-900 text-right max-w-[60%] group-hover:text-brand-cyan transition-colors flex items-center gap-1.5">
         {value || <span className="text-gray-400 italic">–</span>}
         <PencilIcon />
@@ -80,13 +92,14 @@ interface NumberFieldProps {
   value: number | null;
   onSave: (v: number) => void;
   saving?: boolean;
+  saved?: boolean;
   suffix?: string;
   min?: number;
   max?: number;
   step?: number;
 }
 
-export function EditableNumberField({ label, value, onSave, saving, suffix, min = 0, max = 99999, step = 1 }: NumberFieldProps) {
+export function EditableNumberField({ label, value, onSave, saving, saved, suffix, min = 0, max = 99999, step = 1 }: NumberFieldProps) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(String(value ?? 0));
   const ref = useRef<HTMLInputElement>(null);
@@ -131,9 +144,72 @@ export function EditableNumberField({ label, value, onSave, saving, suffix, min 
 
   return (
     <button type="button" onClick={start} className="w-full flex items-center justify-between py-3 border-b border-gray-50 last:border-0 text-left group">
-      <span className="text-body text-gray-500 font-medium">{label}</span>
+      <span className="text-body text-gray-500 font-medium flex items-center">{label}<SavedBadge visible={!!saved} /></span>
       <span className="text-body font-semibold text-gray-900 group-hover:text-brand-cyan transition-colors flex items-center gap-1.5">
         {display}
+        <PencilIcon />
+      </span>
+    </button>
+  );
+}
+
+interface SelectFieldProps {
+  label: string;
+  value: string;
+  options: { value: string; label: string }[];
+  onSave: (v: string) => void;
+  saving?: boolean;
+  saved?: boolean;
+}
+
+export function EditableSelectField({ label, value, options, onSave, saving, saved }: SelectFieldProps) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(value);
+
+  const start = () => { setDraft(value); setEditing(true); };
+  const cancel = () => setEditing(false);
+  const save = () => { if (draft !== value) onSave(draft); setEditing(false); };
+
+  const displayLabel = options.find((o) => o.value === value)?.label ?? value;
+
+  if (editing) {
+    return (
+      <div className="py-2 space-y-2">
+        <span className="text-body text-gray-500 font-medium">{label}</span>
+        <div className="flex flex-wrap gap-2">
+          {options.map((o) => (
+            <button
+              key={o.value}
+              type="button"
+              onClick={() => setDraft(o.value)}
+              disabled={saving}
+              className={`px-4 py-2 rounded-xl text-body-sm font-semibold transition-colors outline-none ${
+                draft === o.value
+                  ? "bg-brand-cyan text-white"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              }`}
+            >
+              {o.label}
+            </button>
+          ))}
+        </div>
+        <div className="flex gap-2 justify-end">
+          <button type="button" onClick={cancel} className="px-4 py-2 rounded-xl text-body-sm font-semibold text-gray-500 hover:bg-gray-100 outline-none">
+            ✕
+          </button>
+          <button type="button" onClick={save} disabled={saving} className="px-4 py-2 rounded-xl bg-brand-dark text-white text-body-sm font-semibold outline-none disabled:opacity-50">
+            {saving ? "..." : "✓"}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <button type="button" onClick={start} className="w-full flex items-center justify-between py-3 border-b border-gray-50 last:border-0 text-left group">
+      <span className="text-body text-gray-500 font-medium flex items-center">{label}<SavedBadge visible={!!saved} /></span>
+      <span className="text-body font-semibold text-gray-900 group-hover:text-brand-cyan transition-colors flex items-center gap-1.5">
+        {displayLabel}
         <PencilIcon />
       </span>
     </button>

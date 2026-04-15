@@ -42,7 +42,7 @@ export default function StepPhotos({ draft, update, onNext }: Props) {
         </div>
         <p className="text-body-md font-bold text-gray-700">{t("photosUploadCta")}</p>
         <p className="text-body-sm text-gray-400">{t("photosHint")}</p>
-        <input ref={inputRef} type="file" accept="image/*" multiple className="hidden" onChange={(e) => handleFiles(e.target.files)} />
+        <input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" multiple className="hidden" onChange={(e) => handleFiles(e.target.files)} />
       </button>
 
       {/* Previews */}

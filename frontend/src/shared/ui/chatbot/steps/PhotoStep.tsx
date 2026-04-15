@@ -73,7 +73,7 @@ export default function PhotoStep({ value, onChange, onSubmit, labels }: StepCom
           <p className="text-body-sm text-gray-400">{items.length}/10</p>
         </button>
       )}
-      <input ref={inputRef} type="file" accept="image/*" multiple className="hidden" onChange={(e) => addFiles(e.target.files)} />
+      <input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" multiple className="hidden" onChange={(e) => addFiles(e.target.files)} />
       <button type="button" onClick={onSubmit} disabled={items.length === 0} className="w-full py-3.5 rounded-2xl bg-brand-dark text-white font-bold text-body-md disabled:opacity-30 transition-opacity">
         {labels.continue}
       </button>

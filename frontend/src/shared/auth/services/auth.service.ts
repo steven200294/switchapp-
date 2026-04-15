@@ -54,6 +54,13 @@ export function updatePreferences(data: Record<string, unknown>): Promise<unknow
   });
 }
 
+export function updateProfile(data: Record<string, unknown>): Promise<UserProfile> {
+  return apiFetch<UserProfile>('/users/me/profile', {
+    method: 'PUT',
+    body: JSON.stringify(data),
+  });
+}
+
 export interface UserProfile {
   user_id: string;
   city?: string | null;

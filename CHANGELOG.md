@@ -5,14 +5,14 @@ All notable changes to SwitchAppart will be documented in this file.
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.3.0] - 2026-03-30
 
 ### Added
 - **Geocoding pipeline**: addresses are geocoded to lat/lng coordinates once on property creation/update via Nominatim API; results cached in `geocoding_cache` table; BullMQ job for async batch processing; backfill script for existing properties
 - **Redis infra module** (`backend/src/infra/redis/`): shared IORedis connection + BullMQ queue factory
 - **Mock database** (`DATABASE_MODE=mock`, `DATABASE_URL_MOCK`): separate `switchapp_mock` database auto-created by Docker init; Prisma client switches at runtime via `env.database.effectiveUrl`
-- **Mock seed** (`data/seed-mock.ts`): 7 users (1 admin + 6 fictifs), 7 properties across 6 villes, 3 matches, 3 conversations, 11 messages, 11 swipes, 5 favorites; scripts `npm run seed:mock` / `db:migrate:mock`
-- **Mock images** (`data/seed-mock-images.sh`): downloads 7 Unsplash apartment photos and uploads to MinIO `properties/mock/`
+- **Mock seed** (`data/seed-mock.ts`): 9 users (1 admin + 8 fictifs), 9 properties across 8 cities, 4 matches, 4 conversations, 15 messages, 19 swipes, 12 favorites; complete profiles with `first_name`, `last_name`, `date_of_birth`, `phone`, `profession`, `bio`; scripts `npm run seed:mock` / `db:migrate:mock`
+- **Mock images** (`data/seed-mock-images.sh`): downloads apartment photos and uploads to MinIO `properties/mock/`
 - **Admin user**: `abderrazaq@mail.com` / `admin123` with `admin_users` table entry and verified profile
 - **AI compatibility endpoint** — GET `/api/v1/properties/:id/compatibility` (authenticated): GPT-4o-mini compares viewer preferences + own listing to viewed property; returns score 0–100, common/weak points, recommendation in French
 - **AI configuration**: `AI_PROVIDER`, `AI_MODEL`, `AI_API_KEY` env vars (default `openai` / `gpt-4o-mini`)
@@ -28,6 +28,9 @@ versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - **Category listing pages** (`/explorer/category/[slug]`): paginated grid view for each category with SEO metadata
 - **"See all" card**: visual card at the end of each horizontal scroll section linking to the full category page
 - **Utilities-included badge**: prominent green badge on property detail page (bottom bar + info section) when `utilities_included` is true; chatbot rent question explicitly mentions "charges comprises"
+- **Profile editing** (`/profil/parametres/informations`): personal info page now persists to API (`PUT /users/me/profile`); auto-saves on blur per field; added profession and bio fields
+- **Property type editing**: property management page allows changing property type via visual select (was previously read-only)
+- **Save feedback checkmarks**: green check icon appears briefly next to each field label after a successful save (property management page + personal info page)
 
 ### Changed
 - **TanStack Query migration**: `getMe()` moved from Zustand side-effect to `useQuery`; login/register/email verification/phone OTP/preferences update all use `useMutation` hooks with proper cache invalidation; swipe mutations invalidate matches, conversations, and deck caches
@@ -38,6 +41,7 @@ versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - `init.sql` scoped to `auth` schema only; Prisma migrations handle `public` schema with `IF NOT EXISTS` guards
 - API healthcheck in Docker uses Node.js `fetch` instead of `wget`
 - CAPTCHA middleware returns `503` in production when secret key is missing (fail-closed)
+- GIF uploads blocked: backend rejects `image/gif`, frontend file inputs restricted to `image/jpeg,image/png,image/webp`, hint text updated
 
 ### Fixed
 - Onboarding modal not appearing after registration when triggered from `AuthGate`-protected pages
