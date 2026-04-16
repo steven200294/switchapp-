@@ -20,8 +20,13 @@ import { verificationRouter } from "../modules/verification/index.js";
 const app = express();
 
 app.use(helmet());
+
+const allowedOrigins = env.isDev
+  ? true
+  : env.frontendUrl.split(',').map((u) => u.trim()).filter(Boolean);
+
 app.use(cors({
-  origin: env.isDev ? true : env.frontendUrl,
+  origin: allowedOrigins,
   credentials: true,
 }));
 app.use(express.json({ limit: "1mb" }));
@@ -54,6 +59,8 @@ app.use(errorHandler);
 
 app.listen(env.port, () => {
   logger.info(`API listening on port ${env.port}`);
+  logger.info(`CORS origins: ${JSON.stringify(allowedOrigins)}`);
+  logger.info(`NODE_ENV: ${env.nodeEnv}`);
 });
 
 export default app;
