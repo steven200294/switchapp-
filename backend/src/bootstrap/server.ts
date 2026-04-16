@@ -1,3 +1,4 @@
+import { execSync } from "child_process";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
@@ -16,6 +17,20 @@ import { messagesRouter } from "../modules/messages/index.js";
 import { favoritesRouter } from "../modules/favorites/index.js";
 import { uploadsRouter } from "../modules/uploads/index.js";
 import { verificationRouter } from "../modules/verification/index.js";
+
+// Run pending Prisma migrations before the server starts. This replaces the
+// pre-deploy command approach, which lacks access to npm scripts at runtime.
+logger.info("Running Prisma migrations…");
+try {
+  execSync("npx prisma migrate deploy", {
+    stdio: "inherit",
+    env: { ...process.env, DATABASE_URL: env.database.url },
+  });
+  logger.info("Prisma migrations applied successfully.");
+} catch (err) {
+  logger.error("Prisma migration failed — aborting startup.", { err });
+  process.exit(1);
+}
 
 const app = express();
 
