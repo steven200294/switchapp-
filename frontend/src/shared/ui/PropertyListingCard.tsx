@@ -5,6 +5,7 @@ import { Link } from "@/i18n/routing";
 import { MapPin, Maximize, Bed, Heart } from "@/shared/ui/icons";
 import { FavoriteHeart } from "@/shared/ui/icons";
 import { resolveStorageUrl, pickCover } from "@/shared/constants/theme";
+import PropertyImage from "@/shared/ui/PropertyImage";
 
 export interface ListingCardProperty {
   id: string;
@@ -52,7 +53,7 @@ export default function PropertyListingCard(props: Props) {
 
   const image = (
     <div className={`relative ${isCompact ? "aspect-4/3" : "aspect-4/3"} rounded-2xl overflow-hidden ${isCompact ? "mb-2.5" : "mb-3"}`}>
-      <img
+      <PropertyImage
         src={coverImg}
         alt={p.title}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

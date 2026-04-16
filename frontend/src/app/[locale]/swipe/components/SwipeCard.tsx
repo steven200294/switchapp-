@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useTransform, type PanInfo } from "framer-motion";
 import { SWIPE_THRESHOLD, resolveStorageUrl, pickCover } from "@/shared/constants/theme";
+import PropertyImage from "@/shared/ui/PropertyImage";
 import type { DeckProperty } from "../types/swipe.types";
 import SwipeOverlays from "./SwipeOverlays";
 import SwipeCardInfo from "./SwipeCardInfo";
@@ -49,7 +50,7 @@ export default function SwipeCard({ property, isTop, stackIndex, onSwipe, onTap 
       exit={{ x: 300, opacity: 0, transition: { duration: 0.3 } }}
     >
       <div className="absolute inset-0">
-        <img src={coverImg} alt={property.title} className="w-full h-full object-cover" />
+        <PropertyImage src={coverImg} alt={property.title} className="w-full h-full object-cover" />
       </div>
 
       {isTop && <SwipeOverlays likeOpacity={likeOpacity} nopeOpacity={nopeOpacity} />}

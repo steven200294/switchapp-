@@ -2,6 +2,7 @@
 
 import type { RefObject } from "react";
 import PropertyCarouselStageOverlays from "@/app/[locale]/explorer/components/PropertyCarouselStageOverlays";
+import PropertyImage from "@/shared/ui/PropertyImage";
 
 interface PropertyImageCarouselStageProps {
   images: string[];
@@ -42,7 +43,7 @@ export default function PropertyImageCarouselStage({
             className="shrink-0 w-full h-full snap-center cursor-zoom-in"
             onClick={() => onImageOpen(i)}
           >
-            <img src={src} alt="" className="w-full h-full object-cover" />
+            <PropertyImage src={src} alt="" className="w-full h-full object-cover" />
           </div>
         ))}
       </div>
