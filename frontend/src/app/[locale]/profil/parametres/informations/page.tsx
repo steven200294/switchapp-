@@ -26,13 +26,14 @@ export default function InformationsPage() {
 
   useEffect(() => {
     if (profile) {
+      const p = profile as Record<string, unknown>;
       setForm({
-        full_name: profile.full_name ?? user?.full_name ?? "",
+        full_name: (p.full_name as string) ?? user?.full_name ?? "",
         email: user?.email ?? "",
-        phone: (profile as Record<string, unknown>).phone_number as string ?? "",
-        city: profile.city ?? "",
-        profession: (profile as Record<string, unknown>).profession as string ?? "",
-        bio: (profile as Record<string, unknown>).bio as string ?? "",
+        phone: (p.phone_number as string) ?? "",
+        city: (p.city as string) ?? "",
+        profession: (p.profession as string) ?? "",
+        bio: (p.bio as string) ?? "",
       });
     }
   }, [profile, user]);

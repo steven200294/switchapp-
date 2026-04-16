@@ -41,9 +41,8 @@ export default function FeedSection({ category, favIds, onToggleFav }: FeedSecti
   const title = t(category.title_key, titleParams);
 
   const subKey = SUB_KEY_MAP[category.title_key];
-  const subParams = category.city
-    ? { city: category.city, count: category.total }
-    : { count: category.total };
+  const subParams: Record<string, string | number> = { count: category.total };
+  if (category.city) subParams.city = category.city;
   const subtitle = subKey ? t(subKey, subParams) : undefined;
 
   const categoryUrl = buildCategoryUrl(category);
