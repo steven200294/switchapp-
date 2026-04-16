@@ -25,15 +25,23 @@ async function uploadPhotos(files: File[]): Promise<UploadResult> {
   const formData = new FormData();
   files.forEach((file) => formData.append("photos", file));
 
-  const res = await fetch(`${API_URL}/uploads/photos`, {
-    method: "POST",
-    headers: token ? { Authorization: `Bearer ${token}` } : {},
-    body: formData,
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15_000);
 
-  const json = await res.json();
-  if (!res.ok) throw new Error(json.error?.message || "Upload failed");
-  return json.data;
+  try {
+    const res = await fetch(`${API_URL}/uploads/photos`, {
+      method: "POST",
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+      body: formData,
+      signal: controller.signal,
+    });
+
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error?.message || "Upload failed");
+    return json.data;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 async function resolvePhotos(raw: unknown): Promise<{ urls: string[]; paths: string[] }> {
@@ -56,9 +64,13 @@ async function resolvePhotos(raw: unknown): Promise<{ urls: string[]; paths: str
   }
 
   if (newFiles.length > 0) {
-    const uploaded = await uploadPhotos(newFiles);
-    existingUrls.push(...uploaded.urls);
-    existingPaths.push(...uploaded.paths);
+    try {
+      const uploaded = await uploadPhotos(newFiles);
+      existingUrls.push(...uploaded.urls);
+      existingPaths.push(...uploaded.paths);
+    } catch {
+      console.warn("Photo upload failed — publishing without new photos");
+    }
   }
 
   return { urls: existingUrls, paths: existingPaths };
