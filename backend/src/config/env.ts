@@ -59,6 +59,7 @@ export const env = {
 
   captcha: {
     secretKey: process.env.CAPTCHA_SECRET_KEY ?? '',
+    enabled: process.env.CAPTCHA_ENABLED !== 'false',
   },
 
   emailVerify: {

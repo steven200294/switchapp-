@@ -69,7 +69,7 @@ async function resolvePhotos(raw: unknown): Promise<{ urls: string[]; paths: str
       existingUrls.push(...uploaded.urls);
       existingPaths.push(...uploaded.paths);
     } catch {
-      console.warn("Photo upload failed — publishing without new photos");
+      // photo upload failed — publishing without new photos
     }
   }
 

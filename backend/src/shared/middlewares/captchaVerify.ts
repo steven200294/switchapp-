@@ -7,6 +7,10 @@ import { ERROR_CODES, CLIENT_MESSAGES } from '../errors/errorCodes.js';
 export async function captchaVerify(req: Request, _res: Response, next: NextFunction): Promise<void> {
   const token = req.body?.captcha_token;
 
+  if (!env.captcha.enabled) {
+    return next();
+  }
+
   if (env.isDev && token === 'dev-bypass') {
     return next();
   }
