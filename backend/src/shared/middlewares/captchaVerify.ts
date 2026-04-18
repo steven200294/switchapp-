@@ -22,14 +22,8 @@ export async function captchaVerify(req: Request, _res: Response, next: NextFunc
   }
 
   if (!env.captcha.secretKey) {
-    if (env.isDev) {
-      logger.warn('CAPTCHA_SECRET_KEY not set — allowing in dev mode');
-      return next();
-    }
-    logger.error('CAPTCHA_SECRET_KEY not set — blocking request (fail-closed)');
-    return next(
-      new AppError(ERROR_CODES.SERVICE_UNAVAILABLE, 503, CLIENT_MESSAGES[ERROR_CODES.SERVICE_UNAVAILABLE]),
-    );
+    logger.warn('CAPTCHA_SECRET_KEY not set — skipping verification');
+    return next();
   }
 
   try {
