@@ -8,7 +8,8 @@ export function useSwipeDeck(enabled: boolean) {
     queryKey: QUERY_KEYS.SWIPE_DECK,
     queryFn: () => getSwipeDeck(DECK_SIZE),
     enabled,
-    staleTime: STALE_TIME,
+    staleTime: 30_000,
+    refetchOnWindowFocus: false,
   });
 }
 

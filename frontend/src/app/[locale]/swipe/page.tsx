@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { useQueryClient } from "@tanstack/react-query";
 import { Heart } from "@/shared/ui/icons";
@@ -31,6 +31,12 @@ export default function SwipePage() {
     (direction: "like" | "nope") => {
       const currentProperty = deck[localDeckIndex];
       if (!currentProperty) return;
+
+      if (direction === "nope") {
+        setLocalDeckIndex((prev) => prev + 1);
+        return;
+      }
+
       swipeMutation.mutate(
         { propertyId: currentProperty.id, action: direction },
         { onSuccess: () => setLocalDeckIndex((prev) => prev + 1) },
@@ -51,6 +57,33 @@ export default function SwipePage() {
     setLocalDeckIndex(0);
     queryClient.invalidateQueries({ queryKey: QUERY_KEYS.SWIPE_DECK });
   }, [queryClient]);
+
+  // Auto-refresh when running low on cards
+  const didAutoRefresh = useRef(false);
+  const remainingCards = deck.length - localDeckIndex;
+  useEffect(() => {
+    if (!deckLoading && remainingCards > 0 && remainingCards < 3 && !didAutoRefresh.current) {
+      didAutoRefresh.current = true;
+      onRefresh();
+    }
+    if (remainingCards >= 5) {
+      didAutoRefresh.current = false;
+    }
+  }, [remainingCards, deckLoading, onRefresh]);
+
+  // Auto-refresh when user returns to the tab after 30s+ away
+  const lastHiddenAt = useRef(0);
+  useEffect(() => {
+    function handleVisibility() {
+      if (document.visibilityState === "hidden") {
+        lastHiddenAt.current = Date.now();
+      } else if (document.visibilityState === "visible" && Date.now() - lastHiddenAt.current > 30_000) {
+        onRefresh();
+      }
+    }
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => document.removeEventListener("visibilitychange", handleVisibility);
+  }, [onRefresh]);
 
   return (
     <AuthGate

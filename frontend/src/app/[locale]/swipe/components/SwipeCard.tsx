@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { motion, useMotionValue, useTransform, type PanInfo } from "framer-motion";
 import { SWIPE_THRESHOLD, resolveStorageUrl, pickCover } from "@/shared/constants/theme";
 import PropertyImage from "@/shared/ui/PropertyImage";
@@ -20,14 +21,26 @@ export default function SwipeCard({ property, isTop, stackIndex, onSwipe, onTap 
   const rotate = useTransform(x, [-300, 0, 300], [-18, 0, 18]);
   const likeOpacity = useTransform(x, [0, SWIPE_THRESHOLD], [0, 1]);
   const nopeOpacity = useTransform(x, [-SWIPE_THRESHOLD, 0], [1, 0]);
+  const wasDragged = useRef(false);
 
   const scale = 1 - stackIndex * 0.05;
   const translateY = stackIndex * 16;
   const coverImg = resolveStorageUrl(pickCover(property));
 
+  function handleDragStart() {
+    wasDragged.current = false;
+  }
+
   function handleDragEnd(_: unknown, info: PanInfo) {
+    if (Math.abs(info.offset.x) > 5) {
+      wasDragged.current = true;
+    }
     if (info.offset.x > SWIPE_THRESHOLD) onSwipe("like");
     else if (info.offset.x < -SWIPE_THRESHOLD) onSwipe("nope");
+  }
+
+  function handleTap() {
+    if (!wasDragged.current) onTap();
   }
 
   return (
@@ -44,8 +57,9 @@ export default function SwipeCard({ property, isTop, stackIndex, onSwipe, onTap 
       drag={isTop ? "x" : false}
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.9}
+      onDragStart={isTop ? handleDragStart : undefined}
       onDragEnd={isTop ? handleDragEnd : undefined}
-      onTap={isTop ? onTap : undefined}
+      onTap={isTop ? handleTap : undefined}
       animate={isTop ? undefined : { x: 0, rotate: 0 }}
       exit={{ x: 300, opacity: 0, transition: { duration: 0.3 } }}
     >

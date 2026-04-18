@@ -1,11 +1,19 @@
 "use client";
 
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Heart } from "@/shared/ui/icons";
 
+const AUTO_DISMISS_MS = 2000;
+
 export default function MatchOverlay({ onClose }: { onClose: () => void }) {
   const t = useTranslations("swipe");
+
+  useEffect(() => {
+    const timer = setTimeout(onClose, AUTO_DISMISS_MS);
+    return () => clearTimeout(timer);
+  }, [onClose]);
   return (
     <motion.div
       className="fixed inset-0 z-200 bg-linear-to-br from-brand-cyan to-brand-purple flex flex-col items-center justify-center text-white"
