@@ -14,9 +14,10 @@ interface SwipeCardProps {
   stackIndex: number;
   onSwipe: (direction: "like" | "nope") => void;
   onTap: () => void;
+  exitX: number;
 }
 
-export default function SwipeCard({ property, isTop, stackIndex, onSwipe, onTap }: SwipeCardProps) {
+export default function SwipeCard({ property, isTop, stackIndex, onSwipe, onTap, exitX }: SwipeCardProps) {
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-300, 0, 300], [-18, 0, 18]);
   const likeOpacity = useTransform(x, [0, SWIPE_THRESHOLD], [0, 1]);
@@ -61,7 +62,7 @@ export default function SwipeCard({ property, isTop, stackIndex, onSwipe, onTap 
       onDragEnd={isTop ? handleDragEnd : undefined}
       onTap={isTop ? handleTap : undefined}
       animate={isTop ? undefined : { x: 0, rotate: 0 }}
-      exit={{ x: 300, opacity: 0, transition: { duration: 0.3 } }}
+      exit={{ x: exitX, opacity: 0, transition: { duration: 0.3 } }}
     >
       <div className="absolute inset-0">
         <PropertyImage src={coverImg} alt={property.title} className="w-full h-full object-cover" />

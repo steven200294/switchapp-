@@ -21,6 +21,7 @@ export default function SwipePage() {
   const router = useRouter();
   const [showMatch, setShowMatch] = useState(false);
   const [localDeckIndex, setLocalDeckIndex] = useState(0);
+  const [exitX, setExitX] = useState(400);
   const queryClient = useQueryClient();
   const { data: deck = [], isLoading: deckLoading } = useSwipeDeck(isLoggedIn && !authLoading);
   const swipeMutation = useSwipeMutation(() => setShowMatch(true));
@@ -31,6 +32,8 @@ export default function SwipePage() {
     (direction: "like" | "nope") => {
       const currentProperty = deck[localDeckIndex];
       if (!currentProperty) return;
+
+      setExitX(direction === "like" ? 400 : -400);
 
       if (direction === "nope") {
         setLocalDeckIndex((prev) => prev + 1);
@@ -47,6 +50,7 @@ export default function SwipePage() {
   const handleSuperLike = useCallback(() => {
     const currentProperty = deck[localDeckIndex];
     if (!currentProperty) return;
+    setExitX(400);
     swipeMutation.mutate(
       { propertyId: currentProperty.id, action: "super_like" },
       { onSuccess: () => setLocalDeckIndex((prev) => prev + 1) },
@@ -103,6 +107,7 @@ export default function SwipePage() {
             onSwipe={handleSwipe}
             onTap={(id) => router.push(`/explorer/${id}`)}
             onRefresh={onRefresh}
+            exitX={exitX}
           />
           {showActionButtons && (
             <SwipeActionButtons

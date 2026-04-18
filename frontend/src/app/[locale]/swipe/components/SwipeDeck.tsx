@@ -14,6 +14,7 @@ interface SwipeDeckProps {
   onSwipe: (dir: "like" | "nope") => void;
   onTap: (id: string) => void;
   onRefresh: () => void;
+  exitX: number;
 }
 
 export default function SwipeDeck({
@@ -23,6 +24,7 @@ export default function SwipeDeck({
   onSwipe,
   onTap,
   onRefresh,
+  exitX,
 }: SwipeDeckProps) {
   const tCommon = useTranslations("common");
   const t = useTranslations("swipe");
@@ -64,6 +66,7 @@ export default function SwipeDeck({
                 stackIndex={stackIndex}
                 onSwipe={onSwipe}
                 onTap={() => onTap(property.id)}
+                exitX={exitX}
               />
             );
           })}
